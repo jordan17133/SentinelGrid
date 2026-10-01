@@ -1,0 +1,243 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 635.87352693103583,
+            "y": 269.19890943682515
+          },
+          "nodeIndex": "rpt agent_health",
+          "nodeLineageTag": "036c2648-8fc7-4210-abc3-da368d84f275",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 265.77099411354732,
+            "y": 531.707350829311
+          },
+          "nodeIndex": "rpt alert_tactics",
+          "nodeLineageTag": "bf123c85-d1ea-4dd8-8b2f-d37b917988b0",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 200.46862410134702,
+            "y": -50
+          },
+          "nodeIndex": "rpt alert_techniques",
+          "nodeLineageTag": "157bd17a-86a9-4efa-a55c-0fb87d5c54a1",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 349.85065161808927,
+            "y": 179.10501081785662
+          },
+          "nodeIndex": "rpt alerts",
+          "nodeLineageTag": "7682a6e8-89ca-45fb-8512-ba0519fd0a0e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1156.9320024367696,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt load_runs",
+          "nodeLineageTag": "82866fd4-3b3c-403b-9d65-b4598446d1a8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 182.86986753640474
+          },
+          "nodeIndex": "rpt rule_performance",
+          "nodeLineageTag": "030dbcc0-8833-4efe-9709-1e40fb7e2f5d",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 922.93200243676961,
+            "y": 376.09739277873427
+          },
+          "nodeIndex": "rpt vulnerabilities_current",
+          "nodeLineageTag": "3a011a21-f5a3-4dc6-bb50-eeb69bf9c79b",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 922.91672119228213,
+            "y": 148.00830364727142
+          },
+          "nodeIndex": "rpt vulnerability_trend",
+          "nodeLineageTag": "8bf7930f-6156-407e-bb7d-349183b61550",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1390.9320024367696,
+            "y": 230.85367541465553
+          },
+          "nodeIndex": "rpt attack_catalog_info",
+          "nodeLineageTag": "d0b57305-1299-583c-85f2-cd7f4e6bdf72",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1674.9320024367696,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt attack_coverage",
+          "nodeLineageTag": "3e3081d6-2489-5c51-a63a-0b2eae91fe68",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1958.9320024367696,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt attack_observed",
+          "nodeLineageTag": "330be4b7-18b2-5091-ae95-1d584e682ac7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2242.93200243677,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt cis_check_results",
+          "nodeLineageTag": "b9b69b01-ad93-581b-8008-2b2d729aa9bb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2526.93200243677,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt cis_score_history",
+          "nodeLineageTag": "520de8b3-d062-57dd-9c98-38a951415478",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2810.93200243677,
+            "y": 230.85367541465553
+          },
+          "nodeIndex": "rpt ingest_latency_hourly",
+          "nodeLineageTag": "1a773355-5f2b-5515-b66e-47bab422165e",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3094.93200243677,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt pipeline_status",
+          "nodeLineageTag": "ad2b4f34-3739-5f4a-b562-279d02192fb9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3378.93200243677,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt vulnerability_findings",
+          "nodeLineageTag": "83462838-2afd-5cd6-9928-786b2a7ab7ad",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3612.93200243677,
+            "y": 204.85367541465553
+          },
+          "nodeIndex": "rpt cases",
+          "nodeLineageTag": "216efbd1-822f-5954-bc64-bbe8848b74a9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,57 @@
+# SentinelGrid retention policies for the Wazuh Indexer (OpenSearch Index State Management).
+# Paste each request into Indexer management > Dev Tools and run it.
+#
+# ism_template attaches the policy to every NEW index whose name matches,
+# so each daily index is deleted automatically once it reaches the age limit.
+# Indices that already exist are attached explicitly with the _ism/add calls.
+
+# 1. Full event archive: keep 30 days.
+PUT _plugins/_ism/policies/sentinelgrid-archives-30d
+{
+  "policy": {
+    "description": "SentinelGrid: delete wazuh-archives daily indices 30 days after creation",
+    "default_state": "hot",
+    "states": [
+      {
+        "name": "hot",
+        "actions": [],
+        "transitions": [{ "state_name": "delete", "conditions": { "min_index_age": "30d" } }]
+      },
+      {
+        "name": "delete",
+        "actions": [{ "delete": {} }],
+        "transitions": []
+      }
+    ],
+    "ism_template": [{ "index_patterns": ["wazuh-archives-*"], "priority": 100 }]
+  }
+}
+
+# 2. Alerts: keep 365 days. (Every alert is also kept in the SQL warehouse.)
+PUT _plugins/_ism/policies/sentinelgrid-alerts-365d
+{
+  "policy": {
+    "description": "SentinelGrid: delete wazuh-alerts daily indices 365 days after creation",
+    "default_state": "hot",
+    "states": [
+      {
+        "name": "hot",
+        "actions": [],
+        "transitions": [{ "state_name": "delete", "conditions": { "min_index_age": "365d" } }]
+      },
+      {
+        "name": "delete",
+        "actions": [{ "delete": {} }],
+        "transitions": []
+      }
+    ],
+    "ism_template": [{ "index_patterns": ["wazuh-alerts-*"], "priority": 100 }]
+  }
+}
+
+# 3. Attach the alerts policy to the alert indices that already exist.
+POST _plugins/_ism/add/wazuh-alerts-*
+{ "policy_id": "sentinelgrid-alerts-365d" }
+
+# 4. Check: every wazuh-alerts index should list a policy_id.
+GET _plugins/_ism/explain/wazuh-alerts-*

@@ -1,0 +1,175 @@
+table 'rpt cases'
+	lineageTag: 216efbd1-822f-5954-bc64-bbe8848b74a9
+
+	measure Cases = COUNTROWS('rpt cases') + 0
+		formatString: #,0
+		lineageTag: f3b664f4-a4cd-51d7-b951-ce396dee16ca
+
+	measure 'Open cases' = CALCULATE([Cases], 'rpt cases'[status] <> "Closed")
+		formatString: #,0
+		lineageTag: e9c2cbe1-d356-5f8b-978a-d65c062d7888
+
+	measure 'Closed cases' = CALCULATE([Cases], 'rpt cases'[status] = "Closed")
+		formatString: #,0
+		lineageTag: 9915eebb-bf13-51ad-85f2-5c25386609b3
+
+	measure 'True positives' = CALCULATE([Cases], 'rpt cases'[verdict] = "True positive")
+		formatString: #,0
+		lineageTag: 381ffc11-e782-5e63-86aa-ff6f84f7f06c
+
+	measure 'Median hours to verdict' = MEDIAN('rpt cases'[hours_to_verdict])
+		formatString: 0.0 "h"
+		lineageTag: d80bc314-bb13-585a-9b94-568f4622f4fa
+
+	measure 'Hours to verdict' = SUM('rpt cases'[hours_to_verdict])
+		formatString: 0.0
+		lineageTag: b35e9615-aaa5-5b93-8fb4-1a6c2f0faf4b
+
+	column case_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 80f4298d-5ac9-5f2f-83f8-7db6e66c8835
+		summarizeBy: none
+		sourceColumn: case_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column case_number
+		dataType: string
+		lineageTag: edad1be4-1e4e-5dd1-a486-480096fc6e80
+		summarizeBy: none
+		sourceColumn: case_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: b299a53c-1a31-5d62-94f6-3afc3c3092ee
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: c254e671-5405-5b62-a416-c22f1291e17f
+		summarizeBy: none
+		sourceColumn: severity
+		sortByColumn: severity_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: aab7c9f2-4eb4-5208-b661-8fce4495a113
+		summarizeBy: sum
+		sourceColumn: severity_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 5cae0d3a-fde4-5616-85ab-4c98d418bec7
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_to
+		dataType: string
+		lineageTag: 9674247a-4b5b-50cc-acbe-c32ab2d2a62c
+		summarizeBy: none
+		sourceColumn: assigned_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column verdict
+		dataType: string
+		lineageTag: 8fe3d746-4a8e-5ed3-b8f0-cf00aeb750eb
+		summarizeBy: none
+		sourceColumn: verdict
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_alert_local
+		dataType: dateTime
+		formatString: mmm d, h:nn AM/PM
+		lineageTag: afa6d426-5ca1-51b8-9b28-99e83321529f
+		summarizeBy: none
+		sourceColumn: first_alert_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column closed_local
+		dataType: dateTime
+		formatString: mmm d, h:nn AM/PM
+		lineageTag: b95dc938-a2b3-59d4-a4ba-27a77b42a02f
+		summarizeBy: none
+		sourceColumn: closed_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column hours_to_verdict
+		dataType: double
+		formatString: 0.0
+		lineageTag: c48f11a2-985e-5506-bdd2-fb633145a458
+		summarizeBy: none
+		sourceColumn: hours_to_verdict
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_age_hours
+		dataType: double
+		formatString: 0.0
+		lineageTag: bd2a6e32-34a1-50fc-a8a1-f9f5a4d01032
+		summarizeBy: none
+		sourceColumn: open_age_hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules
+		dataType: string
+		lineageTag: 4ee5c065-609b-5fbc-8475-e8228f5abe5c
+		summarizeBy: none
+		sourceColumn: rules
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_in_case
+		dataType: int64
+		formatString: #,0
+		lineageTag: 740fe9a9-fa14-5887-8602-adeafdca1656
+		summarizeBy: none
+		sourceColumn: alerts_in_case
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_path
+		dataType: string
+		lineageTag: ae11d4d9-e6c9-5467-b8ff-aef66f8bf82b
+		summarizeBy: none
+		sourceColumn: report_path
+
+		annotation SummarizationSetBy = Automatic
+
+	column summary
+		dataType: string
+		lineageTag: fc5cb09c-e607-5d1a-8d0c-83385e13dc11
+		summarizeBy: none
+		sourceColumn: summary
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt cases' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_cases = Source{[Schema="rpt",Item="cases"]}[Data]
+				in
+				    rpt_cases
+
+	annotation PBI_ResultType = Table
+

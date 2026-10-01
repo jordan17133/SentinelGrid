@@ -1,0 +1,74 @@
+table 'rpt agent_health'
+	lineageTag: 036c2648-8fc7-4210-abc3-da368d84f275
+
+	column agent_id
+		dataType: string
+		lineageTag: 60e0e20f-91f3-44f4-bf81-485f94d897a8
+		summarizeBy: none
+		sourceColumn: agent_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_name
+		dataType: string
+		lineageTag: db1663ca-f9c4-4a49-af00-6eb8a9b7ade6
+		summarizeBy: none
+		sourceColumn: agent_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent_ip
+		dataType: string
+		lineageTag: 47b6f236-afe9-4c13-9890-caad5a6c010b
+		summarizeBy: none
+		sourceColumn: agent_ip
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_seen_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 47e16f48-11f0-40f4-974b-26643e6b6f21
+		summarizeBy: none
+		sourceColumn: first_seen_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_seen_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f2a3a5a3-5203-4136-98ef-60c1f6ca8839
+		summarizeBy: none
+		sourceColumn: last_seen_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_since_last_alert
+		dataType: int64
+		formatString: 0
+		lineageTag: f7a45215-6469-4ff9-9909-e08fda251bdf
+		summarizeBy: sum
+		sourceColumn: minutes_since_last_alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_last_24h
+		dataType: int64
+		formatString: 0
+		lineageTag: bfc22a09-33d6-40ac-8c77-fd4129078734
+		summarizeBy: sum
+		sourceColumn: alerts_last_24h
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt agent_health' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_agent_health = Source{[Schema="rpt",Item="agent_health"]}[Data]
+				in
+				    rpt_agent_health
+
+	annotation PBI_ResultType = Table
+

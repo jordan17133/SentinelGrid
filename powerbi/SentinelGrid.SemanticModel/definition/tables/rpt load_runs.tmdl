@@ -1,0 +1,150 @@
+table 'rpt load_runs'
+	lineageTag: 82866fd4-3b3c-403b-9d65-b4598446d1a8
+
+	measure 'Failed runs' = CALCULATE([Runs], 'rpt load_runs'[status] = "failed")
+		formatString: #,0
+		lineageTag: 96bd8456-848b-5003-a4a4-5cb1a0860de5
+
+	measure 'Succeeded runs' = CALCULATE([Runs], 'rpt load_runs'[status] = "succeeded")
+		formatString: #,0
+		lineageTag: 4fb8e06d-3009-5df9-95fa-9be268986867
+
+	measure Runs = COUNTROWS('rpt load_runs')
+		formatString: #,0
+		lineageTag: dd6a1c0c-78cf-5e34-9e71-06f72d1ebe16
+
+	column run_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c40aa1b-88b1-4c87-a608-1814dcf6ea10
+		summarizeBy: sum
+		sourceColumn: run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column started_at_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2c2f44d3-d532-4768-ab28-fceb8c3d5f99
+		summarizeBy: none
+		sourceColumn: started_at_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column finished_at_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9d8e158c-6861-46c2-826d-68ab9d6fa7ed
+		summarizeBy: none
+		sourceColumn: finished_at_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_seconds
+		dataType: int64
+		formatString: 0
+		lineageTag: 608abcb5-d6e8-4ca9-ac62-3e824bcc05af
+		summarizeBy: sum
+		sourceColumn: duration_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 63863374-7ed9-4239-827a-8694bfca3232
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column watermark_from
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0258772d-7efa-4a1c-ab36-06db7ec94fb5
+		summarizeBy: none
+		sourceColumn: watermark_from
+
+		annotation SummarizationSetBy = Automatic
+
+	column watermark_to
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec54fa78-24dc-4e77-b45c-cf64b5452bf8
+		summarizeBy: none
+		sourceColumn: watermark_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_fetched
+		dataType: int64
+		formatString: 0
+		lineageTag: 863ed98f-393a-461c-ab93-6d8c00a14e71
+		summarizeBy: sum
+		sourceColumn: alerts_fetched
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_inserted
+		dataType: int64
+		formatString: 0
+		lineageTag: 854b52c5-2f72-45b9-884d-92e85c7beee9
+		summarizeBy: sum
+		sourceColumn: alerts_inserted
+
+		annotation SummarizationSetBy = Automatic
+
+	column vulns_snapshotted
+		dataType: int64
+		formatString: 0
+		lineageTag: 43c6c1bf-0cd0-4fe2-a3b2-d65601d88219
+		summarizeBy: sum
+		sourceColumn: vulns_snapshotted
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_message
+		dataType: string
+		lineageTag: 0f1fd14e-dc2d-4526-917b-22280d0a9ff2
+		summarizeBy: none
+		sourceColumn: error_message
+
+		annotation SummarizationSetBy = Automatic
+
+	column started_at_local
+		dataType: dateTime
+		formatString: mmm d, h:nn AM/PM
+		lineageTag: bf60c655-2e4b-5b81-996e-2f1fb427337d
+		summarizeBy: none
+		sourceColumn: started_at_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column started_hour_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4c9a64a5-941e-593a-a4ad-0b7dc811d107
+		summarizeBy: none
+		sourceColumn: started_hour_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column succeeded
+		dataType: int64
+		formatString: 0
+		lineageTag: 19682899-49c2-55ce-95fc-ce8c1a799d6d
+		summarizeBy: sum
+		sourceColumn: succeeded
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt load_runs' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_load_runs = Source{[Schema="rpt",Item="load_runs"]}[Data]
+				in
+				    rpt_load_runs
+
+	annotation PBI_ResultType = Table
+

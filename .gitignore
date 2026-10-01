@@ -1,0 +1,13 @@
+.sites-runtime/
+/tools/
+*.lnk
+.venv/
+.env
+__pycache__/
+*.pbix
+Jordan_Project_Brief.md
+# Power BI project: commit definitions only. The cache holds imported alert data.
+powerbi/**/.pbi/cache.abf
+powerbi/**/.pbi/localSettings.json
+# Regenerable exports (ATT&CK catalog from the Wazuh server)
+warehouse/data/

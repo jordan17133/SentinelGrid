@@ -1,0 +1,34 @@
+table 'rpt alert_tactics'
+	lineageTag: bf123c85-d1ea-4dd8-8b2f-d37b917988b0
+
+	measure 'Tactics with activity' = DISTINCTCOUNT('rpt alert_tactics'[tactic]) + 0
+		formatString: #,0
+		lineageTag: a669ac92-c3ba-5b8d-9cf8-84bcfba8a575
+
+	column doc_id
+		dataType: string
+		lineageTag: c28bc9da-c2a3-4a12-b654-9785af86af0b
+		summarizeBy: none
+		sourceColumn: doc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column tactic
+		dataType: string
+		lineageTag: 90906d36-a5a2-4637-b460-c7dd7e728524
+		summarizeBy: none
+		sourceColumn: tactic
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt alert_tactics' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_alert_tactics = Source{[Schema="rpt",Item="alert_tactics"]}[Data]
+				in
+				    rpt_alert_tactics
+
+	annotation PBI_ResultType = Table
+

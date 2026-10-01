@@ -1,0 +1,3858 @@
+[
+ {
+  "id": "26000",
+  "title": "Ensure 'Enforce password history' is set to '24 or more password(s)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.332+0000",
+  "cis": "1.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26001",
+  "title": "Ensure 'Maximum password age' is set to '365 or fewer days, but not 0'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.348+0000",
+  "cis": "1.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26002",
+  "title": "Ensure 'Minimum password age' is set to '1 or more day(s)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.364+0000",
+  "cis": "1.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26003",
+  "title": "Ensure 'Minimum password length' is set to '14 or more character(s)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.503+0000",
+  "cis": "1.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26004",
+  "title": "Ensure 'Relax minimum password length limits' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.518+0000",
+  "cis": "1.1.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26005",
+  "title": "Ensure 'Account lockout duration' is set to '15 or more minute(s)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.534+0000",
+  "cis": "1.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26006",
+  "title": "Ensure 'Account lockout threshold' is set to '5 or fewer invalid logon attempt(s), but not 0'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.550+0000",
+  "cis": "1.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26007",
+  "title": "Ensure 'Reset account lockout counter after' is set to '15 or more minute(s)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.566+0000",
+  "cis": "1.2.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26008",
+  "title": "Ensure 'Accounts: Block Microsoft accounts' is set to 'Users can't add or log on with Microsoft accounts'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.581+0000",
+  "cis": "2.3.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26009",
+  "title": "Ensure 'Accounts: Guest account status' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.597+0000",
+  "cis": "2.3.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26010",
+  "title": "Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.659+0000",
+  "cis": "2.3.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26011",
+  "title": "Configure 'Accounts: Rename administrator account'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.737+0000",
+  "cis": "2.3.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26012",
+  "title": "Configure 'Accounts: Rename guest account'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.753+0000",
+  "cis": "2.3.1.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26013",
+  "title": "Ensure 'Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.768+0000",
+  "cis": "2.3.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26014",
+  "title": "Ensure 'Audit: Shut down system immediately if unable to log security audits' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.784+0000",
+  "cis": "2.3.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26015",
+  "title": "Ensure 'Devices: Prevent users from installing printer drivers' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:10.800+0000",
+  "cis": "2.3.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26016",
+  "title": "Ensure 'Domain member: Digitally encrypt or sign secure channel data (always)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.815+0000",
+  "cis": "2.3.6.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26017",
+  "title": "Ensure 'Domain member: Digitally encrypt secure channel data (when possible)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.909+0000",
+  "cis": "2.3.6.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26018",
+  "title": "Ensure 'Domain member: Digitally sign secure channel data (when possible)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.956+0000",
+  "cis": "2.3.6.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26019",
+  "title": "Ensure 'Domain member: Disable machine account password changes' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.973+0000",
+  "cis": "2.3.6.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26020",
+  "title": "Ensure 'Domain member: Maximum machine account password age' is set to '30 or fewer days, but not 0'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.973+0000",
+  "cis": "2.3.6.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26021",
+  "title": "Ensure 'Domain member: Require strong (Windows 2000 or later) session key' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:10.987+0000",
+  "cis": "2.3.6.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26022",
+  "title": "Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.002+0000",
+  "cis": "2.3.7.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26023",
+  "title": "Ensure 'Interactive logon: Don't display last signed-in' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.018+0000",
+  "cis": "2.3.7.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26024",
+  "title": "Ensure 'Interactive logon: Machine account lockout threshold' is set to '10 or fewer invalid logon attempts, but not 0'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.049+0000",
+  "cis": "2.3.7.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26025",
+  "title": "Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.157+0000",
+  "cis": "2.3.7.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26026",
+  "title": "Configure 'Interactive logon: Message text for users attempting to log on'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.172+0000",
+  "cis": "2.3.7.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26027",
+  "title": "Configure 'Interactive logon: Message title for users attempting to log on'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.188+0000",
+  "cis": "2.3.7.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26028",
+  "title": "Ensure 'Interactive logon: Number of previous logons to cache (in case domain controller is not available)' is set to '4 or fewer logon(s)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.204+0000",
+  "cis": "2.3.7.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26029",
+  "title": "Ensure 'Interactive logon: Prompt user to change password before expiration' is set to 'between 5 and 14 days'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.220+0000",
+  "cis": "2.3.7.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26030",
+  "title": "Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.236+0000",
+  "cis": "2.3.7.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26031",
+  "title": "Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.344+0000",
+  "cis": "2.3.8.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26032",
+  "title": "Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.360+0000",
+  "cis": "2.3.8.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26033",
+  "title": "Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.376+0000",
+  "cis": "2.3.8.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26034",
+  "title": "Ensure 'Microsoft network server: Amount of idle time required before suspending session' is set to '15 or fewer minute(s)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.392+0000",
+  "cis": "2.3.9.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26035",
+  "title": "Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.408+0000",
+  "cis": "2.3.9.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26036",
+  "title": "Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.424+0000",
+  "cis": "2.3.9.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26037",
+  "title": "Ensure 'Microsoft network server: Disconnect clients when logon hours expire' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.439+0000",
+  "cis": "2.3.9.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26038",
+  "title": "Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.470+0000",
+  "cis": "2.3.9.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26039",
+  "title": "Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.563+0000",
+  "cis": "2.3.10.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26040",
+  "title": "Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.579+0000",
+  "cis": "2.3.10.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26041",
+  "title": "Ensure 'Network access: Do not allow storage of passwords and credentials for network authentication' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.594+0000",
+  "cis": "2.3.10.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26042",
+  "title": "Ensure 'Network access: Let Everyone permissions apply to anonymous users' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.609+0000",
+  "cis": "2.3.10.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26043",
+  "title": "Ensure 'Network access: Named Pipes that can be accessed anonymously' is set to 'None'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.624+0000",
+  "cis": "2.3.10.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26044",
+  "title": "Ensure 'Network access: Remotely accessible registry paths' is configured.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.640+0000",
+  "cis": "2.3.10.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26045",
+  "title": "Ensure 'Network access: Remotely accessible registry paths and sub-paths' is configured.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.702+0000",
+  "cis": "2.3.10.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26046",
+  "title": "Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.764+0000",
+  "cis": "2.3.10.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26047",
+  "title": "Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.779+0000",
+  "cis": "2.3.10.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26048",
+  "title": "Ensure 'Network access: Shares that can be accessed anonymously' is set to 'None'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.794+0000",
+  "cis": "2.3.10.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26049",
+  "title": "Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.809+0000",
+  "cis": "2.3.10.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26050",
+  "title": "Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.825+0000",
+  "cis": "2.3.11.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26051",
+  "title": "Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.840+0000",
+  "cis": "2.3.11.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26052",
+  "title": "Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.886+0000",
+  "cis": "2.3.11.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26053",
+  "title": "Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:11.961+0000",
+  "cis": "2.3.11.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26054",
+  "title": "Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.976+0000",
+  "cis": "2.3.11.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26055",
+  "title": "Ensure 'Network security: Force logoff when logon hours expire' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:11.991+0000",
+  "cis": "2.3.11.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26056",
+  "title": "Ensure 'Network security: LAN Manager authentication level' is set to 'Send NTLMv2 response only. Refuse LM & NTLM'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.007+0000",
+  "cis": "2.3.11.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26057",
+  "title": "Ensure 'Network security: LDAP client signing requirements' is set to 'Negotiate signing' or higher.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.023+0000",
+  "cis": "2.3.11.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26058",
+  "title": "Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.039+0000",
+  "cis": "2.3.11.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26059",
+  "title": "Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.054+0000",
+  "cis": "2.3.11.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26060",
+  "title": "Ensure 'Network security: Restrict NTLM: Audit Incoming NTLM Traffic' is set to 'Enable auditing for all accounts'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.162+0000",
+  "cis": "2.3.11.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26061",
+  "title": "Ensure 'Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers' is set to 'Audit all' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.179+0000",
+  "cis": "2.3.11.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26062",
+  "title": "Ensure 'System objects: Require case insensitivity for non-Windows subsystems' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.193+0000",
+  "cis": "2.3.15.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26063",
+  "title": "Ensure 'System objects: Strengthen default permissions of internal system objects (e.g. Symbolic Links)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.210+0000",
+  "cis": "2.3.15.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26064",
+  "title": "Ensure 'User Account Control: Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.224+0000",
+  "cis": "2.3.17.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26065",
+  "title": "Ensure 'User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode' is set to 'Prompt for consent on the secure desktop'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.240+0000",
+  "cis": "2.3.17.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26066",
+  "title": "Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.287+0000",
+  "cis": "2.3.17.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26067",
+  "title": "Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.365+0000",
+  "cis": "2.3.17.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26068",
+  "title": "Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.380+0000",
+  "cis": "2.3.17.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26069",
+  "title": "Ensure 'User Account Control: Run all administrators in Admin Approval Mode' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.396+0000",
+  "cis": "2.3.17.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26070",
+  "title": "Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.411+0000",
+  "cis": "2.3.17.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26071",
+  "title": "Ensure 'User Account Control: Virtualize file and registry write failures to per-user locations' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.427+0000",
+  "cis": "2.3.17.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26072",
+  "title": "Ensure 'Bluetooth Audio Gateway Service (BTAGService)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.443+0000",
+  "cis": "5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26073",
+  "title": "Ensure 'Bluetooth Support Service (bthserv)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.504+0000",
+  "cis": "5.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26074",
+  "title": "Ensure 'Computer Browser (Browser)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:12.565+0000",
+  "cis": "5.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26075",
+  "title": "Ensure 'Downloaded Maps Manager (MapsBroker)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.582+0000",
+  "cis": "5.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26076",
+  "title": "Ensure 'Geolocation Service (lfsvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.597+0000",
+  "cis": "5.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26077",
+  "title": "Ensure 'IIS Admin Service (IISADMIN)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.613+0000",
+  "cis": "5.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26078",
+  "title": "Ensure 'Infrared monitor service (irmon)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.629+0000",
+  "cis": "5.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26079",
+  "title": "Ensure 'Link-Layer Topology Discovery Mapper (lltdsvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.644+0000",
+  "cis": "5.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26080",
+  "title": "Ensure 'LxssManager (LxssManager)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.675+0000",
+  "cis": "5.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26081",
+  "title": "Ensure 'Microsoft FTP Service (FTPSVC)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.738+0000",
+  "cis": "5.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26082",
+  "title": "Ensure 'Microsoft iSCSI Initiator Service (MSiSCSI)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.752+0000",
+  "cis": "5.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26083",
+  "title": "Ensure 'OpenSSH SSH Server (sshd)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:12.767+0000",
+  "cis": "5.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26084",
+  "title": "Ensure 'Peer Name Resolution Protocol (PNRPsvc)' is set to 'Disabled'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:12.783+0000",
+  "cis": "5.13",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26085",
+  "title": "Ensure 'Peer Networking Grouping (p2psvc)' is set to 'Disabled'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:12.799+0000",
+  "cis": "5.14",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26086",
+  "title": "Ensure 'Peer Networking Identity Manager (p2pimsvc)' is set to 'Disabled'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:12.815+0000",
+  "cis": "5.15",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26087",
+  "title": "Ensure 'PNRP Machine Name Publication Service (PNRPAutoReg)' is set to 'Disabled'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:12.831+0000",
+  "cis": "5.16",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26088",
+  "title": "Ensure 'Print Spooler (Spooler)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.922+0000",
+  "cis": "5.17",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26089",
+  "title": "Ensure 'Problem Reports and Solutions Control Panel Support (wercplsupport)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.937+0000",
+  "cis": "5.18",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26090",
+  "title": "Ensure 'Remote Access Auto Connection Manager (RasAuto)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.952+0000",
+  "cis": "5.19",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26091",
+  "title": "Ensure 'Remote Desktop Configuration (SessionEnv)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.967+0000",
+  "cis": "5.20",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26092",
+  "title": "Ensure 'Remote Desktop Services (TermService)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.983+0000",
+  "cis": "5.21",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26093",
+  "title": "Ensure 'Remote Desktop Services UserMode Port Redirector (UmRdpService)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:12.999+0000",
+  "cis": "5.22",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26094",
+  "title": "Ensure 'Remote Procedure Call (RPC) Locator (RpcLocator)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.094+0000",
+  "cis": "5.23",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26095",
+  "title": "Ensure 'Remote Registry (RemoteRegistry)' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.110+0000",
+  "cis": "5.24",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26096",
+  "title": "Ensure 'Routing and Remote Access (RemoteAccess)' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.125+0000",
+  "cis": "5.25",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26097",
+  "title": "Ensure 'Server (LanmanServer)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.142+0000",
+  "cis": "5.26",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26098",
+  "title": "Ensure 'Simple TCP/IP Services (simptcp)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.157+0000",
+  "cis": "5.27",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26099",
+  "title": "Ensure 'SNMP Service (SNMP)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.173+0000",
+  "cis": "5.28",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26100",
+  "title": "Ensure 'Special Administration Console Helper (sacsvr)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.188+0000",
+  "cis": "5.29",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26101",
+  "title": "Ensure 'SSDP Discovery (SSDPSRV)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.236+0000",
+  "cis": "5.30",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26102",
+  "title": "Ensure 'UPnP Device Host (upnphost)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.297+0000",
+  "cis": "5.31",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26103",
+  "title": "Ensure 'Web Management Service (WMSvc)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.312+0000",
+  "cis": "5.32",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26104",
+  "title": "Ensure 'Windows Error Reporting Service (WerSvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.328+0000",
+  "cis": "5.33",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26105",
+  "title": "Ensure 'Windows Event Collector (Wecsvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.345+0000",
+  "cis": "5.34",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26106",
+  "title": "Ensure 'Windows Media Player Network Sharing Service (WMPNetworkSvc)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.360+0000",
+  "cis": "5.35",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26107",
+  "title": "Ensure 'Windows Mobile Hotspot Service (icssvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.375+0000",
+  "cis": "5.36",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26108",
+  "title": "Ensure 'Windows Push Notifications System Service (WpnService)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.454+0000",
+  "cis": "5.37",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26109",
+  "title": "Ensure 'Windows PushToInstall Service (PushToInstall)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.485+0000",
+  "cis": "5.38",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26110",
+  "title": "Ensure 'Windows Remote Management (WS- Management) (WinRM)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.501+0000",
+  "cis": "5.39",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26111",
+  "title": "Ensure 'World Wide Web Publishing Service (W3SVC)' is set to 'Disabled' or 'Not Installed'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.517+0000",
+  "cis": "5.40",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26112",
+  "title": "Ensure 'Xbox Accessory Management Service (XboxGipSvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.533+0000",
+  "cis": "5.41",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26113",
+  "title": "Ensure 'Xbox Live Auth Manager (XblAuthManager)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.548+0000",
+  "cis": "5.42",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26114",
+  "title": "Ensure 'Xbox Live Game Save (XblGameSave)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.565+0000",
+  "cis": "5.43",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26115",
+  "title": "Ensure 'Xbox Live Networking Service (XboxNetApiSvc)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.625+0000",
+  "cis": "5.44",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26116",
+  "title": "Ensure 'Windows Firewall: Domain: Firewall state' is set to 'On (recommended)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.672+0000",
+  "cis": "9.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26117",
+  "title": "Ensure 'Windows Firewall: Domain: Inbound connections' is set to 'Block (default)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.689+0000",
+  "cis": "9.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26118",
+  "title": "Ensure 'Windows Firewall: Domain: Settings: Display a notification' is set to 'No'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.702+0000",
+  "cis": "9.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26119",
+  "title": "Ensure 'Windows Firewall: Domain: Logging: Name' is set to '%SystemRoot%System32\\logfiles\\firewall\\domainfw.log'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.719+0000",
+  "cis": "9.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26120",
+  "title": "Ensure 'Windows Firewall: Domain: Logging: Size limit (KB)' is set to '16,384 KB or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.735+0000",
+  "cis": "9.1.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26121",
+  "title": "Ensure 'Windows Firewall: Domain: Logging: Log dropped packets' is set to 'Yes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.750+0000",
+  "cis": "9.1.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26122",
+  "title": "Ensure 'Windows Firewall: Domain: Logging: Log successful connections' is set to 'Yes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.783+0000",
+  "cis": "9.1.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26123",
+  "title": "Ensure 'Windows Firewall: Private: Firewall state' is set to 'On (recommended)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.861+0000",
+  "cis": "9.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26124",
+  "title": "Ensure 'Windows Firewall: Private: Inbound connections' is set to 'Block (default)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:13.876+0000",
+  "cis": "9.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26125",
+  "title": "Ensure 'Windows Firewall: Private: Settings: Display a notification' is set to 'No'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.892+0000",
+  "cis": "9.2.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26126",
+  "title": "Ensure 'Windows Firewall: Private: Logging: Name' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\privatefw.log'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.908+0000",
+  "cis": "9.2.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26127",
+  "title": "Ensure 'Windows Firewall: Private: Logging: Size limit (KB)' is set to '16,384 KB or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.924+0000",
+  "cis": "9.2.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26128",
+  "title": "Ensure 'Windows Firewall: Private: Logging: Log dropped packets' is set to 'Yes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.939+0000",
+  "cis": "9.2.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26129",
+  "title": "Ensure 'Windows Firewall: Private: Logging: Log successful connections' is set to 'Yes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:13.955+0000",
+  "cis": "9.2.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26130",
+  "title": "Ensure 'Windows Firewall: Public: Firewall state' is set to 'On (recommended)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.034+0000",
+  "cis": "9.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26131",
+  "title": "Ensure 'Windows Firewall: Public: Inbound connections' is set to 'Block (default)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.050+0000",
+  "cis": "9.3.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26132",
+  "title": "Ensure 'Windows Firewall: Public: Settings: Display a notification' is set to 'No'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.065+0000",
+  "cis": "9.3.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26133",
+  "title": "Ensure 'Windows Firewall: Public: Settings: Apply local firewall rules' is set to 'No'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.080+0000",
+  "cis": "9.3.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26134",
+  "title": "Ensure 'Windows Firewall: Public: Settings: Apply local connection security rules' is set to 'No'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.096+0000",
+  "cis": "9.3.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26135",
+  "title": "Ensure 'Windows Firewall: Public: Logging: Name' is set to '%SystemRoot%\\System32\\logfiles\\firewall\\publicfw.log'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.115+0000",
+  "cis": "9.3.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26136",
+  "title": "Ensure 'Windows Firewall: Public: Logging: Size limit (KB)' is set to '16,384 KB or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.144+0000",
+  "cis": "9.3.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26137",
+  "title": "Ensure 'Windows Firewall: Public: Logging: Log dropped packets' is set to 'Yes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.205+0000",
+  "cis": "9.3.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26138",
+  "title": "Ensure 'Windows Firewall: Public: Logging: Log successful connections' is set to 'Yes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.220+0000",
+  "cis": "9.3.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26139",
+  "title": "Ensure 'Audit Credential Validation' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.236+0000",
+  "cis": "17.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26140",
+  "title": "Ensure 'Audit Application Group Management' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.251+0000",
+  "cis": "17.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26141",
+  "title": "Ensure 'Audit Security Group Management' is set to include 'Success'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.267+0000",
+  "cis": "17.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26142",
+  "title": "Ensure 'Audit User Account Management' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.283+0000",
+  "cis": "17.2.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26143",
+  "title": "Ensure 'Audit PNP Activity' is set to include 'Success'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.299+0000",
+  "cis": "17.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26144",
+  "title": "Ensure 'Audit Process Creation' is set to include 'Success'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.376+0000",
+  "cis": "17.3.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26145",
+  "title": "Ensure 'Audit Account Lockout' is set to include 'Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.391+0000",
+  "cis": "17.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26146",
+  "title": "Ensure 'Audit Group Membership' is set to include 'Success'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.407+0000",
+  "cis": "17.5.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26147",
+  "title": "Ensure 'Audit Logoff' is set to include 'Success'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.422+0000",
+  "cis": "17.5.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26148",
+  "title": "Ensure 'Audit Logon' is set to 'Success and Failure'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.438+0000",
+  "cis": "17.5.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26149",
+  "title": "Ensure 'Audit Other Logon/Logoff Events' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.453+0000",
+  "cis": "17.5.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26150",
+  "title": "Ensure 'Audit Special Logon' is set to include 'Success'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.484+0000",
+  "cis": "17.5.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26151",
+  "title": "Ensure 'Audit Detailed File Share' is set to include 'Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.548+0000",
+  "cis": "17.6.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26152",
+  "title": "Ensure 'Audit File Share' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.563+0000",
+  "cis": "17.6.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26153",
+  "title": "Ensure 'Audit Other Object Access Events' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.578+0000",
+  "cis": "17.6.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26154",
+  "title": "Ensure 'Audit Removable Storage' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.593+0000",
+  "cis": "17.6.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26155",
+  "title": "Ensure 'Audit Audit Policy Change' is set to include 'Success'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.609+0000",
+  "cis": "17.7.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26156",
+  "title": "Ensure 'Audit Authentication Policy Change' is set to include 'Success'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.624+0000",
+  "cis": "17.7.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26157",
+  "title": "Ensure 'Audit Authorization Policy Change' is set to include 'Success'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.639+0000",
+  "cis": "17.7.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26158",
+  "title": "Ensure 'Audit MPSSVC Rule-Level Policy Change' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.718+0000",
+  "cis": "17.7.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26159",
+  "title": "Ensure 'Audit Other Policy Change Events' is set to include 'Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.734+0000",
+  "cis": "17.7.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26160",
+  "title": "Ensure 'Audit Sensitive Privilege Use' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.749+0000",
+  "cis": "17.8.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26161",
+  "title": "Ensure 'Audit IPsec Driver' is set to 'Success and Failure'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.765+0000",
+  "cis": "17.9.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26162",
+  "title": "Ensure 'Audit Other System Events' is set to 'Success and Failure'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.780+0000",
+  "cis": "17.9.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26163",
+  "title": "Ensure 'Audit Security State Change' is set to include 'Success'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.796+0000",
+  "cis": "17.9.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26164",
+  "title": "Ensure 'Audit Security System Extension' is set to include 'Success'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.874+0000",
+  "cis": "17.9.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26165",
+  "title": "Ensure 'Audit System Integrity' is set to 'Success and Failure'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.890+0000",
+  "cis": "17.9.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26166",
+  "title": "Ensure 'Prevent enabling lock screen camera' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.905+0000",
+  "cis": "18.1.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26167",
+  "title": "Ensure 'Prevent enabling lock screen slide show' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.921+0000",
+  "cis": "18.1.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26168",
+  "title": "Ensure 'Allow users to enable online speech recognition services' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.936+0000",
+  "cis": "18.1.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26169",
+  "title": "Ensure 'Allow Online Tips' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:14.952+0000",
+  "cis": "18.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26170",
+  "title": "Ensure 'Apply UAC restrictions to local accounts on network logons' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:14.967+0000",
+  "cis": "18.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26171",
+  "title": "Ensure 'Configure RPC packet level privacy setting for incoming connections' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.045+0000",
+  "cis": "18.4.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26172",
+  "title": "Ensure 'Configure SMB v1 client driver' is set to 'Enabled: Disable driver (recommended)'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.060+0000",
+  "cis": "18.4.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26173",
+  "title": "Ensure 'Configure SMB v1 server' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.085+0000",
+  "cis": "18.4.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26174",
+  "title": "Ensure 'Enable Certificate Padding' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.091+0000",
+  "cis": "18.4.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26175",
+  "title": "Ensure 'Enable Structured Exception Handling Overwrite Protection (SEHOP)' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.107+0000",
+  "cis": "18.4.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26176",
+  "title": "Ensure 'NetBT NodeType configuration' is set to 'Enabled: P-node (recommended)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.123+0000",
+  "cis": "18.4.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26177",
+  "title": "Ensure 'WDigest Authentication' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.138+0000",
+  "cis": "18.4.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26178",
+  "title": "Ensure 'MSS: (AutoAdminLogon) Enable Automatic Logon' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.215+0000",
+  "cis": "18.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26179",
+  "title": "Ensure 'MSS: (DisableIPSourceRouting IPv6) IP source routing protection level is set to 'Enabled: Highest protection, source routing is completely disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.230+0000",
+  "cis": "18.5.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26180",
+  "title": "Ensure 'MSS: (DisableIPSourceRouting) IP source routing protection level ' is set to 'Enabled: Highest protection, source routing is completely disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.245+0000",
+  "cis": "18.5.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26181",
+  "title": "Ensure 'MSS: (DisableSavePassword) Prevent the dial-up password from being saved' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.261+0000",
+  "cis": "18.5.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26182",
+  "title": "Ensure 'MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.276+0000",
+  "cis": "18.5.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26183",
+  "title": "Ensure 'MSS: (KeepAliveTime) How often keep-alive packets are sent in milliseconds' is set to 'Enabled: 300,000 or 5 minutes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.291+0000",
+  "cis": "18.5.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26184",
+  "title": "Ensure 'MSS: (NoNameReleaseOnDemand) Allow the computer to ignore NetBIOS name release requests except from WINS servers' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.307+0000",
+  "cis": "18.5.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26185",
+  "title": "Ensure 'MSS: (PerformRouterDiscovery) Allow IRDP to detect and configure Default Gateway addresses' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.369+0000",
+  "cis": "18.5.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26186",
+  "title": "Ensure 'MSS: (SafeDllSearchMode) Enable Safe DLL search mode' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.401+0000",
+  "cis": "18.5.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26187",
+  "title": "Ensure 'MSS: (ScreenSaverGracePeriod) The time in seconds before the screen saver grace period expires' is set to 'Enabled: 5 or fewer seconds'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.416+0000",
+  "cis": "18.5.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26188",
+  "title": "Ensure 'MSS: (TcpMaxDataRetransmissions IPv6) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.432+0000",
+  "cis": "18.5.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26189",
+  "title": "Ensure 'MSS: (TcpMaxDataRetransmissions) How many times unacknowledged data is retransmitted' is set to 'Enabled: 3'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.447+0000",
+  "cis": "18.5.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26190",
+  "title": "Ensure 'MSS: (WarningLevel) Percentage threshold for the security event log at which the system will generate a warning' is set to 'Enabled: 90% or less'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.462+0000",
+  "cis": "18.5.13",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26191",
+  "title": "Ensure 'Configure DNS over HTTPS (DoH) name resolution' is set to 'Enabled: Allow DoH' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.478+0000",
+  "cis": "18.6.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26192",
+  "title": "Ensure 'Configure NetBIOS settings' is set to 'Enabled: Disable NetBIOS name resolution on public networks'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.556+0000",
+  "cis": "18.6.4.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26193",
+  "title": "Ensure 'Turn off multicast name resolution' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.571+0000",
+  "cis": "18.6.4.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26194",
+  "title": "Ensure 'Enable Font Providers' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.587+0000",
+  "cis": "18.6.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26195",
+  "title": "Ensure 'Enable insecure guest logons' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.602+0000",
+  "cis": "18.6.8.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26196",
+  "title": "Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.618+0000",
+  "cis": "18.6.9.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26197",
+  "title": "Ensure 'Turn on Responder (RSPNDR) driver' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:15.633+0000",
+  "cis": "18.6.9.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26198",
+  "title": "Ensure 'Turn off Microsoft Peer-to-Peer Networking Services' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.649+0000",
+  "cis": "18.6.10.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26199",
+  "title": "Ensure 'Prohibit installation and configuration of Network Bridge on your DNS domain network' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.696+0000",
+  "cis": "18.6.11.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26200",
+  "title": "Ensure 'Prohibit use of Internet Connection Sharing on your DNS domain network' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.742+0000",
+  "cis": "18.6.11.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26201",
+  "title": "Ensure 'Require domain users to elevate when setting a network's location' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.758+0000",
+  "cis": "18.6.11.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26202",
+  "title": "Ensure 'Hardened UNC Paths' is set to 'Enabled, with \"Require Mutual Authentication\" and \"Require Integrity\" set for all NETLOGON and SYSVOL shares'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.774+0000",
+  "cis": "18.6.14.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26203",
+  "title": "Disable IPv6 (Ensure TCPIP6 Parameter 'DisabledComponents' is set to '0xff (255)').",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.789+0000",
+  "cis": "18.6.19.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26204",
+  "title": "Ensure 'Configuration of wireless settings using Windows Connect Now' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.805+0000",
+  "cis": "18.6.20.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26205",
+  "title": "Ensure 'Prohibit access of the Windows Connect Now wizards' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.820+0000",
+  "cis": "18.6.20.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26206",
+  "title": "Ensure 'Minimize the number of simultaneous connections to the Internet or a Windows Domain' is set to 'Enabled: 3 = Prevent Wi-Fi when on Ethernet'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.882+0000",
+  "cis": "18.6.21.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26207",
+  "title": "Ensure 'Prohibit connection to non-domain networks when connected to domain authenticated network' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.914+0000",
+  "cis": "18.6.21.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26208",
+  "title": "Ensure 'Allow Windows to automatically connect to suggested open hotspots, to networks shared by contacts, and to hotspots offering paid services' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.929+0000",
+  "cis": "18.6.23.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26209",
+  "title": "Ensure 'Allow Print Spooler to accept client connections' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.944+0000",
+  "cis": "18.7.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26210",
+  "title": "Ensure 'Configure Redirection Guard' is set to 'Enabled: Redirection Guard Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.960+0000",
+  "cis": "18.7.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26211",
+  "title": "Ensure 'Configure RPC connection settings: Protocol to use for outgoing RPC connections' is set to 'Enabled: RPC over TCP'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.976+0000",
+  "cis": "18.7.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26212",
+  "title": "Ensure 'Configure RPC connection settings: Use authentication for outgoing RPC connections' is set to 'Enabled: Default'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:15.992+0000",
+  "cis": "18.7.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26213",
+  "title": "Ensure 'Configure RPC listener settings: Protocols to allow for incoming RPC connections' is set to 'Enabled: RPC over TCP'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.070+0000",
+  "cis": "18.7.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26214",
+  "title": "Ensure 'Configure RPC listener settings: Authentication protocol to use for incoming RPC connections:' is set to 'Enabled: Negotiate' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.087+0000",
+  "cis": "18.7.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26215",
+  "title": "Ensure 'Configure RPC over TCP port' is set to 'Enabled: 0'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.098+0000",
+  "cis": "18.7.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26216",
+  "title": "Ensure 'Limits print driver installation to Administrators' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.116+0000",
+  "cis": "18.7.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26217",
+  "title": "Ensure 'Manage processing of Queue-specific files' is set to 'Enabled: Limit Queue-specific files to Color profiles'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.130+0000",
+  "cis": "18.7.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26218",
+  "title": "Ensure 'Point and Print Restrictions: When installing drivers for a new connection' is set to 'Enabled: Show warning and elevation prompt'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:16.146+0000",
+  "cis": "18.7.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26219",
+  "title": "Ensure 'Point and Print Restrictions: When updating drivers for an existing connection' is set to 'Enabled: Show warning and elevation prompt'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.162+0000",
+  "cis": "18.7.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26220",
+  "title": "Ensure 'Turn off notifications network usage' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.223+0000",
+  "cis": "18.8.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26221",
+  "title": "Ensure 'Remove Personalized Website Recommendations from the Recommended section in the Start Menu' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.255+0000",
+  "cis": "18.8.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26222",
+  "title": "Ensure 'Include command line in process creation events' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.270+0000",
+  "cis": "18.9.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26223",
+  "title": "Ensure 'Encryption Oracle Remediation' is set to 'Enabled: Force Updated Clients'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.286+0000",
+  "cis": "18.9.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26224",
+  "title": "Ensure 'Remote host allows delegation of non- exportable credentials' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.303+0000",
+  "cis": "18.9.4.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26225",
+  "title": "Ensure 'Turn On Virtualization Based Security' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.319+0000",
+  "cis": "18.9.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26226",
+  "title": "Ensure 'Turn On Virtualization Based Security: Select Platform Security Level' is set to 'Secure Boot' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.334+0000",
+  "cis": "18.9.5.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26227",
+  "title": "Ensure 'Turn On Virtualization Based Security: Virtualization Based Protection of Code Integrity' is set to 'Enabled with UEFI lock'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.412+0000",
+  "cis": "18.9.5.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26228",
+  "title": "Ensure 'Turn On Virtualization Based Security: Require UEFI Memory Attributes Table' is set to 'True (checked)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.427+0000",
+  "cis": "18.9.5.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26229",
+  "title": "Ensure 'Turn On Virtualization Based Security: Credential Guard Configuration' is set to 'Enabled with UEFI lock'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.442+0000",
+  "cis": "18.9.5.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26230",
+  "title": "Ensure 'Turn On Virtualization Based Security: Kernel-mode Hardware-enforced Stack Protection' is set to 'Enabled: Enabled in enforcement mode'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.457+0000",
+  "cis": "18.9.5.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26231",
+  "title": "Ensure 'Prevent installation of devices that match any of these device IDs' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.472+0000",
+  "cis": "18.9.7.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26232",
+  "title": "Ensure 'Prevent installation of devices that match any of these device IDs: Prevent installation of devices that match any of these device IDs' is set to 'PCI\\CC_0C0A'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.487+0000",
+  "cis": "18.9.7.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26233",
+  "title": "Ensure 'Prevent installation of devices that match any of these device IDs: Also apply to matching devices that are already installed.' is set to 'True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.503+0000",
+  "cis": "18.9.7.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26234",
+  "title": "Ensure 'Prevent installation of devices using drivers that match these device setup classes' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.565+0000",
+  "cis": "18.9.7.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26235",
+  "title": "Ensure 'Prevent installation of devices using drivers that match these device setup classes: Prevent installation of devices using drivers for these device setup' is set to 'IEEE 1394 device setup classes'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.596+0000",
+  "cis": "18.9.7.1.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26236",
+  "title": "Ensure 'Prevent installation of devices using drivers that match these device setup classes: Also apply to matching devices that are already installed.' is set to 'True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.611+0000",
+  "cis": "18.9.7.1.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26237",
+  "title": "Ensure 'Prevent device metadata retrieval from the Internet' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.627+0000",
+  "cis": "18.9.7.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26238",
+  "title": "Ensure 'Boot-Start Driver Initialization Policy' is set to 'Enabled: Good, unknown and bad but critical'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.642+0000",
+  "cis": "18.9.13.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26239",
+  "title": "Ensure 'Configure registry policy processing: Do not apply during periodic background processing' is set to 'Enabled: FALSE'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.658+0000",
+  "cis": "18.9.19.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26240",
+  "title": "Ensure 'Configure registry policy processing: Process even if the Group Policy objects have not changed' is set to 'Enabled: TRUE'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.675+0000",
+  "cis": "18.9.19.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26241",
+  "title": "Ensure 'Configure security policy processing: Do not apply during periodic background processing' is set to 'Enabled: FALSE'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.689+0000",
+  "cis": "18.9.19.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26242",
+  "title": "Ensure 'Configure security policy processing: Process even if the Group Policy objects have not changed' is set to 'Enabled: TRUE'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.766+0000",
+  "cis": "18.9.19.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26243",
+  "title": "Ensure 'Continue experiences on this device' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.782+0000",
+  "cis": "18.9.19.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26244",
+  "title": "Ensure 'Turn off background refresh of Group Policy' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:16.796+0000",
+  "cis": "18.9.19.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26245",
+  "title": "Ensure 'Turn off access to the Store' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.811+0000",
+  "cis": "18.9.20.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26246",
+  "title": "Ensure 'Turn off downloading of print drivers over HTTP' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.827+0000",
+  "cis": "18.9.20.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26247",
+  "title": "Ensure 'Turn off handwriting personalization data sharing' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.842+0000",
+  "cis": "18.9.20.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26248",
+  "title": "Ensure 'Turn off handwriting recognition error reporting' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.905+0000",
+  "cis": "18.9.20.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26249",
+  "title": "Ensure 'Turn off Internet Connection Wizard if URL connection is referring to Microsoft.com' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.936+0000",
+  "cis": "18.9.20.1.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26250",
+  "title": "Ensure 'Turn off Internet download for Web publishing and online ordering wizards' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.952+0000",
+  "cis": "18.9.20.1.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26251",
+  "title": "Ensure 'Turn off printing over HTTP' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.967+0000",
+  "cis": "18.9.20.1.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26252",
+  "title": "Ensure 'Turn off Registration if URL connection is referring to Microsoft.com' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.982+0000",
+  "cis": "18.9.20.1.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26253",
+  "title": "Ensure 'Turn off Search Companion content file updates' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:16.997+0000",
+  "cis": "18.9.20.1.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26254",
+  "title": "Ensure 'Turn off the \"Order Prints\" picture task' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.012+0000",
+  "cis": "18.9.20.1.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26255",
+  "title": "Ensure 'Turn off the \"Publish to Web\" task for files and folders' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.028+0000",
+  "cis": "18.9.20.1.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26256",
+  "title": "Ensure 'Turn off the Windows Messenger Customer Experience Improvement Program' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.106+0000",
+  "cis": "18.9.20.1.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26257",
+  "title": "Ensure 'Turn off Windows Customer Experience Improvement Program' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.121+0000",
+  "cis": "18.9.20.1.13",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26258",
+  "title": "Ensure 'Turn off Windows Error Reporting' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.138+0000",
+  "cis": "18.9.20.1.14",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26259",
+  "title": "Ensure 'Support device authentication using certificate' is set to 'Enabled: Automatic'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:17.154+0000",
+  "cis": "18.9.23.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26260",
+  "title": "Ensure 'Enumeration policy for external devices incompatible with Kernel DMA Protection' is set to 'Enabled: Block All'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.171+0000",
+  "cis": "18.9.24.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26261",
+  "title": "Ensure 'Configure password backup directory' is set to 'Enabled: Active Directory' or 'Enabled: Azure Active Directory'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.187+0000",
+  "cis": "18.9.25.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26262",
+  "title": "Ensure 'Do not allow password expiration time longer than required by policy' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.202+0000",
+  "cis": "18.9.25.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26263",
+  "title": "Ensure 'Enable password encryption' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.280+0000",
+  "cis": "18.9.25.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26264",
+  "title": "Ensure 'Password Settings: Password Complexity' is set to 'Enabled: Large letters + small letters + numbers + special characters'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.297+0000",
+  "cis": "18.9.25.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26265",
+  "title": "Ensure 'Password Settings: Password Length' is set to 'Enabled: 15 or more'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.312+0000",
+  "cis": "18.9.25.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26266",
+  "title": "Ensure 'Password Settings: Password Age (Days)' is set to 'Enabled: 30 or fewer'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.327+0000",
+  "cis": "18.9.25.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26267",
+  "title": "Ensure 'Post-authentication actions: Grace period (hours)' is set to 'Enabled: 8 or fewer hours, but not 0'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.342+0000",
+  "cis": "18.9.25.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26268",
+  "title": "Ensure 'Post-authentication actions: Actions' is set to 'Enabled: Reset the password and logoff the managed account' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.359+0000",
+  "cis": "18.9.25.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26269",
+  "title": "Ensure 'Allow Custom SSPs and APs to be loaded into LSASS' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.374+0000",
+  "cis": "18.9.26.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26270",
+  "title": "Ensure 'Configures LSASS to run as a protected process' is set to 'Enabled: Enabled with UEFI Lock'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.450+0000",
+  "cis": "18.9.26.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26271",
+  "title": "Ensure 'Disallow copying of user input methods to the system account for sign-in' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.466+0000",
+  "cis": "18.9.27.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26272",
+  "title": "Ensure 'Block user from showing account details on sign-in' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.481+0000",
+  "cis": "18.9.28.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26273",
+  "title": "Ensure 'Do not display network selection UI' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.497+0000",
+  "cis": "18.9.28.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26274",
+  "title": "Ensure 'Do not enumerate connected users on domain-joined computers' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.512+0000",
+  "cis": "18.9.28.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26275",
+  "title": "Ensure 'Enumerate local users on domain-joined computers' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.528+0000",
+  "cis": "18.9.28.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26276",
+  "title": "Ensure 'Turn off app notifications on the lock screen' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.544+0000",
+  "cis": "18.9.28.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26277",
+  "title": "Ensure 'Turn off picture password sign-in' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.622+0000",
+  "cis": "18.9.28.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26278",
+  "title": "Ensure 'Turn on convenience PIN sign-in' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.622+0000",
+  "cis": "18.9.28.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26279",
+  "title": "Ensure 'Allow Clipboard synchronization across devices' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.637+0000",
+  "cis": "18.9.31.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26280",
+  "title": "Ensure 'Allow upload of User Activities' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.652+0000",
+  "cis": "18.9.31.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26281",
+  "title": "Ensure 'Allow network connectivity during connected-standby (on battery)' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.668+0000",
+  "cis": "18.9.33.6.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26282",
+  "title": "Ensure 'Allow network connectivity during connected-standby (plugged in)' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.685+0000",
+  "cis": "18.9.33.6.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26283",
+  "title": "Ensure 'Allow standby states (S1-S3) when sleeping (on battery)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.761+0000",
+  "cis": "18.9.33.6.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26284",
+  "title": "Ensure 'Allow standby states (S1-S3) when sleeping (plugged in)' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.777+0000",
+  "cis": "18.9.33.6.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26285",
+  "title": "Ensure 'Require a password when a computer wakes (on battery)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.792+0000",
+  "cis": "18.9.33.6.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26286",
+  "title": "Ensure 'Require a password when a computer wakes (plugged in)' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.808+0000",
+  "cis": "18.9.33.6.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26287",
+  "title": "Ensure 'Configure Offer Remote Assistance' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.839+0000",
+  "cis": "18.9.35.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26288",
+  "title": "Ensure 'Configure Solicited Remote Assistance' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.839+0000",
+  "cis": "18.9.35.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26289",
+  "title": "Ensure 'Enable RPC Endpoint Mapper Client Authentication' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.855+0000",
+  "cis": "18.9.36.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26290",
+  "title": "Ensure 'Restrict Unauthenticated RPC clients' is set to 'Enabled: Authenticated'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:17.903+0000",
+  "cis": "18.9.36.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26291",
+  "title": "Ensure 'Microsoft Support Diagnostic Tool: Turn on MSDT interactive communication with support provider' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.949+0000",
+  "cis": "18.9.47.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26292",
+  "title": "Ensure 'Enable/Disable PerfTrack' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.965+0000",
+  "cis": "18.9.47.11.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26293",
+  "title": "Ensure 'Turn off the advertising ID' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.981+0000",
+  "cis": "18.9.49.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26294",
+  "title": "Ensure 'Enable Windows NTP Client' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:17.996+0000",
+  "cis": "18.9.51.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26295",
+  "title": "Ensure 'Enable Windows NTP Server' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:18.011+0000",
+  "cis": "18.9.51.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26296",
+  "title": "Ensure 'Allow a Windows app to share application data between users' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:18.026+0000",
+  "cis": "18.10.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26297",
+  "title": "Ensure 'Prevent non-admin users from installing packaged Windows apps' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.042+0000",
+  "cis": "18.10.3.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26298",
+  "title": "Ensure 'Let Windows apps activate with voice while the system is locked' is set to 'Enabled: Force Deny'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.118+0000",
+  "cis": "18.10.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26299",
+  "title": "Ensure 'Allow Microsoft accounts to be optional' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.134+0000",
+  "cis": "18.10.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26300",
+  "title": "Ensure 'Block launching Universal Windows apps with Windows Runtime API access from hosted content.' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.149+0000",
+  "cis": "18.10.5.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26301",
+  "title": "Ensure 'Disallow Autoplay for non-volume devices' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.165+0000",
+  "cis": "18.10.7.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26302",
+  "title": "Ensure 'Set the default behavior for AutoRun' is set to 'Enabled: Do not execute any autorun commands'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.180+0000",
+  "cis": "18.10.7.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26303",
+  "title": "Ensure 'Turn off Autoplay' is set to 'Enabled: All drives'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.196+0000",
+  "cis": "18.10.7.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26304",
+  "title": "Ensure 'Configure enhanced anti-spoofing' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.227+0000",
+  "cis": "18.10.8.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26305",
+  "title": "Ensure 'Allow access to BitLocker-protected fixed data drives from earlier versions of Windows' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.289+0000",
+  "cis": "18.10.9.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26306",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.304+0000",
+  "cis": "18.10.9.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26307",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Allow data recovery agent' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.320+0000",
+  "cis": "18.10.9.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26308",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Password' is set to 'Enabled: Allow 48-digit recovery password' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.336+0000",
+  "cis": "18.10.9.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26309",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Recovery Key' is set to 'Enabled: Allow 256-bit recovery key' or higher.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.351+0000",
+  "cis": "18.10.9.1.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26310",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.381+0000",
+  "cis": "18.10.9.1.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26311",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Save BitLocker recovery information to AD DS for fixed data drives' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.397+0000",
+  "cis": "18.10.9.1.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26312",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Configure storage of BitLocker recovery information to AD DS' is set to 'Enabled: Backup recovery passwords and key packages'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.461+0000",
+  "cis": "18.10.9.1.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26313",
+  "title": "Ensure 'Choose how BitLocker-protected fixed drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for fixed data drives' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.476+0000",
+  "cis": "18.10.9.1.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26314",
+  "title": "Ensure 'Configure use of hardware-based encryption for fixed data drives' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.493+0000",
+  "cis": "18.10.9.1.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26315",
+  "title": "Ensure 'Configure use of passwords for fixed data drives' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.508+0000",
+  "cis": "18.10.9.1.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26316",
+  "title": "Ensure 'Configure use of smart cards on fixed data drives' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.523+0000",
+  "cis": "18.10.9.1.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26317",
+  "title": "Ensure 'Configure use of smart cards on fixed data drives: Require use of smart cards on fixed data drives' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.539+0000",
+  "cis": "18.10.9.1.13",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26318",
+  "title": "Ensure 'Allow enhanced PINs for startup' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.616+0000",
+  "cis": "18.10.9.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26319",
+  "title": "Ensure 'Allow Secure Boot for integrity validation' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.632+0000",
+  "cis": "18.10.9.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26320",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.647+0000",
+  "cis": "18.10.9.2.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26321",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Allow data recovery agent' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.662+0000",
+  "cis": "18.10.9.2.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26322",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Password' is set to 'Enabled: Require 48-digit recovery password'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.678+0000",
+  "cis": "18.10.9.2.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26323",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Recovery Key' is set to 'Enabled: Do not allow 256-bit recovery key'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.693+0000",
+  "cis": "18.10.9.2.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26324",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.708+0000",
+  "cis": "18.10.9.2.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26325",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Allow data recovery agent' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.770+0000",
+  "cis": "18.10.9.2.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26326",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Configure storage of BitLocker recovery information to AD DS:' is set to 'Enabled: Store recovery passwords and key packages'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.801+0000",
+  "cis": "18.10.9.2.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26327",
+  "title": "Ensure 'Choose how BitLocker-protected operating system drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for operating system drives' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.816+0000",
+  "cis": "18.10.9.2.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26328",
+  "title": "Ensure 'Configure use of hardware-based encryption for operating system drives' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.832+0000",
+  "cis": "18.10.9.2.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26329",
+  "title": "Ensure 'Configure use of passwords for operating system drives' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.847+0000",
+  "cis": "18.10.9.2.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26330",
+  "title": "Ensure 'Require additional authentication at startup' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.863+0000",
+  "cis": "18.10.9.2.13",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26331",
+  "title": "Ensure 'Require additional authentication at startup: Allow BitLocker without a compatible TPM' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.879+0000",
+  "cis": "18.10.9.2.14",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26332",
+  "title": "Ensure 'Require additional authentication at startup: Configure TPM startup:' is set to 'Enabled: Do not allow TPM'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.894+0000",
+  "cis": "18.10.9.2.15",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26333",
+  "title": "Ensure 'Require additional authentication at startup: Configure TPM startup PIN:' is set to 'Enabled: Require startup PIN with TPM'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.970+0000",
+  "cis": "18.10.9.2.16",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26334",
+  "title": "Ensure 'Require additional authentication at startup: Configure TPM startup key:' is set to 'Enabled: Do not allow startup key with TPM'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:18.986+0000",
+  "cis": "18.10.9.2.17",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26335",
+  "title": "Ensure 'Require additional authentication at startup: Configure TPM startup key and PIN:' is set to 'Enabled: Do not allow startup key and PIN with TPM'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.001+0000",
+  "cis": "18.10.9.2.18",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26336",
+  "title": "Ensure 'Allow access to BitLocker-protected removable data drives from earlier versions of Windows' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.033+0000",
+  "cis": "18.10.9.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26337",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.033+0000",
+  "cis": "18.10.9.3.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26338",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Allow data recovery agent' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.048+0000",
+  "cis": "18.10.9.3.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26339",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Recovery Password' is set to 'Enabled: Do not allow 48-digit recovery password'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.126+0000",
+  "cis": "18.10.9.3.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26340",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Recovery Key' is set to 'Enabled: Do not allow 256-bit recovery key'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.141+0000",
+  "cis": "18.10.9.3.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26341",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Omit recovery options from the BitLocker setup wizard' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.157+0000",
+  "cis": "18.10.9.3.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26342",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Save BitLocker recovery information to AD DS for removable data drives' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.173+0000",
+  "cis": "18.10.9.3.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26343",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Configure storage of BitLocker recovery information to AD DS:' is set to 'Enabled: Backup recovery passwords and key packages'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.189+0000",
+  "cis": "18.10.9.3.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26344",
+  "title": "Ensure 'Choose how BitLocker-protected removable drives can be recovered: Do not enable BitLocker until recovery information is stored to AD DS for removable data drives' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.204+0000",
+  "cis": "18.10.9.3.9",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26345",
+  "title": "Ensure 'Configure use of hardware-based encryption for removable data drives' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.221+0000",
+  "cis": "18.10.9.3.10",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26346",
+  "title": "Ensure 'Configure use of passwords for removable data drives' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.236+0000",
+  "cis": "18.10.9.3.11",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26347",
+  "title": "Ensure 'Configure use of smart cards on removable data drives' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.314+0000",
+  "cis": "18.10.9.3.12",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26348",
+  "title": "Ensure 'Configure use of smart cards on removable data drives: Require use of smart cards on removable data drives' is set to 'Enabled: True'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.330+0000",
+  "cis": "18.10.9.3.13",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26349",
+  "title": "Ensure 'Deny write access to removable drives not protected by BitLocker' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.346+0000",
+  "cis": "18.10.9.3.14",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26350",
+  "title": "Ensure 'Deny write access to removable drives not protected by BitLocker: Do not allow write access to devices configured in another organization' is set to 'Enabled: False'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.361+0000",
+  "cis": "18.10.9.3.15",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26351",
+  "title": "Ensure 'Disable new DMA devices when this computer is locked' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.376+0000",
+  "cis": "18.10.9.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26352",
+  "title": "Ensure 'Allow Use of Camera' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.392+0000",
+  "cis": "18.10.10.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26353",
+  "title": "Ensure 'Turn off cloud consumer account state content' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.470+0000",
+  "cis": "18.10.12.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26354",
+  "title": "Ensure 'Turn off cloud optimized content' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.485+0000",
+  "cis": "18.10.12.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26355",
+  "title": "Ensure 'Turn off Microsoft consumer experiences' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.501+0000",
+  "cis": "18.10.12.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26356",
+  "title": "Ensure 'Require pin for pairing' is set to 'Enabled: First Time' OR 'Enabled: Always'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.516+0000",
+  "cis": "18.10.13.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26357",
+  "title": "Ensure 'Do not display the password reveal button' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.531+0000",
+  "cis": "18.10.14.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26358",
+  "title": "Ensure 'Enumerate administrator accounts on elevation' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:19.547+0000",
+  "cis": "18.10.14.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26359",
+  "title": "Ensure 'Prevent the use of security questions for local accounts' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.562+0000",
+  "cis": "18.10.14.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26360",
+  "title": "Ensure 'Allow Diagnostic Data' is set to 'Enabled: Diagnostic data off (not recommended)' or 'Enabled: Send required diagnostic data'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.578+0000",
+  "cis": "18.10.15.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26361",
+  "title": "Ensure 'Configure Authenticated Proxy usage for the Connected User Experience and Telemetry service' is set to 'Enabled: Disable Authenticated Proxy usage'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.656+0000",
+  "cis": "18.10.15.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26362",
+  "title": "Ensure 'Disable OneSettings Downloads' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.672+0000",
+  "cis": "18.10.15.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26363",
+  "title": "Ensure 'Do not show feedback notifications' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.687+0000",
+  "cis": "18.10.15.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26364",
+  "title": "Ensure 'Enable OneSettings Auditing' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.703+0000",
+  "cis": "18.10.15.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26365",
+  "title": "Ensure 'Limit Diagnostic Log Collection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.719+0000",
+  "cis": "18.10.15.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26366",
+  "title": "Ensure 'Limit Dump Collection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.734+0000",
+  "cis": "18.10.15.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26367",
+  "title": "Ensure 'Toggle user control over Insider builds' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.750+0000",
+  "cis": "18.10.15.8",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26368",
+  "title": "Ensure 'Download Mode' is NOT set to 'Enabled: Internet'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:19.826+0000",
+  "cis": "18.10.16.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26369",
+  "title": "Ensure 'Enable App Installer' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.842+0000",
+  "cis": "18.10.17.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26370",
+  "title": "Ensure 'Enable App Installer Experimental Features' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.857+0000",
+  "cis": "18.10.17.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26371",
+  "title": "Ensure 'Enable App Installer Hash Override' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.874+0000",
+  "cis": "18.10.17.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26372",
+  "title": "Ensure 'Enable App Installer ms-appinstaller protocol' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.874+0000",
+  "cis": "18.10.17.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26373",
+  "title": "Ensure 'Application: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:19.889+0000",
+  "cis": "18.10.25.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26374",
+  "title": "Ensure 'Application: Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.920+0000",
+  "cis": "18.10.25.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26375",
+  "title": "Ensure 'Security: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:19.967+0000",
+  "cis": "18.10.25.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26376",
+  "title": "Ensure 'Security: Specify the maximum log file size (KB)' is set to 'Enabled: 196,608 or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:19.983+0000",
+  "cis": "18.10.25.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26377",
+  "title": "Ensure 'Setup: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:19.999+0000",
+  "cis": "18.10.25.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26378",
+  "title": "Ensure 'Setup: Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.014+0000",
+  "cis": "18.10.25.3.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26379",
+  "title": "Ensure 'System: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.060+0000",
+  "cis": "18.10.25.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26380",
+  "title": "Ensure 'System: Specify the maximum log file size (KB)' is set to 'Enabled: 32,768 or greater'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.101+0000",
+  "cis": "18.10.25.4.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26381",
+  "title": "Ensure 'Turn off account-based insights, recent, favorite, and recommended files in File Explorer' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.139+0000",
+  "cis": "18.10.28.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26382",
+  "title": "Ensure 'Turn off Data Execution Prevention for Explorer' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.169+0000",
+  "cis": "18.10.28.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26383",
+  "title": "Ensure 'Turn off heap termination on corruption' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.184+0000",
+  "cis": "18.10.28.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26384",
+  "title": "Ensure 'Turn off shell protocol protected mode' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.201+0000",
+  "cis": "18.10.28.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26385",
+  "title": "Ensure 'Turn off location' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.216+0000",
+  "cis": "18.10.36.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26386",
+  "title": "Ensure 'Allow Message Service Cloud Sync' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.232+0000",
+  "cis": "18.10.40.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26387",
+  "title": "Ensure 'Block all consumer Microsoft account user authentication' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.262+0000",
+  "cis": "18.10.41.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26388",
+  "title": "Ensure 'Configure local setting override for reporting to Microsoft MAPS' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.324+0000",
+  "cis": "18.10.42.5.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26389",
+  "title": "Ensure 'Join Microsoft MAPS' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.355+0000",
+  "cis": "18.10.42.5.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26390",
+  "title": "Ensure 'Configure Attack Surface Reduction rules' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.371+0000",
+  "cis": "18.10.42.6.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26391",
+  "title": "Ensure 'Configure Attack Surface Reduction rules: Set the state for each ASR rule' is configured.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.386+0000",
+  "cis": "18.10.42.6.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26392",
+  "title": "Ensure 'Prevent users and apps from accessing dangerous websites' is set to 'Enabled: Block'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.403+0000",
+  "cis": "18.10.42.6.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26393",
+  "title": "Ensure 'Enable file hash computation feature' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.419+0000",
+  "cis": "18.10.42.7.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26394",
+  "title": "Ensure 'Scan all downloaded files and attachments' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.435+0000",
+  "cis": "18.10.42.10.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26395",
+  "title": "Ensure 'Turn off real-time protection' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.498+0000",
+  "cis": "18.10.42.10.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26396",
+  "title": "Ensure 'Turn on behavior monitoring' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.529+0000",
+  "cis": "18.10.42.10.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26397",
+  "title": "Ensure 'Turn on script scanning' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.561+0000",
+  "cis": "18.10.42.10.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26398",
+  "title": "Ensure 'Configure Watson events' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.592+0000",
+  "cis": "18.10.42.12.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26399",
+  "title": "Ensure 'Scan packed executables' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.592+0000",
+  "cis": "18.10.42.13.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26400",
+  "title": "Ensure 'Scan removable drives' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.607+0000",
+  "cis": "18.10.42.13.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26401",
+  "title": "Ensure 'Turn on e-mail scanning' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.638+0000",
+  "cis": "18.10.42.13.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26402",
+  "title": "Ensure 'Configure detection for potentially unwanted applications' is set to 'Enabled: Block'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.683+0000",
+  "cis": "18.10.42.16",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26403",
+  "title": "Ensure 'Turn off Microsoft Defender AntiVirus' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.730+0000",
+  "cis": "18.10.42.17",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26404",
+  "title": "Ensure 'Allow auditing events in Microsoft Defender Application Guard' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.730+0000",
+  "cis": "18.10.43.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26405",
+  "title": "Ensure 'Allow camera and microphone access in Microsoft Defender Application Guard' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.746+0000",
+  "cis": "18.10.43.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26406",
+  "title": "Ensure 'Allow data persistence for Microsoft Defender Application Guard' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.778+0000",
+  "cis": "18.10.43.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26407",
+  "title": "Ensure 'Allow files to download and save to the host operating system from Microsoft Defender Application Guard' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.778+0000",
+  "cis": "18.10.43.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26408",
+  "title": "Ensure 'Configure Microsoft Defender Application Guard clipboard settings: Clipboard behavior setting' is set to 'Enabled: Enable clipboard operation from an isolated session to the host'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.793+0000",
+  "cis": "18.10.43.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26409",
+  "title": "Ensure 'Turn on Microsoft Defender Application Guard in Managed Mode' is set to 'Enabled: 1'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.825+0000",
+  "cis": "18.10.43.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26410",
+  "title": "Ensure 'Enable news and interests on the taskbar' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.888+0000",
+  "cis": "18.10.49.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26411",
+  "title": "Ensure 'Prevent the usage of OneDrive for file storage' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.904+0000",
+  "cis": "18.10.50.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26412",
+  "title": "Ensure 'Turn off Push To Install service' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.918+0000",
+  "cis": "18.10.55.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26413",
+  "title": "Ensure 'Disable Cloud Clipboard integration for server-to-client data transfer' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.935+0000",
+  "cis": "18.10.56.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26414",
+  "title": "Ensure 'Do not allow passwords to be saved' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:20.951+0000",
+  "cis": "18.10.56.2.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26415",
+  "title": "Ensure 'Allow users to connect remotely by using Remote Desktop Services' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:20.967+0000",
+  "cis": "18.10.56.3.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26416",
+  "title": "Ensure 'Allow UI Automation redirection' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.043+0000",
+  "cis": "18.10.56.3.3.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26417",
+  "title": "Ensure 'Do not allow COM port redirection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.058+0000",
+  "cis": "18.10.56.3.3.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26418",
+  "title": "Ensure 'Do not allow drive redirection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.074+0000",
+  "cis": "18.10.56.3.3.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26419",
+  "title": "Ensure 'Do not allow location redirection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.091+0000",
+  "cis": "18.10.56.3.3.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26420",
+  "title": "Ensure 'Do not allow LPT port redirection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.104+0000",
+  "cis": "18.10.56.3.3.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26421",
+  "title": "Ensure 'Do not allow supported Plug and Play device redirection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.120+0000",
+  "cis": "18.10.56.3.3.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26422",
+  "title": "Ensure 'Do not allow WebAuthn redirection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.137+0000",
+  "cis": "18.10.56.3.3.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26423",
+  "title": "Ensure 'Always prompt for password upon connection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.214+0000",
+  "cis": "18.10.56.3.9.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26424",
+  "title": "Ensure 'Require secure RPC communication' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.229+0000",
+  "cis": "18.10.56.3.9.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26425",
+  "title": "Ensure 'Require use of specific security layer for remote (RDP) connections' is set to 'Enabled: SSL'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.245+0000",
+  "cis": "18.10.56.3.9.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26426",
+  "title": "Ensure 'Require user authentication for remote connections by using Network Level Authentication' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.261+0000",
+  "cis": "18.10.56.3.9.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26427",
+  "title": "Ensure 'Set client connection encryption level' is set to 'Enabled: High Level'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.276+0000",
+  "cis": "18.10.56.3.9.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26428",
+  "title": "Ensure 'Set time limit for active but idle Remote Desktop Services sessions' is set to 'Enabled: 15 minutes or less, but not Never (0)'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.291+0000",
+  "cis": "18.10.56.3.10.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26429",
+  "title": "Ensure 'Set time limit for disconnected sessions' is set to 'Enabled: 1 minute'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.307+0000",
+  "cis": "18.10.56.3.10.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26430",
+  "title": "Ensure 'Do not delete temp folders upon exit' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.370+0000",
+  "cis": "18.10.56.3.11.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26431",
+  "title": "Ensure 'Prevent downloading of enclosures' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.402+0000",
+  "cis": "18.10.57.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26432",
+  "title": "Ensure 'Allow Cloud Search' is set to 'Enabled: Disable Cloud Search'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.417+0000",
+  "cis": "18.10.58.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26433",
+  "title": "Ensure 'Allow Cortana' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.433+0000",
+  "cis": "18.10.58.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26434",
+  "title": "Ensure 'Allow Cortana above lock screen' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.448+0000",
+  "cis": "18.10.58.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26435",
+  "title": "Ensure 'Allow indexing of encrypted files' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.464+0000",
+  "cis": "18.10.58.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26436",
+  "title": "Ensure 'Allow search and Cortana to use location' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.479+0000",
+  "cis": "18.10.58.6",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26437",
+  "title": "Ensure 'Allow search highlights' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.526+0000",
+  "cis": "18.10.58.7",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26438",
+  "title": "Ensure 'Turn off KMS Client Online AVS Validation' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.558+0000",
+  "cis": "18.10.62.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26439",
+  "title": "Ensure 'Disable all apps from Microsoft Store' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.574+0000",
+  "cis": "18.10.65.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26440",
+  "title": "Ensure 'Only display the private store within the Microsoft Store' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.591+0000",
+  "cis": "18.10.65.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26441",
+  "title": "Ensure 'Turn off Automatic Download and Install of updates' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.606+0000",
+  "cis": "18.10.65.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26442",
+  "title": "Ensure 'Turn off the offer to update to the latest version of Windows' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.620+0000",
+  "cis": "18.10.65.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26443",
+  "title": "Ensure 'Turn off the Store application' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.636+0000",
+  "cis": "18.10.65.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26444",
+  "title": "Ensure 'Allow widgets' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.697+0000",
+  "cis": "18.10.71.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26445",
+  "title": "Ensure 'Automatic Data Collection' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.728+0000",
+  "cis": "18.10.75.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26446",
+  "title": "Ensure 'Notify Malicious' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.744+0000",
+  "cis": "18.10.75.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26447",
+  "title": "Ensure 'Notify Password Reuse' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.760+0000",
+  "cis": "18.10.75.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26448",
+  "title": "Ensure 'Notify Unsafe App' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.775+0000",
+  "cis": "18.10.75.1.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26449",
+  "title": "Ensure 'Service Enabled' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.790+0000",
+  "cis": "18.10.75.1.5",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26450",
+  "title": "Ensure 'Configure Windows Defender SmartScreen' is set to 'Enabled: Warn and prevent bypass'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.806+0000",
+  "cis": "18.10.75.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26451",
+  "title": "Ensure 'Enables or disables Windows Game Recording and Broadcasting' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.822+0000",
+  "cis": "18.10.77.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26452",
+  "title": "Ensure 'Enable ESS with Supported Peripherals' is set to 'Enabled: 1'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.900+0000",
+  "cis": "18.10.78.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26453",
+  "title": "Ensure 'Allow suggested apps in Windows Ink Workspace' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.915+0000",
+  "cis": "18.10.79.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26454",
+  "title": "Ensure 'Allow Windows Ink Workspace' is set to 'Enabled: On, but disallow access above lock' OR 'Enabled: Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:21.930+0000",
+  "cis": "18.10.79.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26455",
+  "title": "Ensure 'Allow user control over installs' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.947+0000",
+  "cis": "18.10.80.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26456",
+  "title": "Ensure 'Always install with elevated privileges' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.963+0000",
+  "cis": "18.10.80.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26457",
+  "title": "Ensure 'Prevent Internet Explorer security prompt for Windows Installer scripts' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:21.978+0000",
+  "cis": "18.10.80.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26458",
+  "title": "Ensure 'Enable MPR notifications for the system' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.040+0000",
+  "cis": "18.10.81.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26459",
+  "title": "Ensure 'Sign-in and lock last interactive user automatically after a restart' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.071+0000",
+  "cis": "18.10.81.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26460",
+  "title": "Ensure 'Turn on PowerShell Script Block Logging' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.087+0000",
+  "cis": "18.10.86.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26461",
+  "title": "Ensure 'Turn on PowerShell Transcription' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.102+0000",
+  "cis": "18.10.86.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26462",
+  "title": "Ensure 'Allow Basic authentication' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.117+0000",
+  "cis": "18.10.88.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26463",
+  "title": "Ensure 'Allow unencrypted traffic' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.132+0000",
+  "cis": "18.10.88.1.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26464",
+  "title": "Ensure 'Disallow Digest authentication' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.148+0000",
+  "cis": "18.10.88.1.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26465",
+  "title": "Ensure 'Allow Basic authentication' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.164+0000",
+  "cis": "18.10.88.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26466",
+  "title": "Ensure 'Allow remote server management through WinRM' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.243+0000",
+  "cis": "18.10.88.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26467",
+  "title": "Ensure 'Allow unencrypted traffic' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.259+0000",
+  "cis": "18.10.88.2.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26468",
+  "title": "Ensure 'Disallow WinRM from storing RunAs credentials' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.275+0000",
+  "cis": "18.10.88.2.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26469",
+  "title": "Ensure 'Allow Remote Shell Access' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.290+0000",
+  "cis": "18.10.89.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26470",
+  "title": "Ensure 'Allow clipboard sharing with Windows Sandbox' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.305+0000",
+  "cis": "18.10.90.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26471",
+  "title": "Ensure 'Allow networking in Windows Sandbox' is set to 'Disabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.320+0000",
+  "cis": "18.10.90.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26472",
+  "title": "Ensure 'Prevent users from modifying settings' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.367+0000",
+  "cis": "18.10.91.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26473",
+  "title": "Ensure 'No auto-restart with logged on users for scheduled automatic updates installations' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.413+0000",
+  "cis": "18.10.92.1.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26474",
+  "title": "Ensure 'Configure Automatic Updates' is set to 'Enabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.428+0000",
+  "cis": "18.10.92.2.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26475",
+  "title": "Ensure 'Configure Automatic Updates: Scheduled install day' is set to '0 - Every day'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:22.444+0000",
+  "cis": "18.10.92.2.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26476",
+  "title": "Ensure 'Enable features introduced via servicing that are off by default' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.460+0000",
+  "cis": "18.10.92.2.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26477",
+  "title": "Ensure 'Remove access to \"Pause updates\" feature' is set to 'Enabled'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.475+0000",
+  "cis": "18.10.92.2.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26478",
+  "title": "Ensure 'Manage preview builds' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.491+0000",
+  "cis": "18.10.92.4.1",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26479",
+  "title": "Ensure 'Select when Preview Builds and Feature Updates are received' is set to 'Enabled: 180 or more days'.",
+  "result": "failed",
+  "ts": "2026-09-30T08:44:22.553+0000",
+  "cis": "18.10.92.4.2",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26480",
+  "title": "Ensure 'Select when Quality Updates are received' is set to 'Enabled: 0 days'.",
+  "result": "not applicable",
+  "ts": "2026-09-30T08:44:22.584+0000",
+  "cis": "18.10.92.4.3",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ },
+ {
+  "id": "26481",
+  "title": "Ensure 'Enable optional updates' is set to 'Disabled'.",
+  "result": "passed",
+  "ts": "2026-09-30T08:44:22.599+0000",
+  "cis": "18.10.92.4.4",
+  "policy": "CIS Microsoft Windows 11 Enterprise Benchmark v3.0.0"
+ }
+]

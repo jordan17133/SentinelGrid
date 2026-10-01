@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SentinelGrid"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3cb7ab3d-c746-41e3-af01-d53325d4ddfb"
+  }
+}

@@ -1,0 +1,138 @@
+table 'rpt cis_check_results'
+	lineageTag: b9b69b01-ad93-581b-8008-2b2d729aa9bb
+
+	measure Checks = COUNTROWS('rpt cis_check_results') + 0
+		formatString: #,0
+		lineageTag: 9db23ed5-c7c7-525c-9785-4ff5543f183c
+
+	measure 'Checks fixed' = CALCULATE([Checks], 'rpt cis_check_results'[change_status] = "Fixed")
+		formatString: #,0
+		lineageTag: d1c4ffab-6226-5962-b17c-9a6e37f77cd6
+
+	measure 'Checks regressed' = CALCULATE([Checks], 'rpt cis_check_results'[change_status] = "Regressed")
+		formatString: #,0
+		lineageTag: f3433fbe-1d3e-5e56-9afb-8038ae7b071f
+
+	measure 'Passing at baseline' =
+			DIVIDE(CALCULATE([Checks], 'rpt cis_check_results'[baseline_result] = "passed"),
+			CALCULATE([Checks], 'rpt cis_check_results'[baseline_result] IN {"passed", "failed"}))
+		formatString: 0%
+		lineageTag: c00f8818-c1dc-5f91-8ceb-20f788955778
+
+	measure 'Passing now' =
+			DIVIDE(CALCULATE([Checks], 'rpt cis_check_results'[current_result] = "passed"),
+			CALCULATE([Checks], 'rpt cis_check_results'[current_result] IN {"passed", "failed"}))
+		formatString: 0%
+		lineageTag: dcb1d226-a1e5-5b57-b78e-7ddec352fc0f
+
+	column agent_name
+		dataType: string
+		lineageTag: 435a3f15-f34a-539f-ac49-99b7d70094a7
+		summarizeBy: none
+		sourceColumn: agent_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_name
+		dataType: string
+		lineageTag: 2e76e026-b1ab-503e-bf3f-c72e5a2b1f2f
+		summarizeBy: none
+		sourceColumn: policy_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column check_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b17f8a2-8b2b-59f4-8efd-9964d4ff56de
+		summarizeBy: none
+		sourceColumn: check_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: 690266a6-cee2-51f7-9136-6b631ab631e8
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column cis_ref
+		dataType: string
+		lineageTag: 2cc8ccf2-408d-5ce8-84b2-d320e202f8f6
+		summarizeBy: none
+		sourceColumn: cis_ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column cis_section
+		dataType: int64
+		formatString: 0
+		lineageTag: 04d0238c-d31e-5e7f-b9f0-964719eb8c0c
+		summarizeBy: none
+		sourceColumn: cis_section
+
+		annotation SummarizationSetBy = Automatic
+
+	column section_label
+		dataType: string
+		lineageTag: 26f3af54-698b-54ff-ab48-d5639b4c31fd
+		summarizeBy: none
+		sourceColumn: section_label
+		sortByColumn: cis_section
+
+		annotation SummarizationSetBy = Automatic
+
+	column baseline_result
+		dataType: string
+		lineageTag: 921493fe-f521-54af-b090-104b29daf3b4
+		summarizeBy: none
+		sourceColumn: baseline_result
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_result
+		dataType: string
+		lineageTag: 805030f3-3aac-530b-bfe7-cfd7e658600b
+		summarizeBy: none
+		sourceColumn: current_result
+
+		annotation SummarizationSetBy = Automatic
+
+	column change_status
+		dataType: string
+		lineageTag: 727e6286-9820-51dd-8a9d-ca0ed836ff60
+		summarizeBy: none
+		sourceColumn: change_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_change_local
+		dataType: dateTime
+		formatString: mmm d, h:nn AM/PM
+		lineageTag: fbe2e77f-6954-5b7d-bba1-6c1c017d4a07
+		summarizeBy: none
+		sourceColumn: last_change_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column evidence_doc_id
+		dataType: string
+		lineageTag: f38b3aba-4836-528e-8dc0-befb0a886b0a
+		summarizeBy: none
+		sourceColumn: evidence_doc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt cis_check_results' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_cis_check_results = Source{[Schema="rpt",Item="cis_check_results"]}[Data]
+				in
+				    rpt_cis_check_results
+
+	annotation PBI_ResultType = Table
+

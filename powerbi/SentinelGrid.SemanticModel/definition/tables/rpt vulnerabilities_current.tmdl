@@ -1,0 +1,84 @@
+table 'rpt vulnerabilities_current'
+	lineageTag: 3a011a21-f5a3-4dc6-bb50-eeb69bf9c79b
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: da8eb354-8845-4e57-b807-9b675d2bd28f
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column agent_name
+		dataType: string
+		lineageTag: 119452fc-d73a-413a-9886-22301f48d590
+		summarizeBy: none
+		sourceColumn: agent_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cve_id
+		dataType: string
+		lineageTag: 1de5381b-c98b-447f-993a-0cef27f040bb
+		summarizeBy: none
+		sourceColumn: cve_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column package_name
+		dataType: string
+		lineageTag: 2fb1dee3-abe9-44da-ac3f-c9ea05a33360
+		summarizeBy: none
+		sourceColumn: package_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column package_version
+		dataType: string
+		lineageTag: 7c22077e-503b-4c77-bdb8-f31c8bd19557
+		summarizeBy: none
+		sourceColumn: package_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: f414607a-a32a-42fe-b302-de67c5fa7d45
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column base_score
+		dataType: double
+		lineageTag: 595f2316-04ae-4324-9d23-28f54a575056
+		summarizeBy: sum
+		sourceColumn: base_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column detected_at_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0ecada60-f361-400e-bfe9-afca1caf0a96
+		summarizeBy: none
+		sourceColumn: detected_at_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt vulnerabilities_current' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_vulnerabilities_current = Source{[Schema="rpt",Item="vulnerabilities_current"]}[Data]
+				in
+				    rpt_vulnerabilities_current
+
+	annotation PBI_ResultType = Table
+

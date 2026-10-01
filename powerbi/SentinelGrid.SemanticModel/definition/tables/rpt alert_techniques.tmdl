@@ -1,0 +1,50 @@
+table 'rpt alert_techniques'
+	lineageTag: 157bd17a-86a9-4efa-a55c-0fb87d5c54a1
+
+	measure 'Alerts mapped to ATT&CK' = DIVIDE(DISTINCTCOUNT('rpt alert_techniques'[doc_id]), COUNTROWS('rpt alerts'))
+		formatString: 0%
+		lineageTag: 016c7c87-6972-55ce-bc43-6142952b21ff
+
+	column doc_id
+		dataType: string
+		lineageTag: 1a452e80-543f-4331-86b7-4739213ae6bf
+		summarizeBy: none
+		sourceColumn: doc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_id
+		dataType: string
+		lineageTag: 1769d7ce-100d-4822-9ca2-8db0617a32eb
+		summarizeBy: none
+		sourceColumn: technique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_name
+		dataType: string
+		lineageTag: b107cadb-d653-4e42-8165-2d36505487c1
+		summarizeBy: none
+		sourceColumn: technique_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_label
+		dataType: string
+		lineageTag: a1c6162b-6ae2-4e81-8ca3-cb6d4d9932fa
+		summarizeBy: none
+		sourceColumn: technique_label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt alert_techniques' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_alert_techniques = Source{[Schema="rpt",Item="alert_techniques"]}[Data]
+				in
+				    rpt_alert_techniques
+
+	annotation PBI_ResultType = Table
+

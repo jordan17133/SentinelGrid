@@ -1,0 +1,170 @@
+table 'rpt pipeline_status'
+	lineageTag: ad2b4f34-3739-5f4a-b562-279d02192fb9
+
+	measure 'Minutes since last load' = MAX('rpt pipeline_status'[minutes_since_success])
+		formatString: #,0
+		lineageTag: f54a0445-8b63-5730-9695-3daf1192b186
+
+	measure 'Loader success 7d' = DIVIDE(MAX('rpt pipeline_status'[success_rate_7d_pct]), 100)
+		formatString: 0.0%
+		lineageTag: 9bbf0213-4bea-5619-8751-86ae1ae3f0bc
+
+	measure 'Median latency' = MAX('rpt pipeline_status'[latency_p50_minutes_7d])
+		formatString: 0.0 "min"
+		lineageTag: acc16318-9f08-530b-9338-0b4caa649a48
+
+	measure '95th pct latency' = MAX('rpt pipeline_status'[latency_p95_minutes_7d])
+		formatString: 0.0 "min"
+		lineageTag: 71990a79-54d4-53c4-8abe-09a712088f72
+
+	measure 'Alerts loaded 24h' = FORMAT(MAX('rpt pipeline_status'[alerts_loaded_24h]), "#,0")
+		lineageTag: 52c04e83-efe8-5cf8-90f0-18a10545fac3
+
+	measure 'Data as of' = "Data as of " & FORMAT(MAX('rpt pipeline_status'[as_of_local]), "yyyy-mm-dd h:nn AM/PM") & " (US Eastern)"
+		lineageTag: d4751801-761c-57c5-91bf-a957b7c10680
+
+	measure 'Warehouse size' = MAX('rpt pipeline_status'[data_used_mb])
+		formatString: #,0 "MB"
+		lineageTag: dc41c328-2274-5d18-b85b-92bcec66e5b5
+
+	column as_of_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e66ada92-43ab-5285-b016-18fe0f79fdfb
+		summarizeBy: none
+		sourceColumn: as_of_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_success_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a1e8d84d-7d92-5b40-a217-a77f68572e83
+		summarizeBy: none
+		sourceColumn: last_success_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_since_success
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e719033-7796-5b0e-add2-f5b8ee58402a
+		summarizeBy: sum
+		sourceColumn: minutes_since_success
+
+		annotation SummarizationSetBy = Automatic
+
+	column newest_alert_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: df582937-439f-51e6-bd24-9f3f49630f9a
+		summarizeBy: none
+		sourceColumn: newest_alert_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column minutes_since_newest_alert
+		dataType: int64
+		formatString: 0
+		lineageTag: 28a1d87d-6b97-5084-8116-457a2546b219
+		summarizeBy: sum
+		sourceColumn: minutes_since_newest_alert
+
+		annotation SummarizationSetBy = Automatic
+
+	column runs_24h
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a978181-f75d-51da-bf1b-bb68c648bb44
+		summarizeBy: sum
+		sourceColumn: runs_24h
+
+		annotation SummarizationSetBy = Automatic
+
+	column failed_runs_24h
+		dataType: int64
+		formatString: 0
+		lineageTag: f766b564-081f-56fa-8f62-3c1cf22c9369
+		summarizeBy: sum
+		sourceColumn: failed_runs_24h
+
+		annotation SummarizationSetBy = Automatic
+
+	column success_rate_7d_pct
+		dataType: double
+		lineageTag: 008e201a-a054-589c-815a-759f21cd54df
+		summarizeBy: sum
+		sourceColumn: success_rate_7d_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_loaded_24h
+		dataType: int64
+		formatString: 0
+		lineageTag: b7580cff-4df5-5ec8-96de-531cf04e4a6b
+		summarizeBy: sum
+		sourceColumn: alerts_loaded_24h
+
+		annotation SummarizationSetBy = Automatic
+
+	column runs_all_time
+		dataType: int64
+		formatString: 0
+		lineageTag: df838c5f-aa9f-519e-b78a-bb5deba429a1
+		summarizeBy: sum
+		sourceColumn: runs_all_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column latency_p50_minutes_7d
+		dataType: double
+		lineageTag: 705283f4-65dd-5ca1-9e61-821413ffc7fb
+		summarizeBy: sum
+		sourceColumn: latency_p50_minutes_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column latency_p95_minutes_7d
+		dataType: double
+		lineageTag: ff5b8036-21f4-5e5c-975d-0830fecfb0dc
+		summarizeBy: sum
+		sourceColumn: latency_p95_minutes_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dc232f0-27b6-5076-8dae-c5649fc09241
+		summarizeBy: sum
+		sourceColumn: alert_rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_used_mb
+		dataType: double
+		lineageTag: bdc51e8a-9348-58f3-a52e-ae4057f95a05
+		summarizeBy: sum
+		sourceColumn: data_used_mb
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_cap_mb
+		dataType: double
+		lineageTag: 38a28a89-f9b3-5440-96d1-1eb97189f436
+		summarizeBy: sum
+		sourceColumn: data_cap_mb
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt pipeline_status' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_pipeline_status = Source{[Schema="rpt",Item="pipeline_status"]}[Data]
+				in
+				    rpt_pipeline_status
+
+	annotation PBI_ResultType = Table
+

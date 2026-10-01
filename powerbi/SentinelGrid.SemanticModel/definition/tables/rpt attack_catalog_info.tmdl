@@ -1,0 +1,73 @@
+table 'rpt attack_catalog_info'
+	lineageTag: d0b57305-1299-583c-85f2-cd7f4e6bdf72
+
+	measure 'Catalog source' =
+			VAR v = MAX('rpt attack_catalog_info'[wazuh_version])
+			VAR d = MAX('rpt attack_catalog_info'[exported_at_utc])
+			RETURN IF(ISBLANK(d), "ATT&CK catalog not loaded yet",
+			    "ATT&CK catalog and rule map exported from Wazuh " & v & " on " & FORMAT(d, "yyyy-mm-dd"))
+		lineageTag: 8e839963-0e5c-5ef0-a926-561919c03aad
+
+	column loaded_at_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3f25c41b-46ac-5537-9f25-e0a904d7474e
+		summarizeBy: none
+		sourceColumn: loaded_at_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column exported_at_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1aa2f18f-f9df-5e8d-94e4-624567561298
+		summarizeBy: none
+		sourceColumn: exported_at_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column wazuh_version
+		dataType: string
+		lineageTag: 05e3caf6-b4f1-56b5-b2ce-db5d4f0c473c
+		summarizeBy: none
+		sourceColumn: wazuh_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column attack_version
+		dataType: string
+		lineageTag: dec428bc-8153-586b-b54b-194073c35b70
+		summarizeBy: none
+		sourceColumn: attack_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column techniques
+		dataType: int64
+		formatString: 0
+		lineageTag: 034e5b7c-41dc-561b-ae6f-c65097a368dd
+		summarizeBy: sum
+		sourceColumn: techniques
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules_with_attack
+		dataType: int64
+		formatString: 0
+		lineageTag: bc2e14e8-2dd8-5c0a-8775-3e2d701cc0e3
+		summarizeBy: sum
+		sourceColumn: rules_with_attack
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt attack_catalog_info' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_attack_catalog_info = Source{[Schema="rpt",Item="attack_catalog_info"]}[Data]
+				in
+				    rpt_attack_catalog_info
+
+	annotation PBI_ResultType = Table
+

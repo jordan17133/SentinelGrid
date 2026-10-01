@@ -1,0 +1,34 @@
+<!--
+  Replaces the single journald <localfile> block in /var/ossec/etc/ossec.conf
+  on the Wazuh server.
+
+  Why: the Wazuh dashboard (OpenSearch Dashboards) logs one journald line per
+  HTTP response, i.e. every script, icon and search the browser loads. With full
+  event archiving on, browsing the archive generated more archive data.
+
+  First attempt: <ignore type="PCRE2"> inside the journald block. The Wazuh docs
+  say ignore applies to every log format except eventchannel, but
+  `wazuh-logcollector -t` on 4.14.8 reports:
+    WARNING: (8004): log_format 'journald' does not support 'ignore' option.
+  The pre-restart test caught it, so nothing changed in production.
+
+  Working approach: journald <filter> (PCRE2, an include filter). Filters inside
+  one block are ANDed; separate journald blocks are ORed.
+    Block A: every journald entry whose SYSLOG_IDENTIFIER is not the dashboard
+             (or has none), i.e. sshd, sudo, PAM, systemd, everything else.
+    Block B: dashboard entries only when they matter: logins and logouts
+             (/auth/), failed or denied requests (401, 403), and its own
+             error and status lines ("type":"log").
+-->
+<localfile>
+  <log_format>journald</log_format>
+  <location>journald</location>
+  <filter field="SYSLOG_IDENTIFIER" ignore_if_missing="yes">^(?!opensearch-dashboards$)</filter>
+</localfile>
+
+<localfile>
+  <log_format>journald</log_format>
+  <location>journald</location>
+  <filter field="SYSLOG_IDENTIFIER">^opensearch-dashboards$</filter>
+  <filter field="MESSAGE">"url":"/auth/|"statusCode":40[13]|"type":"log"</filter>
+</localfile>

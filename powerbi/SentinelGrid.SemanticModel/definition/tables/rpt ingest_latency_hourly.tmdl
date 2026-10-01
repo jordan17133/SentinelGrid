@@ -1,0 +1,67 @@
+table 'rpt ingest_latency_hourly'
+	lineageTag: 1a773355-5f2b-5515-b66e-47bab422165e
+
+	measure 'Median minutes' = AVERAGE('rpt ingest_latency_hourly'[p50_minutes])
+		formatString: 0.0
+		lineageTag: b76debcf-7b93-5f94-af13-908d60a82021
+
+	measure '95th percentile minutes' = AVERAGE('rpt ingest_latency_hourly'[p95_minutes])
+		formatString: 0.0
+		lineageTag: 34177acb-df58-584c-b3d8-542495267bce
+
+	column loaded_hour_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5ade7076-5ea9-51be-94c5-48da39ec1e5f
+		summarizeBy: none
+		sourceColumn: loaded_hour_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_loaded
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b1f6954-ea26-5c6a-b3a0-787258f7043d
+		summarizeBy: sum
+		sourceColumn: alerts_loaded
+
+		annotation SummarizationSetBy = Automatic
+
+	column p50_minutes
+		dataType: double
+		formatString: 0.0
+		lineageTag: 916790c7-0bf7-53b4-8a79-e23ddf7e19e8
+		summarizeBy: none
+		sourceColumn: p50_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column p95_minutes
+		dataType: double
+		formatString: 0.0
+		lineageTag: bb9af6a0-2c2f-56dc-816d-cf92b055f88c
+		summarizeBy: none
+		sourceColumn: p95_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_minutes
+		dataType: double
+		formatString: 0.0
+		lineageTag: 77e1851d-e881-5d8b-85ad-65c04aeada84
+		summarizeBy: none
+		sourceColumn: max_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt ingest_latency_hourly' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_ingest_latency_hourly = Source{[Schema="rpt",Item="ingest_latency_hourly"]}[Data]
+				in
+				    rpt_ingest_latency_hourly
+
+	annotation PBI_ResultType = Table
+

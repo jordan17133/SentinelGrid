@@ -1,0 +1,38 @@
+<!--
+  SentinelGrid tuning rules for known-benign activity on jordan-pc.
+  Deployed to /var/ossec/etc/rules/sentinelgrid_tuning.xml on the Wazuh server.
+
+  Each rule is a child of a stock Wazuh rule and only matches when every listed
+  field matches, so the parent rule still fires at full severity for anything else.
+  Matched events are still recorded, at level 3, rather than dropped.
+
+  Windows eventdata values keep doubled backslashes (C:\\Windows), so path
+  separators are matched with \\\\ in pcre2, the same convention the stock
+  Wazuh Sysmon rules use.
+
+  Investigations: triage/2026-09-30-rule-92213-powershell-policy-test-noise.md
+                  triage/2026-09-30-rule-92058-sdbinst-pca-maintenance.md
+-->
+<group name="local,sysmon,sentinelgrid_tuning,">
+
+  <!-- PowerShell writes and deletes an execution-policy test script in Temp every
+       time it starts. Scheduled watchdogs start PowerShell 36 times an hour. -->
+  <rule id="100100" level="3">
+    <if_sid>92213</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)^C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1\.0\\\\powershell\.exe$</field>
+    <field name="win.eventdata.targetFilename" type="pcre2">(?i)^C:\\\\Users\\\\[^\\]+\\\\AppData\\\\Local\\\\Temp\\\\__PSScriptPolicyTest_[a-z0-9]{8}\.[a-z0-9]{3}\.ps1$</field>
+    <description>Tuned 92213: PowerShell execution-policy test file in Temp (benign PowerShell startup)</description>
+  </rule>
+
+  <!-- The Program Compatibility Assistant service runs a background merge of the
+       application compatibility database once an hour, as SYSTEM. -->
+  <rule id="100101" level="3">
+    <if_sid>92058</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)^C:\\\\Windows\\\\System32\\\\sdbinst\.exe$</field>
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)^C:\\\\Windows\\\\System32\\\\sdbinst\.exe -m -bg$</field>
+    <field name="win.eventdata.parentCommandLine" type="pcre2">(?i)^C:\\\\Windows\\\\system32\\\\svchost\.exe -k LocalSystemNetworkRestricted -p -s PcaSvc$</field>
+    <field name="win.eventdata.user" type="pcre2">(?i)^NT AUTHORITY\\\\SYSTEM$</field>
+    <description>Tuned 92058: hourly PcaSvc background merge of the compatibility database (benign Windows maintenance)</description>
+  </rule>
+
+</group>

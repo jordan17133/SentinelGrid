@@ -1,0 +1,20 @@
+relationship 6a22aa07-c752-54db-8557-02d4decb241e
+	fromColumn: 'rpt vulnerability_findings'.agent_name
+	toColumn: 'rpt agent_health'.agent_name
+
+relationship debb0dc6-31cf-5ef8-bf2b-57a68ed3a8de
+	fromColumn: 'rpt cis_check_results'.agent_name
+	toColumn: 'rpt agent_health'.agent_name
+
+relationship 73adcd6a-b7df-53d7-aff5-3114e24edebe
+	fromColumn: 'rpt cis_score_history'.agent_name
+	toColumn: 'rpt agent_health'.agent_name
+
+relationship 56a724ed-54a9-5c56-948b-2944853af66d
+	fromColumn: 'rpt alert_techniques'.doc_id
+	toColumn: 'rpt alerts'.doc_id
+
+relationship c273a498-fcd9-5069-9270-46b13a6a323a
+	fromColumn: 'rpt alert_tactics'.doc_id
+	toColumn: 'rpt alerts'.doc_id
+

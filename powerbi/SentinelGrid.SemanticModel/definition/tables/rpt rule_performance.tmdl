@@ -1,0 +1,93 @@
+table 'rpt rule_performance'
+	lineageTag: 030dbcc0-8833-4efe-9709-1e40fb7e2f5d
+
+	column rule_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7797abcf-7b55-478c-a56c-99ab1dafb421
+		summarizeBy: none
+		sourceColumn: rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 53adc188-b6ff-46fe-9d6b-b5d317173754
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_level
+		dataType: int64
+		formatString: 0
+		lineageTag: ecccb5d9-2db7-4af5-ae61-9fc05119badd
+		summarizeBy: sum
+		sourceColumn: rule_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_groups
+		dataType: string
+		lineageTag: edb8e0dc-8ece-4e3c-8227-08fcde08d203
+		summarizeBy: none
+		sourceColumn: rule_groups
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_alerts
+		dataType: int64
+		formatString: 0
+		lineageTag: cf7cb1a9-0295-401f-92e1-8c283026813a
+		summarizeBy: sum
+		sourceColumn: total_alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts_last_7_days
+		dataType: int64
+		formatString: 0
+		lineageTag: b9d104ea-b08f-44cd-8895-4e4075f520a1
+		summarizeBy: sum
+		sourceColumn: alerts_last_7_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 02d8a1e5-127c-44f4-a520-4e3d7c206b3e
+		summarizeBy: sum
+		sourceColumn: active_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_alert_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f5b29a3e-20ba-44c4-8d82-ad51d919a0cf
+		summarizeBy: none
+		sourceColumn: first_alert_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_alert_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0e9cdfd9-aedb-4aad-94de-9f2a49ca024d
+		summarizeBy: none
+		sourceColumn: last_alert_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt rule_performance' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_rule_performance = Source{[Schema="rpt",Item="rule_performance"]}[Data]
+				in
+				    rpt_rule_performance
+
+	annotation PBI_ResultType = Table
+

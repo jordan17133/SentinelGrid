@@ -1,0 +1,125 @@
+table 'rpt cis_score_history'
+	lineageTag: 520de8b3-d062-57dd-9c98-38a951415478
+
+	measure 'CIS score' = DIVIDE(AVERAGE('rpt cis_score_history'[score_pct]), 100)
+		formatString: 0.0%
+		lineageTag: 39c28a1c-2c4f-58c2-a4c5-3c15e866a2ce
+
+	measure 'CIS score now' =
+			VAR latestScan = TOPN(1, 'rpt cis_score_history', 'rpt cis_score_history'[scan_time_local], DESC)
+			RETURN DIVIDE(MAXX(latestScan, 'rpt cis_score_history'[score_pct]), 100)
+		formatString: 0.0%
+		lineageTag: dafbbaf5-eda4-50e5-8f78-b4cf158cacfb
+
+	measure 'CIS score at baseline' =
+			VAR firstScan = TOPN(1, 'rpt cis_score_history', 'rpt cis_score_history'[scan_time_local], ASC)
+			RETURN DIVIDE(MAXX(firstScan, 'rpt cis_score_history'[score_pct]), 100)
+		formatString: 0.0%
+		lineageTag: 20f42058-88a8-5ea3-89dd-f18c8c66db30
+
+	column agent_name
+		dataType: string
+		lineageTag: 2b745fde-cb75-5c31-8ad2-72e44d8080dd
+		summarizeBy: none
+		sourceColumn: agent_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_name
+		dataType: string
+		lineageTag: 5e29aebf-e71e-5e33-b515-66e0f5734b76
+		summarizeBy: none
+		sourceColumn: policy_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column scan_time_local
+		dataType: dateTime
+		formatString: mmm d, h:nn AM/PM
+		lineageTag: d59f21b4-471c-51ae-807a-aacb6db18d22
+		summarizeBy: none
+		sourceColumn: scan_time_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column passed
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ee282ed-1f87-5dda-84ff-4613a97cdb40
+		summarizeBy: sum
+		sourceColumn: passed
+
+		annotation SummarizationSetBy = Automatic
+
+	column failed
+		dataType: int64
+		formatString: 0
+		lineageTag: 14846409-4081-58ba-ba5f-fde280f175c3
+		summarizeBy: sum
+		sourceColumn: failed
+
+		annotation SummarizationSetBy = Automatic
+
+	column not_applicable
+		dataType: int64
+		formatString: 0
+		lineageTag: 40eebbef-a893-513d-8bc7-489b013d41c6
+		summarizeBy: sum
+		sourceColumn: not_applicable
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_checks
+		dataType: int64
+		formatString: 0
+		lineageTag: 86307d2f-03b3-508b-8cec-1a350d4b04b9
+		summarizeBy: sum
+		sourceColumn: total_checks
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: 8c6e9709-e26f-5673-a569-278192e33ede
+		summarizeBy: none
+		sourceColumn: score_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column scan_number
+		dataType: int64
+		formatString: 0
+		lineageTag: 58b3c6d0-3c20-546b-937e-a38060e16d5d
+		summarizeBy: none
+		sourceColumn: scan_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: f277b679-1562-5fb1-8476-4d848ac82d30
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column evidence_doc_id
+		dataType: string
+		lineageTag: c8ac0ffc-ed91-540a-884e-31924a37334e
+		summarizeBy: none
+		sourceColumn: evidence_doc_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt cis_score_history' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_cis_score_history = Source{[Schema="rpt",Item="cis_score_history"]}[Data]
+				in
+				    rpt_cis_score_history
+
+	annotation PBI_ResultType = Table
+

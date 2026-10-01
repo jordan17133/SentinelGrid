@@ -1,0 +1,35 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["rpt agent_health","rpt alert_tactics","rpt alert_techniques","rpt alerts","rpt attack_catalog_info","rpt attack_coverage","rpt attack_observed","rpt cases","rpt cis_check_results","rpt cis_score_history","rpt ingest_latency_hourly","rpt load_runs","rpt pipeline_status","rpt rule_performance","rpt vulnerabilities_current","rpt vulnerability_findings","rpt vulnerability_trend"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'rpt agent_health'
+ref table 'rpt alert_tactics'
+ref table 'rpt alert_techniques'
+ref table 'rpt alerts'
+ref table 'rpt load_runs'
+ref table 'rpt rule_performance'
+ref table 'rpt vulnerabilities_current'
+ref table 'rpt vulnerability_trend'
+ref table 'rpt attack_catalog_info'
+ref table 'rpt attack_coverage'
+ref table 'rpt attack_observed'
+ref table 'rpt cis_check_results'
+ref table 'rpt cis_score_history'
+ref table 'rpt ingest_latency_hourly'
+ref table 'rpt pipeline_status'
+ref table 'rpt vulnerability_findings'
+ref table 'rpt cases'
+
+ref cultureInfo en-US
+

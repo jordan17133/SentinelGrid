@@ -1,0 +1,133 @@
+table 'rpt attack_coverage'
+	lineageTag: 3e3081d6-2489-5c51-a63a-0b2eae91fe68
+
+	measure Techniques = DISTINCTCOUNT('rpt attack_coverage'[technique_id]) + 0
+		formatString: #,0
+		lineageTag: fc369d9d-a316-5736-af9e-8442e484322a
+
+	measure 'Techniques with a ready rule' = CALCULATE([Techniques], 'rpt attack_coverage'[coverage_sort] <= 2)
+		formatString: #,0
+		lineageTag: 8d99b469-0d93-5497-9657-3a2b8b57170c
+
+	measure 'Rule coverage' = DIVIDE([Techniques with a ready rule], [Techniques])
+		formatString: 0%
+		lineageTag: 969f50db-736f-5811-b2af-54d5d458898a
+
+	column technique_id
+		dataType: string
+		lineageTag: 9cba2b2e-2420-56fb-b118-a751ebc7454d
+		summarizeBy: none
+		sourceColumn: technique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_name
+		dataType: string
+		lineageTag: 174fa0ce-33f8-58dd-8310-2bf3086545da
+		summarizeBy: none
+		sourceColumn: technique_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_label
+		dataType: string
+		lineageTag: 6965d6a7-0bbf-53ca-aa75-eeff50eee2f0
+		summarizeBy: none
+		sourceColumn: technique_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_subtechnique
+		dataType: int64
+		formatString: 0
+		lineageTag: 630e3206-9c3a-56d1-80f4-17fb311fa6a1
+		summarizeBy: none
+		sourceColumn: is_subtechnique
+
+		annotation SummarizationSetBy = Automatic
+
+	column tactic_name
+		dataType: string
+		lineageTag: f7f847f0-3661-5bc1-aa32-24b3691bbcbc
+		summarizeBy: none
+		sourceColumn: tactic_name
+		sortByColumn: matrix_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column matrix_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c62545a8-05bf-564c-8c7a-82930dcd6b5f
+		summarizeBy: none
+		sourceColumn: matrix_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules_collected
+		dataType: int64
+		formatString: 0
+		lineageTag: 28c45f50-ab8d-5ef0-9235-b8189501cca3
+		summarizeBy: sum
+		sourceColumn: rules_collected
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules_any
+		dataType: int64
+		formatString: 0
+		lineageTag: 621ed532-93fd-55a7-82eb-70983b15b0a0
+		summarizeBy: sum
+		sourceColumn: rules_any
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts
+		dataType: int64
+		formatString: 0
+		lineageTag: 1448f6d0-cd9e-5f43-9e89-89e8c4ec1150
+		summarizeBy: sum
+		sourceColumn: alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_seen_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bb1011cb-9b76-50ca-9adc-034ed3435e38
+		summarizeBy: none
+		sourceColumn: last_seen_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_status
+		dataType: string
+		lineageTag: e00fb55f-7e6a-5ae2-bac2-b3a0261d76d2
+		summarizeBy: none
+		sourceColumn: coverage_status
+		sortByColumn: coverage_sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 23039c83-deef-5444-8f6f-52373fc4f772
+		summarizeBy: none
+		sourceColumn: coverage_sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt attack_coverage' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_attack_coverage = Source{[Schema="rpt",Item="attack_coverage"]}[Data]
+				in
+				    rpt_attack_coverage
+
+	annotation PBI_ResultType = Table
+

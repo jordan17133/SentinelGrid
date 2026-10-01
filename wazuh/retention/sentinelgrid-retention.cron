@@ -1,0 +1,10 @@
+# /etc/cron.d/sentinelgrid-retention on the Wazuh server.
+# Wazuh rotates its raw logs daily into compressed files under /var/ossec/logs
+# but never deletes them. The searchable copies are managed by the ISM policies;
+# these raw files are a secondary copy, so they are kept for less time.
+#
+#   archives (every event): 7 days     alerts: 90 days
+#
+# m  h  dom mon dow user command
+15 3 * * * root find /var/ossec/logs/archives -mindepth 2 -type f -name 'ossec-archive-*' -mtime +7 -delete && find /var/ossec/logs/archives -mindepth 1 -type d -empty -delete
+20 3 * * * root find /var/ossec/logs/alerts -mindepth 2 -type f -name 'ossec-alerts-*' -mtime +90 -delete && find /var/ossec/logs/alerts -mindepth 1 -type d -empty -delete

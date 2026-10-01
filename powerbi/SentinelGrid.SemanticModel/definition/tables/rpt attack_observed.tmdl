@@ -1,0 +1,143 @@
+table 'rpt attack_observed'
+	lineageTag: 330be4b7-18b2-5091-ae95-1d584e682ac7
+
+	measure 'Techniques fired' = COUNTROWS('rpt attack_observed') + 0
+		formatString: #,0
+		lineageTag: 339f7166-9413-5b0c-97d0-3d3724de6393
+
+	measure 'Technique alerts' = SUM('rpt attack_observed'[alerts]) + 0
+		formatString: #,0
+		lineageTag: c716daf6-191c-547e-a472-42ab3b4d3731
+
+	column technique_id
+		dataType: string
+		lineageTag: d849fb4b-644c-58cc-bbb6-e2b25258bee5
+		summarizeBy: none
+		sourceColumn: technique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_name
+		dataType: string
+		lineageTag: ed91fde9-b9ea-5a73-a589-ac6c02693190
+		summarizeBy: none
+		sourceColumn: technique_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column technique_label
+		dataType: string
+		lineageTag: e45050f9-9ebe-5baf-a08b-ef375439b0ef
+		summarizeBy: none
+		sourceColumn: technique_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column tactic_names
+		dataType: string
+		lineageTag: 1c1f4a63-67d8-5ee4-92b7-08a808438c2a
+		summarizeBy: none
+		sourceColumn: tactic_names
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_tactic_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9577492a-19c0-5d62-98de-e994a4fe2105
+		summarizeBy: none
+		sourceColumn: first_tactic_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column alerts
+		dataType: int64
+		formatString: 0
+		lineageTag: ba11088c-a848-5fb3-b058-8a2637e17a8d
+		summarizeBy: sum
+		sourceColumn: alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column rules_fired
+		dataType: int64
+		formatString: 0
+		lineageTag: a4c5925d-f72c-514f-9c4d-6440bd686559
+		summarizeBy: sum
+		sourceColumn: rules_fired
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 00205b0d-75b0-5b71-9324-c44368cf14cf
+		summarizeBy: none
+		sourceColumn: max_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_seen_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ea50e2b-b2be-5aee-a483-ef64c5f99e42
+		summarizeBy: none
+		sourceColumn: first_seen_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_seen_local
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4bf64fef-7f9d-5ca4-bfde-52fd68aba9b0
+		summarizeBy: none
+		sourceColumn: last_seen_local
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_rule_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1dadc98a-49a2-5e97-89d9-b0e055b9ab75
+		summarizeBy: none
+		sourceColumn: top_rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_rule_description
+		dataType: string
+		lineageTag: f75f3412-b827-5b32-8a19-2f8eae90ba02
+		summarizeBy: none
+		sourceColumn: top_rule_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_rule_share_pct
+		dataType: double
+		formatString: 0.0
+		lineageTag: 3536439b-621b-5cfe-8552-693aabe14a31
+		summarizeBy: none
+		sourceColumn: top_rule_share_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_rule_triage
+		dataType: string
+		lineageTag: cc087f1e-57b8-57ff-abd6-076f560fc528
+		summarizeBy: none
+		sourceColumn: top_rule_triage
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'rpt attack_observed' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "SentinelGridWarehouse"),
+				    rpt_attack_observed = Source{[Schema="rpt",Item="attack_observed"]}[Data]
+				in
+				    rpt_attack_observed
+
+	annotation PBI_ResultType = Table
+
