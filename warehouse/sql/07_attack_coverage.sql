@@ -167,6 +167,8 @@ USING (VALUES
             N'triage/2026-09-30-rule-92213-powershell-policy-test-noise.md'),
     (594, N'Benign: Windows state keys (TPM, DeviceAssociation, bam, W32Time)',
             N'triage/2026-10-01-baseline-review-remaining-rules.md'),
+    (100113, N'Benign: Microsoft Edge updated its own startup entry (signed, timing matches)',
+            N'triage/2026-10-02-rule-100113-edge-autostart-change.md'),
     (67017, N'Low risk: loopback admin share by own account, source process not confirmed',
             N'triage/2026-10-01-baseline-review-remaining-rules.md')
 ) AS s (rule_id, verdict, report_path)
