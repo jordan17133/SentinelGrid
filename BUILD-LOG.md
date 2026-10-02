@@ -120,7 +120,7 @@ Windows host                         |
 - The monitored automation workload moved to a new folder and from Python 3.11 to 3.13 (copy-and-keep-backup, verified by identical backtests). Its migration report was checked independently: every process and enabled scheduled task runs on 3.13, no enabled task uses 3.11, and all 16 monitored files exist at the new paths.
 - File integrity monitoring and rules 100110/100111 were repointed to the new folder and tested against all 16 monitored paths plus 4 decoys (including the old folder and the new virtual environment's interpreter): 16 match, 0 decoys match. The first pass missed rule 100110 because its folder name sits inside a regex group; the test caught it.
 - Deployed to the Wazuh server (rules and the `default` group's agent.conf, manager restarted, `active`); the Windows agent received the new config one minute later, watching all 16 new paths and none of the old ones.
-- Python 3.11 is not uninstalled yet: the old folder is the rollback path and still needs 3.11. Plan: 48 hours of clean running, then delete the 10 disabled tasks, uninstall 3.11 (about 30 findings) and archive the old folder.
+- Python 3.11 uninstalled after confirming nothing used it (0 processes, no enabled task); the rollback stays possible by reinstalling 3.11.9 and restoring the saved package list. Its 16 interpreter findings should clear on Wazuh's next software inventory scan; Python 3.13.15 brought 1 new finding. Leftover Python 3.11 entries in the user PATH are being removed, since a missing user-writable folder on the PATH can be used to plant a fake `python.exe`.
 - The new virtual environment carried over cryptography 47.0.0, PyJWT 2.12.1 and urllib3 2.6.3; upgrading them there is the next patch step.
 
 ## Problems hit and how they were solved
@@ -203,7 +203,7 @@ Windows host                         |
 
 ### Posture
 - [x] Updated Steam and the ChatGPT app (2026-10-02). ChatGPT should clear on the next inventory scan; Steam's 8 findings persist because Steam never updates its Windows uninstall version (2.10.91.91), so they need a reinstall from the current installer or acceptance as an inventory limitation.
-- [x] Do NOT retire Python 3.11: an audit on 2026-10-02 found a production automation workload depends on it (scheduled tasks, its virtual environment and launch scripts). Its 16 interpreter findings are accepted risk until that workload moves to a newer Python (3.11 security releases ship without Windows installers).
+- [x] Python 3.11 retired 2026-10-02, after the automation workload that depended on it moved to 3.13 (see the timeline).
 - [ ] Patch cryptography, PyJWT, urllib3 and setuptools inside Python 3.11 (14 findings) with a saved rollback, then verify the workload's health check.
 - [x] CIS baseline recorded and hardened: 27.1% to 37.0% (docs/cis-baseline.md).
 - [ ] Review the remaining Administrative Templates failures in smaller batches; test Credential Guard and SmartScreen prevent-bypass.
