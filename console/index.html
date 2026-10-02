@@ -34,10 +34,19 @@
 
   <main>
     <section id="view-overview" class="view">
+      <div class="start">
+        <h2>Start here: three investigations worth a minute</h2>
+        <div class="stories">
+          <a class="story" href="#cases/SG-002"><span class="case-num">SG-002</span><strong>Cut a false alarm stream of 36 Critical alerts an hour</strong><span>Traced scheduled scripts that looked like malware, proved they were benign, and wrote a narrow rule so real threats still fire.</span></a>
+          <a class="story" href="#cases/SG-004"><span class="case-num">SG-004</span><strong>Ran a controlled attack and caught it</strong><span>Password guessing against the SIEM server: detected, mapped to MITRE ATT&amp;CK, and a gap in the default rules documented.</span></a>
+          <a class="story" href="#cases/SG-005"><span class="case-num">SG-005</span><strong>The SIEM caught a graphics driver crashing at 2 AM</strong><span>Critical alerts led to a real stability problem on the host. Detections find more than attackers.</span></a>
+        </div>
+      </div>
       <div class="kpis" id="kpis"></div>
       <div class="grid two">
         <div class="panel wide">
-          <div class="panel-head"><h2>Alerts per hour by severity</h2><span class="legend" id="hourLegend"></span></div>
+          <div class="panel-head"><h2>Alerts per hour by severity</h2><span class="legend" id="hourLegend"></span><label class="toggle"><input type="checkbox" id="showLow"> Show Medium and Low</label></div>
+          <p class="hint">Critical and High alerts per hour. Red bars falling away on the evening of Sep 30 is the tuning in case SG-002 taking effect.</p>
           <div id="hourChart" class="chart"></div>
         </div>
       </div>

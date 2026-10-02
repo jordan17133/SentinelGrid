@@ -20,7 +20,7 @@ let selectedCase = null;
 const $ = (id) => document.getElementById(id);
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const sevOf = (level) => (level >= 15 ? "critical" : level >= 12 ? "high" : level >= 7 ? "medium" : "low");
-const sevTag = (level) => `<span class="sev ${sevOf(level)}">${SEV_LABEL[sevOf(level)]} ${level}</span>`;
+const sevTag = (level) => `<span class="sev ${sevOf(level)}" title="Wazuh rule level ${level} of 15. 15 is Critical, 12-14 High, 7-11 Medium, 0-6 Low.">${SEV_LABEL[sevOf(level)]} ${level}</span>`;
 const time = (iso) => (iso ? fmtTime.format(new Date(iso)) : "-");
 
 function verdictPill(verdict) {
@@ -50,7 +50,12 @@ fetch("data/snapshot.json", { cache: "no-cache" })
 window.addEventListener("hashchange", route);
 
 function route() {
-  const view = (location.hash || "#overview").slice(1).split("/")[0];
+  const [view, item] = (location.hash || "#overview").slice(1).split("/");
+  if (view === "cases" && item && data) {
+    selectedCase = decodeURIComponent(item);
+    renderCases();
+    window.scrollTo(0, 0);
+  }
   const known = ["overview", "alerts", "cases", "attack", "pipeline"].includes(view) ? view : "overview";
   document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === `view-${known}`));
   document.querySelectorAll(".tabs a").forEach((a) => a.classList.toggle("active", a.dataset.view === known));
@@ -66,11 +71,11 @@ function renderOverview() {
   const k = data.kpi;
   $("kpis").innerHTML = [
     kpi("Alerts collected", fmtNum.format(k.alerts_total), "loaded into SQL every 15 minutes"),
-    kpi("ATT&CK techniques fired", k.techniques_fired, "every one triaged to a verdict", true),
+    kpi("ATT&CK techniques fired", k.techniques_fired, "attacker behaviors seen; every one explained", true),
     kpi("Cases", k.cases_open + k.cases_closed, `${k.cases_closed} closed, ${k.cases_open} open`),
-    kpi("Median time to verdict", `${k.median_hours_to_verdict.toFixed(1)} h`, "first alert to closed case"),
+    kpi("Median time to verdict", `${k.median_hours_to_verdict.toFixed(1)} h`, "from first alert to a decision"),
     kpi("Vulnerability findings", `${k.vulns_all} → ${k.vulns_open}`, `${k.vulns_critical_open} Critical open`, true),
-    kpi("CIS benchmark", `${k.cis_first.toFixed(1)}% → ${k.cis_now.toFixed(1)}%`, "Windows 11 Enterprise v3.0.0"),
+    kpi("CIS benchmark", `${k.cis_first.toFixed(1)}% → ${k.cis_now.toFixed(1)}%`, "security settings passing, after hardening"),
   ].join("");
 
   $("hourLegend").innerHTML = SEV_ORDER.map((s) => `<span><i style="background:${SEV_COLOR[s]}"></i>${SEV_LABEL[s]}</span>`).join("");
@@ -99,8 +104,9 @@ function renderOverview() {
 
 function renderHourChart() {
   const rows = data.hourly;
+  const shown = $("showLow").checked ? SEV_ORDER : ["critical", "high"];
   const W = 1000, H = 220, padL = 40, padB = 26, padT = 8;
-  const totals = rows.map((r) => SEV_ORDER.reduce((s, k) => s + r[k], 0));
+  const totals = rows.map((r) => shown.reduce((s, k) => s + r[k], 0));
   const max = Math.max(...totals, 1);
   const step = (W - padL) / rows.length;
   const bw = Math.max(2, step - 2);
@@ -115,7 +121,7 @@ function renderHourChart() {
     const x = padL + i * step + 1;
     let base = 0;
     ["low", "medium", "high", "critical"].forEach((s) => {
-      if (!r[s]) return;
+      if (!r[s] || !shown.includes(s)) return;
       const top = y(base + r[s]);
       svg += `<rect x="${x}" y="${top}" width="${bw}" height="${Math.max(1, y(base) - top)}" fill="${SEV_COLOR[s]}" rx="1"/>`;
       base += r[s];
@@ -144,6 +150,7 @@ function renderHourChart() {
 function bindControls() {
   $("alertSearch").addEventListener("input", renderAlerts);
   $("alertSeverity").addEventListener("change", renderAlerts);
+  $("showLow").addEventListener("change", renderHourChart);
 }
 
 function renderAlerts() {
@@ -160,7 +167,7 @@ function renderAlerts() {
     rows.slice(0, 400).map((a) => `<tr data-alert="${esc(a.id)}" class="${a.id === selectedAlert ? "selected" : ""}">
       <td class="nowrap">${time(a.ts)}</td><td>${sevTag(a.level)}</td>
       <td><span class="muted">${a.rule_id}</span> ${esc(a.rule)}</td>
-      <td>${esc(a.agent)}</td><td class="nowrap">${esc(a.techniques.join(", "))}</td></tr>`).join("")}</tbody>`;
+      <td>${esc(a.agent)}</td><td class="nowrap" title="${esc(a.techniques.map((t) => `${t} ${techniqueNames[t] || ""}`).join("; "))}">${esc(a.techniques.join(", "))}</td></tr>`).join("")}</tbody>`;
   $("alertTable").querySelectorAll("tbody tr").forEach((tr) => tr.addEventListener("click", () => selectAlert(tr.dataset.alert)));
 }
 
