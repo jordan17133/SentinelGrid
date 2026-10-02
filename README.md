@@ -11,7 +11,7 @@ SentinelGrid is a working security operations lab: a Windows endpoint instrument
 ## Highlights
 
 - **End-to-end detection pipeline.** Sysmon telemetry from a Windows 11 host flows through a Wazuh agent to a Wazuh manager, indexer and dashboard running in a hardened Ubuntu VM.
-- **Real triage, written up.** Five investigations covering every rule behind a fired ATT&CK technique, each traced to a root cause with evidence, a verdict and the residual risk of any tuning (including why one technique was deliberately left untuned), plus a controlled password-guessing test detected end to end. See [triage/](triage/).
+- **Real triage, written up.** Six investigations covering every rule behind a fired ATT&CK technique (including a persistence alert caught overnight by a custom rule), each traced to a root cause with evidence, a verdict and the residual risk of any tuning (including why one technique was deliberately left untuned), plus a controlled password-guessing test detected end to end. See [triage/](triage/).
 - **Detection tuning that was tested before deployment.** Two child rules lower proven noise to level 3 without disabling the parent detections. Before going live, they were replayed against 674 stored alerts: every noise event matched and every real installer event still fired.
 - **94% of Critical alerts eliminated as noise**, so a genuine Critical stands out. The activity is still recorded, just at the right severity.
 - **Vulnerability findings cut from 445 to 39, and Critical from 99 to 0.** Removing one forgotten, unused browser cleared 88% of them.
