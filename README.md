@@ -109,6 +109,8 @@ Windows host                         |
 
 ## Roadmap
 
+The full plan, with why each chapter matters and when it counts as done, is in [ROADMAP.md](ROADMAP.md).
+
 - [x] Stages 0-4: lab, Wazuh, Sysmon, agent, first event path
 - [x] Stage 7: SQL Server warehouse, scheduled loader and case log (open, assign, close, history)
 - [x] Detection tuning with tested custom rules
