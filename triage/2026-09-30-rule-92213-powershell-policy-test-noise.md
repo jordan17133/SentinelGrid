@@ -12,7 +12,7 @@
 
 ## Summary
 
-After the first load into the SentinelGrid SQL warehouse, rule 92213 accounted for every Critical-band alert: 506 in half a day. The [first 92213 triage](2026-09-30-rule-92213-installer-false-positive.md) covered three alerts during setup, so a steady stream of this volume needed its own investigation. 478 of the 506 were PowerShell writing its own execution-policy test file to the user's Temp folder, triggered by three automation watchdog tasks that start PowerShell every 5 minutes. The other 28 were software installs and uninstalls done on purpose that day.
+After the first load into the Watchtide SQL warehouse, rule 92213 accounted for every Critical-band alert: 506 in half a day. The [first 92213 triage](2026-09-30-rule-92213-installer-false-positive.md) covered three alerts during setup, so a steady stream of this volume needed its own investigation. 478 of the 506 were PowerShell writing its own execution-policy test file to the user's Temp folder, triggered by three automation watchdog tasks that start PowerShell every 5 minutes. The other 28 were software installs and uninstalls done on purpose that day.
 
 ## Investigation
 

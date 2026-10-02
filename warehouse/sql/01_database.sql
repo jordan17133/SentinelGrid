@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: instance settings and database.
+-- Watchtide warehouse: instance settings and database.
 -- Runs against master. Safe to re-run.
 
 -- The Wazuh VM already reserves 8 GB of host RAM, so cap SQL Server at 4 GB.

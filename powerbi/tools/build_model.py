@@ -1,4 +1,4 @@
-"""Add the posture, ATT&CK and pipeline tables to the SentinelGrid semantic model (TMDL).
+"""Add the posture, ATT&CK and pipeline tables to the Watchtide semantic model (TMDL).
 
 Usage (from the repo root, with Power BI Desktop closed):
     .venv\\Scripts\\python.exe powerbi\\tools\\build_model.py

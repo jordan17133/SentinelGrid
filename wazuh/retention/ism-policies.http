@@ -1,4 +1,4 @@
-# SentinelGrid retention policies for the Wazuh Indexer (OpenSearch Index State Management).
+# Watchtide retention policies for the Wazuh Indexer (OpenSearch Index State Management).
 # Paste each request into Indexer management > Dev Tools and run it.
 #
 # ism_template attaches the policy to every NEW index whose name matches,
@@ -9,7 +9,7 @@
 PUT _plugins/_ism/policies/sentinelgrid-archives-30d
 {
   "policy": {
-    "description": "SentinelGrid: delete wazuh-archives daily indices 30 days after creation",
+    "description": "Watchtide: delete wazuh-archives daily indices 30 days after creation",
     "default_state": "hot",
     "states": [
       {
@@ -31,7 +31,7 @@ PUT _plugins/_ism/policies/sentinelgrid-archives-30d
 PUT _plugins/_ism/policies/sentinelgrid-alerts-365d
 {
   "policy": {
-    "description": "SentinelGrid: delete wazuh-alerts daily indices 365 days after creation",
+    "description": "Watchtide: delete wazuh-alerts daily indices 365 days after creation",
     "default_state": "hot",
     "states": [
       {

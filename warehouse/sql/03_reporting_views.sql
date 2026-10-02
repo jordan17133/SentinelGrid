@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: reporting views for Power BI.
+-- Watchtide warehouse: reporting views for Power BI.
 -- Power BI reads only the rpt schema, never the sg tables directly.
 -- Times are stored in UTC and converted to US Eastern for display.
 -- Severity bands follow the Wazuh dashboard: 0-6 Low, 7-11 Medium, 12-14 High, 15 Critical.

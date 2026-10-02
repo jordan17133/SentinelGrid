@@ -1,4 +1,4 @@
-"""Load Wazuh alerts and vulnerability state into the SentinelGrid SQL warehouse.
+"""Load Wazuh alerts and vulnerability state into the Watchtide SQL warehouse.
 
 Usage (from the repo root):
     .venv\\Scripts\\python.exe loader\\wazuh_to_sql.py

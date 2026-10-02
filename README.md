@@ -1,22 +1,25 @@
-# SentinelGrid: A Home SOC Built on Wazuh, SQL Server and Power BI
+# Watchtide: A Home SOC Built on Wazuh, SQL Server and Power BI
 
-SentinelGrid is a working security operations lab: a Windows endpoint instrumented with Sysmon, monitored by a self-hosted Wazuh SIEM, with alerts loaded into a SQL Server warehouse and reported in Power BI. It was built, broken, fixed, hardened and tuned by hand, and every step is documented.
+Watchtide is a working security operations lab: a Windows endpoint instrumented with Sysmon, monitored by a self-hosted Wazuh SIEM, with alerts loaded into a SQL Server warehouse and reported in Power BI. It was built, broken, fixed, hardened and tuned by hand, and every step is documented.
 
 **Author:** Jordan Carven-Bellace
 
-**[Open the SentinelGrid console](https://jordan17133.github.io/SentinelGrid/)**: a read-only SOC console built on a scrubbed snapshot of this lab's real alerts, cases and ATT&CK coverage. It runs in the browser, with no setup and no live connection to the SIEM.
+*Formerly named SentinelGrid. Some internal identifiers (the `SentinelGridWarehouse` database, the `SentinelGrid-Wazuh` VM, scheduled task and rule-file names) keep the original name so the running system did not need to change.*
+
+**[Open the Watchtide console](https://jordan17133.github.io/Watchtide/)**: a read-only SOC console built on a scrubbed snapshot of this lab's real alerts, cases and ATT&CK coverage. It runs in the browser, with no setup and no live connection to the SIEM.
 
 ![SOC Overview page in Power BI](docs/screenshots/powerbi-soc-overview.jpg)
 
 ## Highlights
 
 - **End-to-end detection pipeline.** Sysmon telemetry from a Windows 11 host flows through a Wazuh agent to a Wazuh manager, indexer and dashboard running in a hardened Ubuntu VM.
-- **Real triage, written up.** Six investigations covering every rule behind a fired ATT&CK technique (including a persistence alert caught overnight by a custom rule), each traced to a root cause with evidence, a verdict and the residual risk of any tuning (including why one technique was deliberately left untuned), plus a controlled password-guessing test detected end to end. See [triage/](triage/).
+- **Real triage, written up.** Seven investigations covering every rule behind a fired ATT&CK technique (including a persistence alert caught overnight by a custom rule), each traced to a root cause with evidence, a verdict and the residual risk of any tuning (including why one technique was deliberately left untuned), plus a controlled password-guessing test detected end to end. See [triage/](triage/).
 - **Detection tuning that was tested before deployment.** Two child rules lower proven noise to level 3 without disabling the parent detections. Before going live, they were replayed against 674 stored alerts: every noise event matched and every real installer event still fired.
 - **94% of Critical alerts eliminated as noise**, so a genuine Critical stands out. The activity is still recorded, just at the right severity.
 - **Vulnerability findings cut from 445 to 39, and Critical from 99 to 0.** Removing one forgotten, unused browser cleared 88% of them.
 - **A data warehouse that found what the SIEM dashboard hid.** Aggregating alerts in SQL exposed a flat 36-per-hour stream of level 15 alerts from scheduled automation, which led to the second triage report.
-- **Posture and coverage reported from evidence.** The Power BI pages rebuild the vulnerability and CIS "before" numbers from Wazuh's own alerts, and map ATT&CK coverage three ways: techniques with a ready rule (115 of 447 for Windows and Linux), techniques that fired here (33), and what is still missing.
+- **Posture and coverage reported from evidence.** The Power BI pages rebuild the vulnerability and CIS "before" numbers from Wazuh's own alerts, and map ATT&CK coverage three ways: techniques with a ready rule (115 of 447 for Windows and Linux), techniques that fired here (37, every one triaged to a verdict), and what is still missing.
+- **Change management on a monitored workload.** When a scheduled automation workload moved to a new folder and from Python 3.11 to 3.13, the migration was verified independently, file integrity monitoring was repointed and tested against every real path plus decoys (which caught one rule mistake before deployment), and Python 3.11 was retired only after confirming nothing used it, with a rollback path kept. Retiring it removes its 16 interpreter vulnerability findings.
 - **Least-privilege data access.** The loader reads Wazuh through an SSH tunnel with a key restricted to a single port forward (no shell), using a read-only indexer account and TLS verified against the Wazuh root CA. The indexer is never exposed on the network.
 
 ## Architecture
@@ -62,7 +65,8 @@ Windows host                         |
 | [sdbinst / Program Compatibility Assistant](triage/2026-09-30-rule-92058-sdbinst-pca-maintenance.md) | 92058, level 12 | Benign: Microsoft-signed hourly Windows maintenance (looks like T1546.011). Tuned. |
 | [Critical alerts left after tuning, and rule 92217](triage/2026-10-01-rules-92213-92217-after-tuning.md) | 92213, level 15; 92217, level 6 | Benign: AMD crash reporter after GPU driver crashes, build tooling compiling with `Add-Type` (kept Critical), installs and updates |
 | [Baseline review of every remaining fired rule](triage/2026-10-01-baseline-review-remaining-rules.md) | 28 rules, levels 3-14 | 27 benign with a named source; 1 low risk, source not confirmed. Every fired ATT&CK technique now has a verdict. |
-| [Run-key autostart change at 1:36 AM](triage/2026-10-02-rule-100113-edge-autostart-change.md) | 100113, level 10 (custom) | Benign: Microsoft Edge updated its own startup entry. Caught by SentinelGrid's own persistence rule, triaged in minutes. |
+| [Run-key autostart change at 1:36 AM](triage/2026-10-02-rule-100113-edge-autostart-change.md) | 100113, level 10 (custom) | Benign: Microsoft Edge updated its own startup entry. Caught by Watchtide's own persistence rule, triaged in minutes. |
+| [Eleven scheduled tasks created in one day](triage/2026-10-02-rule-60228-scheduled-task-creation.md) | 60228, level 4 | Benign: a signed AMD software update and an authorized, documented migration |
 | [Failed SSH logins on the Wazuh server](triage/2026-10-01-ssh-failed-logins-wazuh-server.md) | 5710, 5760, 2502 (level 10) | True positive, controlled test of T1110.001. Detected end to end; one threshold gap documented. |
 
 ## Security design
@@ -90,7 +94,7 @@ Windows host                         |
 
 ### Power BI
 
-Screenshots captured October 1, 2026. For current numbers, open the [console](https://jordan17133.github.io/SentinelGrid/).
+Screenshots captured October 1, 2026. For current numbers, open the [console](https://jordan17133.github.io/Watchtide/).
 
 | | |
 |---|---|

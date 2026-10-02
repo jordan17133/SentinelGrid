@@ -1,6 +1,6 @@
-# SentinelGrid SOC Platform Build Runbook
+# Watchtide SOC Platform Build Runbook
 
-This runbook builds SentinelGrid in layers so that every alert can be traced back to a real source. Commands and product versions were checked on September 29, 2026, and revised on September 30, 2026 after the first build. When a vendor page shows a newer minor release, use the command or package shown on that vendor page.
+This runbook builds Watchtide in layers so that every alert can be traced back to a real source. Commands and product versions were checked on September 29, 2026, and revised on September 30, 2026 after the first build. When a vendor page shows a newer minor release, use the command or package shown on that vendor page.
 
 What actually happened during the build, including every failure and fix, is recorded in [BUILD-LOG.md](BUILD-LOG.md).
 
@@ -17,7 +17,7 @@ What actually happened during the build, including every failure and fix, is rec
 | 7. SQL Server warehouse (moved ahead of Stage 6) | Done 2026-09-30; case log added 2026-10-01 (`warehouse/cases.py`) |
 | 8. Power BI report | Done 2026-10-01 (five pages including Cases, kept as a Power BI Project in Git) |
 | Detection validation | In progress: controlled SSH password-guessing test detected and written up |
-| 6. SentinelGrid API | Planned |
+| 6. Watchtide API | Planned |
 | 5. Suricata network telemetry | Planned |
 
 ## Lab facts
@@ -48,15 +48,15 @@ Ubuntu Server VM
                                    |          v
                                    |   SQL Server warehouse -> Power BI
                                    |          ^
-                                   +-> SentinelGrid API ----+  (later: incidents, analyst actions)
+                                   +-> Watchtide API ----+  (later: incidents, analyst actions)
                                               |
                                               v
-                                      SentinelGrid Console
+                                      Watchtide Console
 
 Later: Suricata -> eve.json -> Wazuh Agent -> Wazuh Server
 ```
 
-The first build loads SQL Server directly from the Wazuh Indexer with a small Python loader, so Power BI gets real data before the SentinelGrid API exists. When the API is built, it writes incident and analyst-action data into the same warehouse.
+The first build loads SQL Server directly from the Wazuh Indexer with a small Python loader, so Power BI gets real data before the Watchtide API exists. When the API is built, it writes incident and analyst-action data into the same warehouse.
 
 ## Stage 0: Prepare the lab
 
@@ -374,7 +374,7 @@ Do this only after Stage 4 works reliably.
 
 At least one benign DNS or HTTP connection must be visible in `eve.json` and traceable to a Wazuh record.
 
-## Stage 6: Connect the SentinelGrid API
+## Stage 6: Connect the Watchtide API
 
 ### Programs and documentation
 
@@ -385,23 +385,23 @@ At least one benign DNS or HTTP connection must be visible in `eve.json` and tra
 
 ### Implementation order
 
-1. Create a server-side SentinelGrid API; never connect browser JavaScript directly to ports 9200 or 55000.
+1. Create a server-side Watchtide API; never connect browser JavaScript directly to ports 9200 or 55000.
 2. Create read-only Wazuh credentials for the API. Do not use the Wazuh `admin` account.
 3. Store credentials in environment variables outside Git.
 4. Query Wazuh Server API for agent health and inventory.
 5. Query Wazuh Indexer API for `wazuh-alerts-*` and, later, approved archive queries.
-6. Normalize Wazuh fields into SentinelGrid's alert, asset, source, and incident shapes.
+6. Normalize Wazuh fields into Watchtide's alert, asset, source, and incident shapes.
 7. Implement read-only routes first: `/api/health`, `/api/agents`, `/api/alerts`, and `/api/assets`.
 8. Add authentication, authorization, input validation, request limits, TLS verification, and audit logs.
-9. Replace SentinelGrid's generated live events with API data. Keep demo mode as a clearly labeled switch.
+9. Replace Watchtide's generated live events with API data. Keep demo mode as a clearly labeled switch.
 
 ### Completion gate
 
-Every SentinelGrid alert must display its Wazuh index, document ID, agent, source timestamp, and rule ID. Refreshing the page must not manufacture new alerts.
+Every Watchtide alert must display its Wazuh index, document ID, agent, source timestamp, and rule ID. Refreshing the page must not manufacture new alerts.
 
 ## Stage 7: Add SQL Server reporting storage
 
-This stage now runs before Stage 6. A Python loader reads `wazuh-alerts-*` from the Wazuh Indexer and writes to SQL Server, so the warehouse and Power BI do not wait on the SentinelGrid API.
+This stage now runs before Stage 6. A Python loader reads `wazuh-alerts-*` from the Wazuh Indexer and writes to SQL Server, so the warehouse and Power BI do not wait on the Watchtide API.
 
 As built:
 
@@ -442,13 +442,13 @@ restrict,port-forwarding,permitopen="127.0.0.1:9200",command="/bin/false" ssh-ed
 2. Create a database named `SentinelGridWarehouse`.
 3. Create tables for assets, alerts, incidents, incident events, MITRE techniques, analyst actions, and daily metrics.
 4. Keep raw high-volume telemetry in Wazuh Indexer. Copy only curated alerts, case history, and summarized metrics to SQL.
-5. Give the SentinelGrid API a narrowly scoped writer account.
+5. Give the Watchtide API a narrowly scoped writer account.
 6. Give Power BI a separate read-only account with access to reporting views, not operational tables.
 7. Build a scheduled incremental load keyed by Wazuh document ID and timestamp so reruns do not duplicate rows.
 
 ### Completion gate
 
-Closing or assigning an incident in SentinelGrid must persist in SQL, and a reporting view must return incident counts without exposing Wazuh or API credentials.
+Closing or assigning an incident in Watchtide must persist in SQL, and a reporting view must return incident counts without exposing Wazuh or API credentials.
 
 ## Stage 8: Build the Power BI report
 
@@ -470,7 +470,7 @@ Closing or assigning an incident in SentinelGrid must persist in SQL, and a repo
 
 ### Completion gate
 
-A Power BI visual must trace back to a SQL reporting view, which must trace back to a SentinelGrid incident or Wazuh alert ID.
+A Power BI visual must trace back to a SQL reporting view, which must trace back to a Watchtide incident or Wazuh alert ID.
 
 ## Recommended first milestone
 

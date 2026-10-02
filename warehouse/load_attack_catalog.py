@@ -49,7 +49,7 @@ FILE_FAMILY = {f: family for family, files in COLLECTED_FILES.items() for f in f
 
 def classify(rule: dict) -> tuple[str, bool]:
     if rule.get("local"):
-        return "SentinelGrid custom rules", True
+        return "Watchtide custom rules", True
     family = FILE_FAMILY.get(rule["file"])
     return (family, True) if family else ("Not collected here", False)
 

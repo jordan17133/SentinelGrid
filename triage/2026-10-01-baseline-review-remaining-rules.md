@@ -19,7 +19,7 @@ How the evidence was gathered: Sysmon process alerts were grouped by parent and 
 | Rule | Level | Alerts | Source | Verdict |
 |---|---|---|---|---|
 | 91823 PowerShell `Invoke-Command` | 14 | 2 | Same second (06:43:34 UTC) as the Windows troubleshooter's scripts from `C:\Windows\Temp\SDIAG_...` (rules 91820 and 92213 in the [previous report](2026-10-01-rules-92213-92217-after-tuning.md)); the script defines the troubleshooter library's `Test-Caller` function | Benign: Windows troubleshooter |
-| 100110 SentinelGrid FIM: secret file changed | 12 | 3 | `c:\users\jordan\.ssh\sg-fim-test.txt` added, modified and deleted at 05:48 UTC: the planned test of the FIM rule | Benign: planned FIM test |
+| 100110 Watchtide FIM: secret file changed | 12 | 3 | `c:\users\jordan\.ssh\sg-fim-test.txt` added, modified and deleted at 05:48 UTC: the planned test of the FIM rule | Benign: planned FIM test |
 | 91809 PowerShell Base64 decoding | 10 | 54 | All 54 begin `$EncodedCommand = '...'`, the wrapper that Claude Code's PowerShell tool uses. Decoded, they are this build's own commands: `sqlcmd` queries, Power BI window checks, `Get-Service WazuhSvc` | Benign: build tooling. Not tuned, see below |
 | 60227 New external device | 8 | 3 | "Headset (A50)", an audio endpoint, at 18:40 UTC | Benign: user's headset |
 | 60182 Performance Monitor Users changed | 8 | 2 | A virtual service account (`S-1-5-80-...`) added to `Performance Monitor Users` at 19:39 and 19:41 UTC on 9/30, during the SQL Server 2025 install | Benign: SQL Server setup |

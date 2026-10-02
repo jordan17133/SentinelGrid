@@ -1,5 +1,5 @@
-// SentinelGrid console: renders data/snapshot.json, a scrubbed export of the
-// SentinelGrid SQL warehouse. Read-only by design; nothing here talks to the SIEM.
+// Watchtide console: renders data/snapshot.json, a scrubbed export of the
+// Watchtide SQL warehouse. Read-only by design; nothing here talks to the SIEM.
 
 const SEV_ORDER = ["critical", "high", "medium", "low"];
 const SEV_LABEL = { critical: "Critical", high: "High", medium: "Medium", low: "Low" };

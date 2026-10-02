@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: case log. An alert is a signal; a case is the
+-- Watchtide warehouse: case log. An alert is a signal; a case is the
 -- investigation of one or more alerts, with an owner, a status, a verdict and
 -- a history. Cases are opened, assigned and closed with warehouse/cases.py.
 -- The seed below records the investigations in triage/ and only inserts

@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: data lifecycle (tiered retention).
+-- Watchtide warehouse: data lifecycle (tiered retention).
 --
 --   Medium, High, Critical alerts (level 7+)   full detail forever
 --   Low alerts (level 0-6)                     full detail 365 days, then raw_json

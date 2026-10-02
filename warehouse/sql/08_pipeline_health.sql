@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: pipeline health for the Power BI "Pipeline Health" page.
+-- Watchtide warehouse: pipeline health for the Power BI "Pipeline Health" page.
 -- Answers: is data arriving, how late is it, does the loader fail, and how
 -- close is the warehouse to its 100 GB cap. Figures are as of the moment
 -- Power BI refreshes. Safe to re-run.

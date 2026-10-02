@@ -1,4 +1,4 @@
-"""Write the four report pages (PBIR) for the SentinelGrid Power BI project.
+"""Write the five report pages (PBIR) for the Watchtide Power BI project.
 
 Usage (from the repo root, after build_model.py, with Power BI Desktop closed):
     .venv\\Scripts\\python.exe powerbi\\tools\\build_report.py

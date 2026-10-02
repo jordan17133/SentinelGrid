@@ -1,4 +1,4 @@
-"""Open, assign, annotate and close SentinelGrid cases.
+"""Open, assign, annotate and close Watchtide cases.
 
 Usage (from the repo root):
     .venv\\Scripts\\python.exe warehouse\\cases.py list

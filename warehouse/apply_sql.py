@@ -1,4 +1,4 @@
-"""Apply the SentinelGrid warehouse SQL scripts in order.
+"""Apply the Watchtide warehouse SQL scripts in order.
 
 Usage (from the repo root):
     .venv\\Scripts\\python.exe warehouse\\apply_sql.py

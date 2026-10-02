@@ -1,5 +1,5 @@
 <!--
-  SentinelGrid tuning rules for known-benign activity on jordan-pc.
+  Watchtide tuning rules for known-benign activity on jordan-pc.
   Deployed to /var/ossec/etc/rules/sentinelgrid_tuning.xml on the Wazuh server.
 
   Each rule is a child of a stock Wazuh rule and only matches when every listed

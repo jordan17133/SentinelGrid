@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: core tables.
+-- Watchtide warehouse: core tables.
 -- Raw, high-volume telemetry stays in the Wazuh Indexer. This database holds
 -- curated alerts, their dimensions, vulnerability snapshots and load history.
 -- Safe to re-run: every object is created only if it is missing.

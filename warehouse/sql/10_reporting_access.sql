@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: least-privilege reporting access.
+-- Watchtide warehouse: least-privilege reporting access.
 -- SQL Server stays in Windows-authentication-only mode, so there is no SQL
 -- password to steal. Reporting tools get the rpt_reader role (SELECT on the
 -- rpt schema only). powerbi_reader is a user without a login: it cannot sign

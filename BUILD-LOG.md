@@ -1,6 +1,6 @@
-# SentinelGrid Build Log
+# Watchtide Build Log
 
-A running record of how the SentinelGrid home SOC lab was built, what broke, and how it was fixed. The step-by-step plan lives in [SentinelGrid-Build-Runbook.md](SentinelGrid-Build-Runbook.md). Alert investigations live in [triage/](triage/).
+A running record of how the Watchtide home SOC lab was built, what broke, and how it was fixed. The step-by-step plan lives in [SentinelGrid-Build-Runbook.md](SentinelGrid-Build-Runbook.md). Alert investigations live in [triage/](triage/).
 
 ## Status at a glance (2026-10-01)
 
@@ -12,7 +12,7 @@ A running record of how the SentinelGrid home SOC lab was built, what broke, and
 | 3. Wazuh agent on Windows | Done, agent `jordan-pc` is Active |
 | 4. Prove the event path end to end | Done, traced through every layer (docs/event-trace.md) |
 | 5. Suricata network telemetry | Not started |
-| 6. SentinelGrid API on live Wazuh data | Not started (console still runs on generated demo data) |
+| 6. Watchtide API on live Wazuh data | Not started (console still runs on generated demo data) |
 | 4b. Posture review | Done: 445 vulnerability findings cut to 39 with zero Critical; CIS 27.1% to 37.0% |
 | 7. SQL Server reporting storage | Done: loader every 15 minutes; case log with history (`warehouse/cases.py`) meets the incident gate |
 | 8. Power BI report | Done: five pages (including Cases) built as a Power BI Project (definitions in Git, data cache ignored), ATT&CK catalog loaded |
@@ -193,7 +193,7 @@ Windows host                         |
 - [x] Enable `ufw`: deny all inbound by default, allow only 22, 443 and 1514-1515 from `172.16.0.0/12` (the range Hyper-V's Default Switch draws from). Verified from Windows that those ports are reachable and that 9200 (indexer) and 55000 (API) are blocked.
 - [x] Take a Hyper-V checkpoint of the hardened VM, named `wazuh-clean`, as the rollback point for attack testing.
 - [x] Ubuntu fully patched 2026-10-02 (0 updates pending). Keep patching weekly (see ROADMAP upkeep); stay on 24.04 until Wazuh supports a newer release.
-- [ ] Stage 6 will need 55000 and 9200: open them only to the SentinelGrid API host, with a read-only Wazuh account.
+- [ ] Stage 6 will need 55000 and 9200: open them only to the Watchtide API host, with a read-only Wazuh account.
 
 ### Detection work
 - [x] First controlled test: failed SSH logins against the Wazuh server, detected as T1110.001 and written up ([report](triage/2026-10-01-ssh-failed-logins-wazuh-server.md)). Wazuh's brute-force rule 5712 needs 8 failures from one IP in 120 seconds, so slow guessing only reaches level 10.

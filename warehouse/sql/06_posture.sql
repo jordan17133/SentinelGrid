@@ -1,4 +1,4 @@
--- SentinelGrid warehouse: endpoint posture (vulnerabilities and CIS benchmark).
+-- Watchtide warehouse: endpoint posture (vulnerabilities and CIS benchmark).
 --
 -- Wazuh reports posture changes as ordinary alerts, so they are already in
 -- sg.alerts. This script extracts them into typed tables, so the posture pages

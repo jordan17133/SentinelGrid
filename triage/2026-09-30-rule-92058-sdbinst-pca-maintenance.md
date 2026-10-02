@@ -12,7 +12,7 @@
 
 ## Summary
 
-A review of every Critical and High alert in the SentinelGrid warehouse found one High-severity pattern not yet explained: `sdbinst.exe` launching once an hour. Attackers can abuse `sdbinst.exe` to install a malicious compatibility "shim" database that injects code into other programs and survives reboots, which is why Wazuh rates it High. Investigation showed a genuine, Microsoft-signed binary started by Windows' own Program Compatibility Assistant service with its standard background-merge arguments.
+A review of every Critical and High alert in the Watchtide warehouse found one High-severity pattern not yet explained: `sdbinst.exe` launching once an hour. Attackers can abuse `sdbinst.exe` to install a malicious compatibility "shim" database that injects code into other programs and survives reboots, which is why Wazuh rates it High. Investigation showed a genuine, Microsoft-signed binary started by Windows' own Program Compatibility Assistant service with its standard background-merge arguments.
 
 ## Investigation
 

@@ -1,5 +1,5 @@
 <!--
-  SentinelGrid file integrity monitoring severity rules for jordan-pc.
+  Watchtide file integrity monitoring severity rules for jordan-pc.
   Deployed to /var/ossec/etc/rules/sentinelgrid_fim.xml on the Wazuh server.
 
   Stock FIM rules fire at level 5-7 for any monitored change. These children raise
@@ -15,7 +15,7 @@
   <rule id="100110" level="12">
     <if_sid>550,553,554</if_sid>
     <field name="file" type="pcre2">(?i)^c:\\(apps\\automation\\(\.env|config\\app[^\\]*\.json)$|users\\jordan\\(\.ssh\\|documents\\sentinelgrid-private\\|desktop\\siem-soc\\loader\\\.env$))</field>
-    <description>SentinelGrid FIM: secret or credential file changed</description>
+    <description>Watchtide FIM: secret or credential file changed</description>
     <mitre>
       <id>T1552.001</id>
     </mitre>
@@ -25,7 +25,7 @@
   <rule id="100111" level="12">
     <if_sid>550,553,554</if_sid>
     <field name="file" type="pcre2">(?i)^c:\\apps\\automation\\(tools\\(watchdog_launcher\.vbs|app_watchdog\.ps1|health_check\.py|validate\.py|trim_logs\.py)|jobs\\(job_[ab]_watchdog(_launcher\.vbs|\.ps1)|daily_report\.py|data_collector\.py|ledger\.py))$</field>
-    <description>SentinelGrid FIM: script run by a scheduled task was changed</description>
+    <description>Watchtide FIM: script run by a scheduled task was changed</description>
     <mitre>
       <id>T1053.005</id>
     </mitre>
@@ -35,7 +35,7 @@
   <rule id="100112" level="10">
     <if_sid>550,553,554</if_sid>
     <field name="file" type="pcre2">(?i)\\start menu\\programs\\startup\\</field>
-    <description>SentinelGrid FIM: Startup folder changed</description>
+    <description>Watchtide FIM: Startup folder changed</description>
     <mitre>
       <id>T1547.001</id>
     </mitre>
@@ -45,7 +45,7 @@
   <rule id="100113" level="10">
     <if_sid>750,751,752</if_sid>
     <field name="file" type="pcre2">(?i)\\software\\microsoft\\windows\\currentversion\\run(once)?$</field>
-    <description>SentinelGrid FIM: Run key autostart entry changed</description>
+    <description>Watchtide FIM: Run key autostart entry changed</description>
     <mitre>
       <id>T1547.001</id>
     </mitre>

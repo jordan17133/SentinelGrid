@@ -5,14 +5,14 @@
 | Date | 2026-10-02 |
 | Analyst | Jordan Carven-Bellace |
 | Host | jordan-pc |
-| Rule | 100113, "SentinelGrid FIM: Run key autostart entry changed" (level 10, custom) |
+| Rule | 100113, "Watchtide FIM: Run key autostart entry changed" (level 10, custom) |
 | Volume | 2 alerts (the 64-bit and 32-bit registry views of the same value), 05:36:33 UTC |
 | MITRE ATT&CK | T1547.001, Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder |
 | Verdict | **Benign: Microsoft Edge updated its own startup entry.** No tuning. |
 
 ## Summary
 
-A routine morning check of the ATT&CK Coverage page showed a 36th technique, not yet triaged: T1547.001, raised by SentinelGrid's own file integrity rule for the user's Run key. Programs listed there start at every logon, which is why attackers use it for persistence. The changed value was Microsoft Edge's own auto-launch entry, rewritten by Edge to add a startup flag.
+A routine morning check of the ATT&CK Coverage page showed a 36th technique, not yet triaged: T1547.001, raised by Watchtide's own file integrity rule for the user's Run key. Programs listed there start at every logon, which is why attackers use it for persistence. The changed value was Microsoft Edge's own auto-launch entry, rewritten by Edge to add a startup flag.
 
 ## Investigation
 
