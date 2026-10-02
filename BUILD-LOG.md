@@ -119,6 +119,7 @@ Windows host                         |
 
 - The monitored automation workload moved to a new folder and from Python 3.11 to 3.13 (copy-and-keep-backup, verified by identical backtests). Its migration report was checked independently: every process and enabled scheduled task runs on 3.13, no enabled task uses 3.11, and all 16 monitored files exist at the new paths.
 - File integrity monitoring and rules 100110/100111 were repointed to the new folder and tested against all 16 monitored paths plus 4 decoys (including the old folder and the new virtual environment's interpreter): 16 match, 0 decoys match. The first pass missed rule 100110 because its folder name sits inside a regex group; the test caught it.
+- Deployed to the Wazuh server (rules and the `default` group's agent.conf, manager restarted, `active`); the Windows agent received the new config one minute later, watching all 16 new paths and none of the old ones.
 - Python 3.11 is not uninstalled yet: the old folder is the rollback path and still needs 3.11. Plan: 48 hours of clean running, then delete the 10 disabled tasks, uninstall 3.11 (about 30 findings) and archive the old folder.
 - The new virtual environment carried over cryptography 47.0.0, PyJWT 2.12.1 and urllib3 2.6.3; upgrading them there is the next patch step.
 
