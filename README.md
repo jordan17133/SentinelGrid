@@ -125,4 +125,8 @@ Windows host                         |
 
 ## Tools
 
-Wazuh 4.14 Â· Sysmon Â· Ubuntu Server 24.04 Â· Hyper-V Â· SQL Server 2025 Developer Â· Python 3.14 (pyodbc, requests) Â· Power BI Desktop Â· PowerShell Â· ufw Â· OpenSSH
+Wazuh 4.14 · Sysmon · Ubuntu Server 24.04 · Hyper-V · SQL Server 2025 Developer · Python 3.14 (pyodbc, requests) · Power BI Desktop · PowerShell · ufw · OpenSSH
+
+## Copyright
+
+© 2026 Jordan Carven-Bellace. All rights reserved. The code and write-ups are shared to be read and evaluated; no license to reuse them is granted.
