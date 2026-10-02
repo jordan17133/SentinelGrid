@@ -197,6 +197,11 @@ Windows host                         |
 - Cause: SQL Server's `JSON_VALUE` returns NULL, without an error, when the value is longer than 4,000 characters. PowerShell script blocks often are, so a filter on the script text silently matched nothing.
 - Fix: search long fields in the raw JSON (`raw_json LIKE ...`) or read them with `OPENJSON` and an `nvarchar(max)` column. A zero result now gets a sanity check against the total before it goes in a report.
 
+### 15. A case showed 0 alerts when it had 2
+
+- Cause: `sg.cases.first_alert_utc` is `datetime2(0)`, so storing 05:36:33.692 rounded it up to 05:36:34, and the two alerts that opened case SG-008 fell "before" the case started.
+- Fix: `rpt.cases` counts alerts from one second before the stored first-alert time. Found while checking screenshots for a LinkedIn post, which is a reminder to look at outputs, not only queries.
+
 ## Open items
 
 ### Hardening

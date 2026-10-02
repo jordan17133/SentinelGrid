@@ -124,7 +124,7 @@ SELECT
      FROM sg.case_rules AS r WHERE r.case_id = c.case_id) AS rules,
     (SELECT COUNT(*) FROM sg.alerts AS a
      WHERE a.rule_id IN (SELECT r.rule_id FROM sg.case_rules AS r WHERE r.case_id = c.case_id)
-       AND a.alert_ts_utc >= c.first_alert_utc
+       AND a.alert_ts_utc >= DATEADD(second, -1, c.first_alert_utc)   -- first_alert_utc is stored to the second and may round up
        AND a.alert_ts_utc <= ISNULL(c.closed_utc, SYSUTCDATETIME())) AS alerts_in_case,
     c.report_path,
     c.summary
