@@ -123,6 +123,11 @@ Windows host                         |
 - Python 3.11 uninstalled after confirming nothing used it (0 processes, no enabled task); the rollback stays possible by reinstalling 3.11.9 and restoring the saved package list. Its 16 interpreter findings should clear on Wazuh's next software inventory scan; Python 3.13.15 brought 1 new finding. Leftover Python 3.11 entries in the user PATH are being removed, since a missing user-writable folder on the PATH can be used to plant a fake `python.exe`.
 - The new virtual environment carried over cryptography 47.0.0, PyJWT 2.12.1 and urllib3 2.6.3; upgrading them there is the next patch step.
 
+### 2026-10-02: Renamed to Watchtide
+
+- "SentinelGrid" collided with a managed security company of the same name and with Microsoft Sentinel, so the project became Watchtide (one other GitHub repository uses the name). Public branding, the console, docs, custom rule descriptions and links were renamed; internal identifiers kept the original name so nothing running had to change. The repository moved to github.com/jordan17133/Watchtide (GitHub redirects the old address) and the console to jordan17133.github.io/Watchtide.
+- Case SG-009: rule 60228 (scheduled task created, T1053) was explained by a signed AMD software update and the documented migration's new tasks. All 37 fired techniques have a verdict.
+
 ## Problems hit and how they were solved
 
 ### 1. Wazuh install failed: "No space left on device"
