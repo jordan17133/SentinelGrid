@@ -194,8 +194,9 @@ Windows host                         |
 - [x] Tuned only after a baseline existed: rules 100100 and 100101 were replayed against 674 stored alerts before deployment.
 
 ### Posture
-- [ ] Update Steam and the ChatGPT app, then recheck Vulnerability Detection.
-- [ ] Retire Python 3.11 (or upgrade the packages in it) once nothing depends on it.
+- [x] Updated Steam and the ChatGPT app (2026-10-02). ChatGPT should clear on the next inventory scan; Steam's 8 findings persist because Steam never updates its Windows uninstall version (2.10.91.91), so they need a reinstall from the current installer or acceptance as an inventory limitation.
+- [x] Do NOT retire Python 3.11: an audit on 2026-10-02 found a production automation workload depends on it (scheduled tasks, its virtual environment and launch scripts). Its 16 interpreter findings are accepted risk until that workload moves to a newer Python (3.11 security releases ship without Windows installers).
+- [ ] Patch cryptography, PyJWT, urllib3 and setuptools inside Python 3.11 (14 findings) with a saved rollback, then verify the workload's health check.
 - [x] CIS baseline recorded and hardened: 27.1% to 37.0% (docs/cis-baseline.md).
 - [ ] Review the remaining Administrative Templates failures in smaller batches; test Credential Guard and SmartScreen prevent-bypass.
 
