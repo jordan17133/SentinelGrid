@@ -7,7 +7,7 @@ What is built, what comes next, and why. Each chapter ends the same way: build i
 - [x] Lab: Hyper-V VM, Ubuntu Server 24.04, Wazuh 4.14 all-in-one, hardened (firewall, rotated credentials, backups, checkpoints)
 - [x] Endpoint telemetry: Sysmon, Windows Security and System logs, Microsoft Defender, PowerShell script-block logging, file integrity monitoring with who-did-it attribution
 - [x] One event traced through every layer ([docs/event-trace.md](docs/event-trace.md))
-- [x] Posture: vulnerability findings 445 to 39 (zero Critical); CIS Benchmark 27.1% to 37.0% ([docs/cis-baseline.md](docs/cis-baseline.md))
+- [x] Posture: 437 of 447 vulnerability findings resolved (10 open, zero Critical); CIS Benchmark 27.1% to 37.0% ([docs/cis-baseline.md](docs/cis-baseline.md))
 - [x] Detection tuning with tested custom rules (100100, 100101) and FIM severity rules (100110-100113)
 - [x] SQL Server warehouse with a scheduled loader (every 15 minutes, 99% success) and data lifecycle rules
 - [x] Case log with history; eight investigations closed, one open ([triage/](triage/))

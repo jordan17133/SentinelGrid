@@ -13,7 +13,7 @@ A running record of how the Watchtide home SOC lab was built, what broke, and ho
 | 4. Prove the event path end to end | Done, traced through every layer (docs/event-trace.md) |
 | 5. Suricata network telemetry | Not started |
 | 6. Watchtide API on live Wazuh data | Not started (console still runs on generated demo data) |
-| 4b. Posture review | Done: 445 vulnerability findings cut to 39 with zero Critical; CIS 27.1% to 37.0% |
+| 4b. Posture review | Done: 437 of 447 vulnerability findings resolved (10 open, zero Critical); CIS 27.1% to 37.0% |
 | 7. SQL Server reporting storage | Done: loader every 15 minutes; case log with history (`warehouse/cases.py`) meets the incident gate |
 | 8. Power BI report | Done: five pages (including Cases) built as a Power BI Project (definitions in Git, data cache ignored), ATT&CK catalog loaded |
 | Detection validation | In progress: controlled SSH password-guessing test detected end to end; every Critical alert since tuning explained |
@@ -127,6 +127,13 @@ Windows host                         |
 
 - "SentinelGrid" collided with a managed security company of the same name and with Microsoft Sentinel, so the project became Watchtide (one other GitHub repository uses the name). Public branding, the console, docs, custom rule descriptions and links were renamed; internal identifiers kept the original name so nothing running had to change. The repository moved to github.com/jordan17133/Watchtide (GitHub redirects the old address) and the console to jordan17133.github.io/Watchtide.
 - Case SG-009: rule 60228 (scheduled task created, T1053) was explained by a signed AMD software update and the documented migration's new tasks. All 37 fired techniques have a verdict.
+
+### 2026-10-02 (evening): Vulnerability rescan after the Python retirement
+
+- Wazuh's next inventory scan confirmed the result: open findings fell from 39 to 10 (zero Critical). Retiring Python 3.11 cleared its 16 interpreter findings and the 14 findings in libraries installed in it (cryptography, PyJWT, urllib3, setuptools). Two new findings appeared (Python 3.13.15, a newer ChatGPT build), so 447 have been found in total and 437 resolved.
+- Remaining: Steam 8 (its Windows uninstall entry never updates, so a reinstall is needed), Python 3.13.15 1, ChatGPT 1.
+- Caveat: Wazuh's vulnerability detection reads the system-wide Python, not virtual environments. The migrated workload's virtual environment still carries the older cryptography, PyJWT and urllib3, so patching them there stays on the list even though the scanner cannot see them.
+- The console gained link-preview tags and a preview image, so shared links (LinkedIn, chat apps) show a card.
 
 ## Problems hit and how they were solved
 

@@ -16,7 +16,7 @@ Watchtide is a working security operations lab: a Windows endpoint instrumented 
 - **Real triage, written up.** Seven investigations covering every rule behind a fired ATT&CK technique (including a persistence alert caught overnight by a custom rule), each traced to a root cause with evidence, a verdict and the residual risk of any tuning (including why one technique was deliberately left untuned), plus a controlled password-guessing test detected end to end. See [triage/](triage/).
 - **Detection tuning that was tested before deployment.** Two child rules lower proven noise to level 3 without disabling the parent detections. Before going live, they were replayed against 674 stored alerts: every noise event matched and every real installer event still fired.
 - **94% of Critical alerts eliminated as noise**, so a genuine Critical stands out. The activity is still recorded, just at the right severity.
-- **Vulnerability findings cut from 445 to 39, and Critical from 99 to 0.** Removing one forgotten, unused browser cleared 88% of them.
+- **437 of 447 vulnerability findings resolved, and Critical cut from 99 to 0.** Removing one forgotten, unused browser cleared 88% of the first scan's findings; retiring an outdated Python later cleared 30 more.
 - **A data warehouse that found what the SIEM dashboard hid.** Aggregating alerts in SQL exposed a flat 36-per-hour stream of level 15 alerts from scheduled automation, which led to the second triage report.
 - **Posture and coverage reported from evidence.** The Power BI pages rebuild the vulnerability and CIS "before" numbers from Wazuh's own alerts, and map ATT&CK coverage three ways: techniques with a ready rule (115 of 447 for Windows and Linux), techniques that fired here (37, every one triaged to a verdict), and what is still missing.
 - **Change management on a monitored workload.** When a scheduled automation workload moved to a new folder and from Python 3.11 to 3.13, the migration was verified independently, file integrity monitoring was repointed and tested against every real path plus decoys (which caught one rule mistake before deployment), and Python 3.11 was retired only after confirming nothing used it, with a rollback path kept. Retiring it removes its 16 interpreter vulnerability findings.
@@ -84,7 +84,7 @@ Windows host                         |
 
 | Measure | Before | After |
 |---|---|---|
-| Vulnerability findings | 445 (99 Critical, 247 High) | 39 (0 Critical, 21 High) |
+| Vulnerability findings | 445 (99 Critical, 247 High) | 10 open of 447 found (0 Critical, 7 High) |
 | CIS Windows 11 benchmark score | 27.1% | 37.0% (47 fixes, every remaining gap documented) |
 | Level 15 alerts per hour from known noise | about 36 | 0 (now level 3) |
 | Level 12 alerts per hour from known noise | 1 | 0 (now level 3) |

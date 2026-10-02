@@ -13,7 +13,7 @@ What actually happened during the build, including every failure and fix, is rec
 | 2. Sysmon | Done 2026-09-30 |
 | 3. Windows Wazuh agent | Done 2026-09-30 |
 | 4. First real event path | Done 2026-09-30 |
-| 4b. Review posture findings | Done 2026-10-01 (445 findings cut to 39, CIS 27.1% to 37.0%) |
+| 4b. Review posture findings | Done 2026-10-01 (437 of 447 findings resolved, 10 open; CIS 27.1% to 37.0%) |
 | 7. SQL Server warehouse (moved ahead of Stage 6) | Done 2026-09-30; case log added 2026-10-01 (`warehouse/cases.py`) |
 | 8. Power BI report | Done 2026-10-01 (five pages including Cases, kept as a Power BI Project in Git) |
 | Detection validation | In progress: controlled SSH password-guessing test detected and written up |
