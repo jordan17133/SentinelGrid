@@ -163,6 +163,10 @@ USING (VALUES
             N'triage/2026-10-01-baseline-review-remaining-rules.md'),
     (67018, N'Benign: planned restarts',
             N'triage/2026-10-01-baseline-review-remaining-rules.md'),
+    (100100, N'Benign: tuned watchdog PowerShell policy-test files (see 92213 report)',
+            N'triage/2026-09-30-rule-92213-powershell-policy-test-noise.md'),
+    (594, N'Benign: Windows state keys (TPM, DeviceAssociation, bam, W32Time)',
+            N'triage/2026-10-01-baseline-review-remaining-rules.md'),
     (67017, N'Low risk: loopback admin share by own account, source process not confirmed',
             N'triage/2026-10-01-baseline-review-remaining-rules.md')
 ) AS s (rule_id, verdict, report_path)

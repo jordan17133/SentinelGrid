@@ -30,6 +30,7 @@ How the evidence was gathered: Sysmon process alerts were grouped by parent and 
 | Rule | Alerts | Main sources | Verdict |
 |---|---|---|---|
 | 750 Registry value checksum changed | 552 | `Services\bam\State` (333: Windows' Background Activity Moderator, which records when programs last ran), `Services\W32Time` (70: time sync) | Benign: Windows keeping its own state |
+| 594 Registry key checksum changed | 570 | `Services\TPM\WMI` (180), `Services\DeviceAssociationService` (159), `bam\State` (38), `W32Time` (36): Windows updating its own keys | Benign: Windows keeping its own state |
 | 751 Registry value deleted | 10 | `Services\MozillaMaintenance` (8: the Firefox removal during posture work), `Services\SharedAccess` (2) | Benign: planned software removal |
 | 92052 cmd started by an abnormal process | 527 | `claude.exe > cmd.exe` (240: Claude Code's shell tool), `RadeonSoftware.exe > RSServCmd.exe` (98: AMD software) | Benign: build tooling and AMD software |
 | 92032 Suspicious cmd shell execution | 508 | `cmd.exe > powershell.exe` (236) and `cmd.exe > chcp.com` (184): how Claude Code's tools start a shell | Benign: build tooling |

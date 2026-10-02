@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SentinelGrid Console</title>
+  <meta name="description" content="Read-only SOC console for SentinelGrid, a home security operations center built on Wazuh, Sysmon, SQL Server and Power BI.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="favicon.svg" alt="" width="28" height="28">
+      <div>
+        <h1>SentinelGrid</h1>
+        <p class="tagline">Home SOC console · read-only snapshot of real data</p>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="Views">
+      <a href="#overview" data-view="overview">Overview</a>
+      <a href="#alerts" data-view="alerts">Alerts</a>
+      <a href="#cases" data-view="cases">Cases</a>
+      <a href="#attack" data-view="attack">ATT&amp;CK</a>
+      <a href="#pipeline" data-view="pipeline">Pipeline</a>
+    </nav>
+    <a class="repo-link" href="https://github.com/jordan17133/SentinelGrid" target="_blank" rel="noopener">View on GitHub</a>
+  </header>
+
+  <div class="notice" id="notice">
+    Every number below comes from a real home lab: one Windows 11 workstation and its Wazuh server.
+    This page is a scrubbed snapshot (<span id="snapshotTime">loading</span>), not a live connection, so the SIEM itself is never exposed to the internet.
+  </div>
+
+  <main>
+    <section id="view-overview" class="view">
+      <div class="kpis" id="kpis"></div>
+      <div class="grid two">
+        <div class="panel wide">
+          <div class="panel-head"><h2>Alerts per hour by severity</h2><span class="legend" id="hourLegend"></span></div>
+          <div id="hourChart" class="chart"></div>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="panel">
+          <div class="panel-head"><h2>Busiest rules and their triage verdict</h2></div>
+          <div id="topRules"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>Newest Critical and High alerts</h2><a href="#alerts" class="more">All alerts</a></div>
+          <div id="recentHigh"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-alerts" class="view">
+      <div class="filters">
+        <input id="alertSearch" type="search" placeholder="Search rule, rule ID, process, technique" aria-label="Search alerts">
+        <select id="alertSeverity" aria-label="Severity">
+          <option value="all">All severities</option>
+          <option value="critical">Critical</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <span class="count" id="alertCount"></span>
+      </div>
+      <div class="split">
+        <div class="panel table-wrap"><table class="table" id="alertTable"></table></div>
+        <aside class="panel detail" id="alertDetail"><p class="muted">Select an alert to see its details.</p></aside>
+      </div>
+    </section>
+
+    <section id="view-cases" class="view">
+      <div class="split">
+        <div class="panel"><div id="caseList"></div></div>
+        <aside class="panel detail" id="caseDetail"></aside>
+      </div>
+    </section>
+
+    <section id="view-attack" class="view">
+      <p class="lead" id="attackLead"></p>
+      <div class="matrix" id="matrix"></div>
+    </section>
+
+    <section id="view-pipeline" class="view">
+      <div class="kpis" id="pipeKpis"></div>
+      <div class="panel">
+        <div class="panel-head"><h2>How data moves</h2></div>
+        <ol class="flow">
+          <li><strong>Windows 11 endpoint</strong><span>Sysmon, Security, Defender, PowerShell 4104, file integrity</span></li>
+          <li><strong>Wazuh agent</strong><span>Ships events over TLS to the server</span></li>
+          <li><strong>Wazuh server</strong><span>Ubuntu VM: rules, ATT&amp;CK mapping, indexer, dashboard</span></li>
+          <li><strong>Python loader</strong><span>Every 15 minutes through a locked-down SSH tunnel</span></li>
+          <li><strong>SQL Server warehouse</strong><span>Alerts, posture, cases, reporting views</span></li>
+          <li><strong>Power BI and this console</strong><span>Reports and a scrubbed public snapshot</span></li>
+        </ol>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>Endpoints reporting</h2></div>
+        <div id="endpoints"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Jordan Carven-Bellace · All rights reserved</span>
+    <span>Built with Wazuh, Sysmon, SQL Server, Python and Power BI · <a href="https://github.com/jordan17133/SentinelGrid" target="_blank" rel="noopener">Source and write-ups</a></span>
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

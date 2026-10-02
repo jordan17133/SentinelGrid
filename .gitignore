@@ -11,3 +11,6 @@ powerbi/**/.pbi/cache.abf
 powerbi/**/.pbi/localSettings.json
 # Regenerable exports (ATT&CK catalog from the Wazuh server)
 warehouse/data/
+
+# Local preview config for the console
+/.claude/
