@@ -15,7 +15,7 @@ A running record of how the SentinelGrid home SOC lab was built, what broke, and
 | 6. SentinelGrid API on live Wazuh data | Not started (console still runs on generated demo data) |
 | 4b. Posture review | Done: 445 vulnerability findings cut to 39 with zero Critical; CIS 27.1% to 37.0% |
 | 7. SQL Server reporting storage | Done: loader every 15 minutes; case log with history (`warehouse/cases.py`) meets the incident gate |
-| 8. Power BI report | Done: four pages built as a Power BI Project (definitions in Git, data cache ignored), ATT&CK catalog loaded |
+| 8. Power BI report | Done: five pages (including Cases) built as a Power BI Project (definitions in Git, data cache ignored), ATT&CK catalog loaded |
 | Detection validation | In progress: controlled SSH password-guessing test detected end to end; every Critical alert since tuning explained |
 
 ## What is running
@@ -184,14 +184,14 @@ Windows host                         |
 - [x] Rotate the Wazuh `admin` password with `wazuh-passwords-tool.sh` (random, generated on the server) and store it in a password manager.
 - [x] Enable `ufw`: deny all inbound by default, allow only 22, 443 and 1514-1515 from `172.16.0.0/12` (the range Hyper-V's Default Switch draws from). Verified from Windows that those ports are reachable and that 9200 (indexer) and 55000 (API) are blocked.
 - [x] Take a Hyper-V checkpoint of the hardened VM, named `wazuh-clean`, as the rollback point for attack testing.
-- [ ] Apply Ubuntu updates regularly. Stay on 24.04 until Wazuh supports a newer release.
+- [x] Ubuntu fully patched 2026-10-02 (0 updates pending). Keep patching weekly (see ROADMAP upkeep); stay on 24.04 until Wazuh supports a newer release.
 - [ ] Stage 6 will need 55000 and 9200: open them only to the SentinelGrid API host, with a read-only Wazuh account.
 
 ### Detection work
 - [x] First controlled test: failed SSH logins against the Wazuh server, detected as T1110.001 and written up ([report](triage/2026-10-01-ssh-failed-logins-wazuh-server.md)). Wazuh's brute-force rule 5712 needs 8 failures from one IP in 120 seconds, so slow guessing only reaches level 10.
 - [ ] Run more controlled attack simulations (for example, Atomic Red Team tests on a throwaway VM) and write a triage report for each one.
-- [ ] Record which techniques Wazuh detects and which it misses, to build an ATT&CK coverage map.
-- [ ] Tune noisy rules only after a baseline of normal activity exists.
+- [x] ATT&CK coverage map built: 115 of 447 Windows and Linux techniques have a deployed rule with a collected source, and all 36 that fired are triaged. Proving "detects vs. misses" per technique needs more tests (ROADMAP chapter 1).
+- [x] Tuned only after a baseline existed: rules 100100 and 100101 were replayed against 674 stored alerts before deployment.
 
 ### Posture
 - [ ] Update Steam and the ChatGPT app, then recheck Vulnerability Detection.
@@ -217,4 +217,5 @@ Windows host                         |
 - [x] Least-privilege reporting access (`10_reporting_access.sql`). SQL Server stays in Windows-authentication-only mode, Microsoft's recommended setting, so no SQL password exists to steal; switching to mixed mode just to add a password login would weaken that. Instead, a login-less `powerbi_reader` user in the `rpt_reader` role was tested with `EXECUTE AS`: reading `rpt.cases` is allowed; reading `sg.alerts`, updating `sg.cases` and deleting from `sg.case_events` are all denied (error 229). Power BI on this one-person lab still signs in as the analyst; a shared deployment would add its own Windows or Entra identity to the role.
 - [x] Triaged rule 92217: all 577 Low alerts are software installs and updates (same report).
 - [ ] Delete `PowerBI-SOC.pbix` once the project is confirmed as the only copy (it is superseded and git-ignored).
-- [ ] Stage 6: build the SentinelGrid API with a read-only Wazuh account and switch the console from demo data to live alerts.
+- [x] Console switched from demo data to a scrubbed snapshot of real data, hosted on GitHub Pages; the demo-data prototype was removed.
+- [ ] Stage 6, second part: a live API behind the console with a read-only Wazuh account (ROADMAP chapter 10).

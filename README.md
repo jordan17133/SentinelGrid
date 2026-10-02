@@ -36,7 +36,7 @@ Windows host                         |
                                      v
   SQL Server 2025: SentinelGridWarehouse
     sg.*  tables (alerts, agents, rules, MITRE, vulnerability snapshots, load runs)
-    rpt.* views  ->  Power BI Desktop (4 pages, kept as code in powerbi/)
+    rpt.* views  ->  Power BI Desktop (5 pages, kept as code in powerbi/)
 ```
 
 ## What is in this repo
@@ -90,6 +90,8 @@ Windows host                         |
 
 ### Power BI
 
+Screenshots captured October 1, 2026. For current numbers, open the [console](https://jordan17133.github.io/SentinelGrid/).
+
 | | |
 |---|---|
 | ![SOC Overview](docs/screenshots/powerbi-soc-overview.jpg) | ![Endpoint Posture](docs/screenshots/powerbi-endpoint-posture.jpg) |
@@ -97,7 +99,7 @@ Windows host                         |
 | ![ATT&CK Coverage](docs/screenshots/powerbi-attack-coverage.jpg) | ![Pipeline Health](docs/screenshots/powerbi-pipeline-health.jpg) |
 | **ATT&CK Coverage:** what the deployed rules can detect, what fired here, and the triage verdict behind it | **Pipeline Health:** data freshness, loader success, alert-to-SQL latency, warehouse size |
 | ![Cases](docs/screenshots/powerbi-cases.jpg) | |
-| **Cases:** every investigation as a case with an owner, a verdict and its time from first alert to verdict (median 13.0 hours) | |
+| **Cases:** every investigation as a case with an owner, a verdict and its time from first alert to verdict | |
 
 ### Wazuh
 
