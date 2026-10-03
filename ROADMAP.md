@@ -10,7 +10,7 @@ What is built, what comes next, and why. Each chapter ends the same way: build i
 - [x] Posture: 437 of 447 vulnerability findings resolved (10 open, zero Critical); CIS Benchmark 27.1% to 37.0% ([docs/cis-baseline.md](docs/cis-baseline.md))
 - [x] Detection tuning with tested custom rules (100100, 100101) and FIM severity rules (100110-100113)
 - [x] SQL Server warehouse with a scheduled loader (every 15 minutes, 99% success) and data lifecycle rules
-- [x] Case log with history; eight investigations closed, one open ([triage/](triage/))
+- [x] Case log with history; nine investigations closed, one open ([triage/](triage/))
 - [x] Every fired MITRE ATT&CK technique triaged to a verdict
 - [x] First controlled attack test: SSH password guessing, detected end to end
 - [x] Least-privilege reporting role, tested

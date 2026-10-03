@@ -171,6 +171,8 @@ USING (VALUES
             N'triage/2026-10-02-rule-100113-edge-autostart-change.md'),
     (60228, N'Benign: signed AMD software update and a documented migration',
             N'triage/2026-10-02-rule-60228-scheduled-task-creation.md'),
+    (60122, N'Benign: mistyped Windows password at Edge''s prompt (user-confirmed)',
+            N'triage/2026-10-02-rule-60122-edge-password-prompt.md'),
     (67017, N'Low risk: loopback admin share by own account, source process not confirmed',
             N'triage/2026-10-01-baseline-review-remaining-rules.md')
 ) AS s (rule_id, verdict, report_path)
