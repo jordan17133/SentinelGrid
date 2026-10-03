@@ -17,6 +17,7 @@ What actually happened during the build, including every failure and fix, is rec
 | 7. SQL Server warehouse (moved ahead of Stage 6) | Done 2026-09-30; case log added 2026-10-01 (`warehouse/cases.py`) |
 | 8. Power BI report | Done 2026-10-01 (five pages including Cases, kept as a Power BI Project in Git) |
 | Detection validation | In progress: controlled SSH password-guessing test detected and written up |
+| 4c. Tailscale private remote access | Setup started 2026-10-03; policy, access tests and pipeline verification pending ([plan](docs/private-access-plan.md)) |
 | 6. Watchtide API | Planned |
 | 5. Suricata network telemetry | Planned |
 
@@ -345,6 +346,22 @@ Wazuh scans enrolled agents out of the box. Use it to fix real weaknesses on the
 
 No Critical vulnerability findings remain unexplained, and the Configuration Assessment score has a recorded baseline.
 
+## Stage 4c: Add private remote access with Tailscale
+
+**Status:** setup started; no verified VPN access-control result is recorded yet. The detailed procedure, access matrix, evidence checklist and rollback are in [docs/private-access-plan.md](docs/private-access-plan.md).
+
+### Steps
+
+1. Save the current firewall and tailnet policy privately, record loader/agent health, and take a Hyper-V checkpoint with VM-console access available.
+2. Connect both the admin device and Ubuntu VM to Tailscale. Installing it on the Hyper-V host alone does not enroll the guest. Confirm the correct dashboard HTTPS hostname and certificate before relying on remote access.
+3. Apply narrow grants for approved admin devices to SSH/dashboard and, later, monitored endpoints to agent ingestion. Keep enrollment temporary, the indexer on loopback and the existing restricted loader key. Verify the effective firewall and tailnet policy together.
+4. Test from an approved device off the home network, an unprivileged tailnet test device, and a device without Tailscale. Recheck the local Wazuh agent and the next scheduled SQL load before tightening existing local exceptions.
+5. Publish a sanitized test report and update completion boxes only after the tests pass. Then enroll one remote endpoint and trace a harmless collected event through Wazuh, SQL and Power BI.
+
+### Completion gate
+
+Approved remote SSH/dashboard access succeeds; unauthorized tailnet access and direct public access fail; direct indexer/API access stays blocked; the local agent and loader remain healthy. Record the date, expected/actual result and redacted evidence for each test. Remote endpoint collection is a separate gate and must have its own event trace.
+
 ## Stage 5: Add Suricata network telemetry
 
 Do this only after Stage 4 works reliably.
@@ -376,6 +393,8 @@ At least one benign DNS or HTTP connection must be visible in `eve.json` and tra
 
 ## Stage 6: Connect the Watchtide API
 
+The public GitHub Pages console stays on a sanitized snapshot. This future live API and analyst console are private services reached through approved lab access; they do not give public visitors a connection to Wazuh or SQL.
+
 ### Programs and documentation
 
 - [Node.js LTS](https://nodejs.org/en/download)
@@ -393,7 +412,7 @@ At least one benign DNS or HTTP connection must be visible in `eve.json` and tra
 6. Normalize Wazuh fields into Watchtide's alert, asset, source, and incident shapes.
 7. Implement read-only routes first: `/api/health`, `/api/agents`, `/api/alerts`, and `/api/assets`.
 8. Add authentication, authorization, input validation, request limits, TLS verification, and audit logs.
-9. Replace Watchtide's generated live events with API data. Keep demo mode as a clearly labeled switch.
+9. Connect a separate private analyst console to the API. Keep the public GitHub Pages console on its sanitized snapshot.
 
 ### Completion gate
 

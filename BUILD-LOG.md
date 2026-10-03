@@ -2,7 +2,7 @@
 
 A running record of how the Watchtide home SOC lab was built, what broke, and how it was fixed. The step-by-step plan lives in [SentinelGrid-Build-Runbook.md](SentinelGrid-Build-Runbook.md). Alert investigations live in [triage/](triage/).
 
-## Status at a glance (2026-10-01)
+## Status at a glance (2026-10-03)
 
 | Runbook stage | Status |
 |---|---|
@@ -12,11 +12,12 @@ A running record of how the Watchtide home SOC lab was built, what broke, and ho
 | 3. Wazuh agent on Windows | Done, agent `jordan-pc` is Active |
 | 4. Prove the event path end to end | Done, traced through every layer (docs/event-trace.md) |
 | 5. Suricata network telemetry | Not started |
-| 6. Watchtide API on live Wazuh data | Not started (console still runs on generated demo data) |
+| 6. Watchtide API on live Wazuh data | Private live API not started; public console serves a sanitized snapshot of real lab data |
 | 4b. Posture review | Done: 437 of 447 vulnerability findings resolved (10 open, zero Critical); CIS 27.1% to 37.0% |
 | 7. SQL Server reporting storage | Done: loader every 15 minutes; case log with history (`warehouse/cases.py`) meets the incident gate |
 | 8. Power BI report | Done: five pages (including Cases) built as a Power BI Project (definitions in Git, data cache ignored), ATT&CK catalog loaded |
 | Detection validation | In progress: controlled SSH password-guessing test detected end to end; every Critical alert since tuning explained |
+| 4c. Tailscale private remote access | Setup started; access policy, remote tests and pipeline checks pending |
 
 ## What is running
 
@@ -135,6 +136,14 @@ Windows host                         |
 - Caveat: Wazuh's vulnerability detection reads the system-wide Python, not virtual environments. The migrated workload's virtual environment still carries the older cryptography, PyJWT and urllib3, so patching them there stays on the list even though the scanner cannot see them.
 - The console gained link-preview tags and a preview image, so shared links (LinkedIn, chat apps) show a card.
 
+### 2026-10-03: Private remote-access decision and next milestones
+
+- Started the Tailscale setup chapter to add private remote administration of the Hyper-V/Ubuntu SOC. Installation on both devices, policy enforcement and reachability are still awaiting verification; this entry records the decision and plan, not a completed control.
+- Added [docs/private-access-plan.md](docs/private-access-plan.md) with intended service access, a safe change sequence, allowed/denied tests, pipeline checks and rollback. Kept the existing loopback indexer, restricted loader tunnel and private SQL design as requirements.
+- Put current work and the next milestones near the top of the README: private access, one remote endpoint, then more detection validation. Added Stage 4c to the runbook and reordered the roadmap around the same gates.
+- Clarified the public/private boundary for the future live API: employers use the public sanitized snapshot; live administration and analyst actions stay private.
+- Pending evidence: off-LAN admin access, denied unprivileged access, no direct public management access, and healthy agent/loader operation. No VPN test result or runtime configuration change is claimed by this documentation update.
+
 ## Problems hit and how they were solved
 
 ### 1. Wazuh install failed: "No space left on device"
@@ -210,12 +219,18 @@ Windows host                         |
 - [x] Enable `ufw`: deny all inbound by default, allow only 22, 443 and 1514-1515 from `172.16.0.0/12` (the range Hyper-V's Default Switch draws from). Verified from Windows that those ports are reachable and that 9200 (indexer) and 55000 (API) are blocked.
 - [x] Take a Hyper-V checkpoint of the hardened VM, named `wazuh-clean`, as the rollback point for attack testing.
 - [x] Ubuntu fully patched 2026-10-02 (0 updates pending). Keep patching weekly (see ROADMAP upkeep); stay on 24.04 until Wazuh supports a newer release.
-- [ ] Stage 6 will need 55000 and 9200: open them only to the Watchtide API host, with a read-only Wazuh account.
+- [ ] Stage 6: choose a private API placement and read-only account; prefer local access or a restricted tunnel before adding any narrow API-host exception for 55000/9200.
+
+### Private remote access
+- [ ] Verify Tailscale on the admin device and Ubuntu VM; save the baseline and rollback details privately.
+- [ ] Apply least-privilege grants and test allowed and denied SSH/dashboard access, including an off-LAN test and a public-access check.
+- [ ] Confirm the existing local agent and scheduled SQL loader still work; publish a sanitized results report ([plan](docs/private-access-plan.md)).
+- [ ] Enroll one remote endpoint and publish a benign event trace through Wazuh, SQL and Power BI.
 
 ### Detection work
 - [x] First controlled test: failed SSH logins against the Wazuh server, detected as T1110.001 and written up ([report](triage/2026-10-01-ssh-failed-logins-wazuh-server.md)). Wazuh's brute-force rule 5712 needs 8 failures from one IP in 120 seconds, so slow guessing only reaches level 10.
 - [ ] Run more controlled attack simulations (for example, Atomic Red Team tests on a throwaway VM) and write a triage report for each one.
-- [x] ATT&CK coverage map built: 115 of 447 Windows and Linux techniques have a deployed rule with a collected source, and all 36 that fired are triaged. Proving "detects vs. misses" per technique needs more tests (ROADMAP chapter 1).
+- [x] ATT&CK coverage map built: 115 of 447 Windows and Linux techniques have a deployed rule with a collected source, and all 36 that fired are triaged. Proving "detects vs. misses" per technique needs more tests (ROADMAP chapter 3).
 - [x] Tuned only after a baseline existed: rules 100100 and 100101 were replayed against 674 stored alerts before deployment.
 
 ### Posture
@@ -244,4 +259,4 @@ Windows host                         |
 - [x] Triaged rule 92217: all 577 Low alerts are software installs and updates (same report).
 - [x] Moved the superseded `PowerBI-SOC.pbix` to the Recycle Bin (2026-10-02); the Power BI Project in `powerbi/` is the only copy.
 - [x] Console switched from demo data to a scrubbed snapshot of real data, hosted on GitHub Pages; the demo-data prototype was removed.
-- [ ] Stage 6, second part: a live API behind the console with a read-only Wazuh account (ROADMAP chapter 10).
+- [ ] Stage 6, second part: a private live API/console with a read-only Wazuh account; public console stays on a sanitized snapshot (ROADMAP chapter 12).

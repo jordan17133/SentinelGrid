@@ -8,6 +8,18 @@ Watchtide is a working security operations lab: a Windows endpoint instrumented 
 
 **[Open the Watchtide console](https://jordan17133.github.io/Watchtide/)**: a read-only SOC console built on a scrubbed snapshot of this lab's real alerts, cases and ATT&CK coverage. It runs in the browser, with no setup and no live connection to the SIEM.
 
+## What is coming next
+
+Updated October 3, 2026. The pipeline and investigations below are built; these next milestones have their own validation gates.
+
+| Priority | Work | Status | Evidence to publish |
+|---|---|---|---|
+| Current | **Private remote access with Tailscale** | Setup started; access policy and reachability tests pending | Sanitized access matrix, successful admin access, denied unauthorized access, and pipeline health before/after |
+| Next | **One remote Wazuh endpoint** | Planned after private access is validated | A benign event traced from a separate network through Wazuh, SQL and Power BI |
+| Following | **More detection validation** | Planned: Atomic Red Team on a separate test VM | Five or more techniques tested, with cases documenting detections and gaps |
+
+The [private-access plan](docs/private-access-plan.md) explains the VPN decision, remaining steps and completion tests. The full [roadmap](ROADMAP.md) also covers phishing analysis, Splunk practice, a short demo video and Suricata. Employers can review the public console and documentation without joining the private lab.
+
 ![SOC Overview page in Power BI](docs/screenshots/powerbi-soc-overview.jpg)
 
 ## Highlights
@@ -48,6 +60,8 @@ Windows host                         |
 |---|---|
 | [SentinelGrid-Build-Runbook.md](SentinelGrid-Build-Runbook.md) | Stage-by-stage build guide with completion gates, revised with every lesson from the real build |
 | [BUILD-LOG.md](BUILD-LOG.md) | What actually happened: timeline, seven problems hit and how each was solved, open items |
+| [ROADMAP.md](ROADMAP.md) | Upcoming work, its purpose and the evidence required to call each milestone done |
+| [docs/private-access-plan.md](docs/private-access-plan.md) | Tailscale design decision, intended access rules, validation checklist and rollback plan; implementation verification pending |
 | [triage/](triage/) | Alert investigation reports |
 | [wazuh/rules/sentinelgrid_tuning.xml](wazuh/rules/sentinelgrid_tuning.xml) | Custom Wazuh rules deployed to the manager |
 | [warehouse/](warehouse/) | Idempotent SQL Server schema, reporting views and the script that applies them; `cases.py` opens, assigns and closes cases with a full history |
@@ -80,6 +94,8 @@ Windows host                         |
 | Transport | TLS verified against the Wazuh root CA, with hostname checking on. Only Python's strict-mode flag is relaxed, because the installer's CA lacks a keyUsage extension; a wrong-hostname test is still rejected. |
 | Recovery | Hyper-V checkpoints at known-good points. |
 | Data hygiene | The Power BI file, which embeds alert data, is kept out of Git. |
+
+**In progress: Tailscale private remote access.** The goal is to reach SSH and the Wazuh dashboard from approved admin devices while keeping the lab off the public internet. The current NAT and loader protections above remain the documented baseline. Tailscale installation alone does not establish least-privilege access; the [plan](docs/private-access-plan.md) requires both allowed and denied connection tests before this becomes a completed control. A future live console/API will be private; GitHub Pages will continue to serve the sanitized snapshot.
 
 ## Results
 
@@ -126,6 +142,8 @@ The full plan, with why each chapter matters and when it counts as done, is in [
 - [x] Stage 4b: CIS benchmark baseline and hardening ([docs/cis-baseline.md](docs/cis-baseline.md))
 - [x] Stage 8: Power BI pages for posture, MITRE ATT&CK coverage and pipeline health
 - [x] Least-privilege reporting role, tested: reads `rpt` views, blocked from raw tables and from any change (SQL Server stays Windows-authentication only, so no SQL passwords exist)
+- [ ] Stage 4c: Tailscale private remote access, with least-privilege policy and allowed/denied access tests
+- [ ] One remote endpoint: a benign event traced across networks into Wazuh, SQL and Power BI
 - [ ] Alert notifications for level 12 and above
 - [x] File Integrity Monitoring with who-did-it attribution on secrets, scheduled automation scripts and autostart locations
 - [x] Full event archive with tiered retention at every layer
@@ -133,7 +151,7 @@ The full plan, with why each chapter matters and when it counts as done, is in [
 - [x] Collect PowerShell script block logs (event 4104, deobfuscated)
 - [ ] Attack simulations (Atomic Red Team) with a detection coverage map
 - [x] Stage 6 (first part): public read-only console on a scrubbed snapshot of real data
-- [ ] Stage 6 (second part): live API behind the console, with analysts working cases from it
+- [ ] Stage 6 (second part): private live API/console, with analysts working cases from it; public console stays on a sanitized snapshot
 - [ ] Stage 5: Suricata network telemetry
 
 ## Tools
